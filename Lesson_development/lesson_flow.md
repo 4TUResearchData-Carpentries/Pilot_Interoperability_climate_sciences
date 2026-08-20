@@ -21,3 +21,7 @@
 
 - The schedule is organized chronologically from the welcome session to the final wrap-up.
 - All linked materials are intended to support the corresponding session in the workshop flow.
+
+## Debrief pilot session
+
+We must follow a debrief session shortly after the pilot , see [here](../Debrief-session/debrief_session.md) for the guidelines.
