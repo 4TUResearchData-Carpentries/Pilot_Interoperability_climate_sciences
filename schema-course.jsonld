@@ -1,104 +1,118 @@
 {
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "YOUR COURSE TITLE",
-  "description": "Brief summary of the course aims and topics covered.",
-  "url": "https://your.site/course-page",
-  "courseCode": "COURSE123",
-  "image": "https://your.site/course-image.png",
+  "name": "Interoperability in Climate and Atmospheric Sciences: FAIR NetCDF Data workshop",
+  "description": "A hands-on pilot workshop on creating interoperable, FAIR climate and atmospheric science datasets using NetCDF, metadata standards, persistent identifiers, and practical data access patterns.",
+  "url": "https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/",
+  "courseCode": "INTEROP-CLIMATE-FAIR",
+  "image": "https://raw.githubusercontent.com/4TUResearchData-Carpentries/interoperability-climate-sciences/main/cover_image.webp",
   "provider": {
     "@type": "Organization",
-    "name": "YOUR INSTITUTION OR ORGANIZATION",
-    "url": "https://your.org",
-    "sameAs": "https://your.org/about"
+    "name": "4TU.ResearchData",
+    "url": "https://www.4tu.nl/",
+    "sameAs": "https://www.4tu.nl/"
   },
-  "educationalLevel": "Beginner",
+  "educationalLevel": "Intermediate",
   "audience": [
-    "PhD students",
-    "Post-docs",
-    "Researchers"
+    "Researchers",
+    "Data stewards",
+    "Data engineers",
+    "Research software engineers"
   ],
-  "timeRequired": "P2D",
+  "timeRequired": "PT7H",
   "coursePrerequisites": [
     {
       "@type": "CreativeWork",
-      "name": "Basic Unix shell knowledge"
+      "name": "Basic Python experience (write and run short scripts)"
     },
     {
-      "@type": "Course",
-      "name": "Introduction to Programming"
+      "@type": "CreativeWork",
+      "name": "Awareness of the NetCDF format"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Access to a Unix-like terminal (Git Bash, WSL, Mac/Linux terminal)"
     }
   ],
   "teaches": [
-    "Initialize and configure a Git repository",
-    "Use branching and merging for collaboration",
-    "Set up and work with remotes",
-    "Handle merge conflicts",
-    "Deposit data in 4TU.ResearchData"
+    "FAIR principles for climate and atmospheric science data",
+    "Structural interoperability for NetCDF datasets",
+    "Semantic interoperability and metadata conventions",
+    "Technical interoperability through data access protocols and APIs",
+    "Cloud-native layouts for scientific workflows",
+    "Interoperable infrastructure in the AI era",
+    "Hands-on creation and publication of interoperable research outputs"
   ],
   "hasPart": [
     {
       "@type": "CourseSection",
       "position": 1,
-      "name": "Local Git workflow",
-      "description": "create, configure, commit locally; navigate history"
+      "name": "Introduction to interoperability",
+      "description": "Overview of FAIR and interoperable research outputs for climate data"
     },
     {
       "@type": "CourseSection",
       "position": 2,
-      "name": "Remote collaboration",
-      "description": "SSH keys, push/pull, forking and pull requests"
+      "name": "Structural interoperability",
+      "description": "Standards, data structures, and dataset design for interoperability"
     },
     {
       "@type": "CourseSection",
       "position": 3,
-      "name": "Conflict management",
-      "description": "understand and resolve merge conflicts"
+      "name": "Semantic interoperability",
+      "description": "Metadata, vocabularies, and meaningful data descriptions"
     },
     {
       "@type": "CourseSection",
       "position": 4,
-      "name": "4TU.ResearchData introduction",
-      "description": "how to deposit and retrieve data/software"
+      "name": "Technical interoperability",
+      "description": "Data access protocols and API-based interoperability"
+    },
+    {
+      "@type": "CourseSection",
+      "position": 5,
+      "name": "Cloud-native layouts and AI-ready infrastructure",
+      "description": "Modern infrastructure patterns for reusable and scalable scientific data workflows"
     }
   ],
   "hasCourseInstance": [
     {
       "@type": "CourseInstance",
-      "name": "June 2025 — In-Person Workshop",
-      "description": "Two-day, hands-on introductory workshop on Git and open science best practices.",
-      "courseMode": "InPerson",
-      "startDate": "2025-06-17T09:30:00+02:00",
-      "endDate": "2025-06-18T16:00:00+02:00",
-      "inLanguage": "en-GB",
+      "name": "22 October 2026 — Pilot workshop",
+      "description": "A free, one-day pilot workshop designed to test and refine newly developed lesson materials for interoperable climate data workflows.",
+      "courseMode": "Online",
+      "startDate": "2026-10-22T09:30:00+02:00",
+      "endDate": "2026-10-22T16:30:00+02:00",
+      "inLanguage": "en",
       "location": {
         "@type": "Place",
-        "name": "4TU Center, Eindhoven",
+        "name": "Netherlands",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Campuslaan 99",
-          "addressLocality": "Eindhoven",
-          "addressRegion": "North Brabant",
-          "postalCode": "5612AZ",
           "addressCountry": "NL"
         }
       },
       "instructor": [
         {
           "@type": "Person",
-          "name": "Dr. Jane Doe",
-          "url": "https://janedoe.com",
-          "email": "jane.doe@your.org"
+          "name": "Leila Iñigo de la Cruz",
+          "email": "l.m.inigodelacruz@tudelft.nl"
+        },
+        {
+          "@type": "Person",
+          "name": "Aleksandra Wilczynska",
+          "email": "A.E.Wilczynska@tudelft.nl"
         }
       ],
       "offers": {
         "@type": "Offer",
-        "url": "https://your.site/register",
-        "price": "150.00",
+        "url": "https://www.eventbrite.com/",
+        "price": "0.00",
         "priceCurrency": "EUR",
+        "category": "Free",
         "availability": "https://schema.org/InStock",
-        "validFrom": "2025-04-01T00:00:00+02:00",
-        "enrollmentDeadline": "2025-06-10"
+        "validFrom": "2026-09-01T00:00:00+02:00",
+        "enrollmentDeadline": "2026-10-15"
       }
     }
   ]
