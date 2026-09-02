@@ -1,0 +1,53 @@
+
+
+--------------------------------------------------------------------------------
+                         IOOS Compliance Checker Report                         
+                                 Version 6.1.0                                  
+                     Report generated 2026-09-02T09:47:00Z                      
+                                    cf:1.11                                     
+http://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html
+--------------------------------------------------------------------------------
+                               Corrective Actions                               
+tmp5er0_bm9.nc has 6 potential issues
+
+
+                                     Errors                                     
+--------------------------------------------------------------------------------
+§3.1 Units
+* units for linear_depolarisation_ratio, "dB" are not recognized by UDUNITS
+* units for sample_beat_signal, "Samples of the beat signal collected at a sampling frequency of 2.5 MHz" are not recognized by UDUNITS
+* units for differential_reflectivity, "dB" are not recognized by UDUNITS
+
+§3.3 Standard Name
+* standard_name sample is not defined in Standard Name Table v93.
+
+§4 Coordinate Types
+* sample_beat_signal's axis attribute must be T, X, Y, or Z, currently S
+
+
+                                    Warnings                                    
+--------------------------------------------------------------------------------
+§2.4 Dimensions
+* differential_reflectivity's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_processed_data (T), range (U) (with U: other/unknown; L: unlimited).
+* differential_phase's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_processed_data (T), range (U) (with U: other/unknown; L: unlimited).
+* equivalent_reflectivity_factor's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_processed_data (T), range (U) (with U: other/unknown; L: unlimited).
+* i_hh's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_raw_data (T), sample_beat_signal (U) (with U: other/unknown; L: unlimited).
+* i_vv's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_raw_data (T), sample_beat_signal (U) (with U: other/unknown; L: unlimited).
+* i_vh's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_raw_data (T), sample_beat_signal (U) (with U: other/unknown; L: unlimited).
+* linear_depolarisation_ratio's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_processed_data (T), range (U) (with U: other/unknown; L: unlimited).
+* q_hh's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_raw_data (T), sample_beat_signal (U) (with U: other/unknown; L: unlimited).
+* q_vv's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_raw_data (T), sample_beat_signal (U) (with U: other/unknown; L: unlimited).
+* q_vh's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_raw_data (T), sample_beat_signal (U) (with U: other/unknown; L: unlimited).
+* radial_velocity's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_processed_data (T), range (U) (with U: other/unknown; L: unlimited).
+* spectrum_width's spatio-temporal dimensions are not in the recommended order T, Z, Y, X and/or further dimensions are not located left of T, Z, Y, X. The dimensions (and their guessed types) are time_processed_data (T), range (U) (with U: other/unknown; L: unlimited).
+
+§2.5 Variables
+* Attribute '_FillValue' (type: <class 'numpy.float64'>) and parent variable 'equivalent_reflectivity_factor' (type: <class 'numpy.float32'>) must have equivalent datatypes
+* Attribute '_FillValue' (type: <class 'numpy.float64'>) and parent variable 'differential_reflectivity' (type: <class 'numpy.float32'>) must have equivalent datatypes
+* Attribute '_FillValue' (type: <class 'numpy.float64'>) and parent variable 'linear_depolarisation_ratio' (type: <class 'numpy.float32'>) must have equivalent datatypes
+* Attribute '_FillValue' (type: <class 'numpy.float64'>) and parent variable 'radial_velocity' (type: <class 'numpy.float32'>) must have equivalent datatypes
+* Attribute '_FillValue' (type: <class 'numpy.float64'>) and parent variable 'spectrum_width' (type: <class 'numpy.float32'>) must have equivalent datatypes
+* Attribute '_FillValue' (type: <class 'numpy.float64'>) and parent variable 'differential_phase' (type: <class 'numpy.float32'>) must have equivalent datatypes
+
+§2.6 Attributes
+* §2.6.1 Conventions global attribute does not contain "CF-1.11"
