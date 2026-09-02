@@ -4,9 +4,8 @@
 
 - 09:30–09:45 — Welcome, installation check, and housekeeping (Leila) — [Setup](setup.md)
 - 09:45–10:15 — Introduction to interoperability (Leila) — [Introduction](introduction.md)
-- 10:15–10:45 — Structural interoperability (Aleks) — [Structural interoperability](structural-interoperability.md)
-- 10:45–11:00 — Break
-- 11:00–12:00 — Semantic interoperability (Leila) — [Semantic interoperability](semantic-interoperability.md)
+- 10:15–11:15 — Structural interoperability (Aleks)/ Break — [Structural interoperability](structural-interoperability.md)
+- 11:15–12:00 — Semantic interoperability (Leila) — [Semantic interoperability](semantic-interoperability.md)
 - 12:00–13:00 — Lunch
 - 13:00–14:00 — Technical interoperability: data access protocols (Aleks) — [Data access protocols](protocols.md)
 - 14:00–14:15 — Break
