@@ -7,3 +7,9 @@ Certificates/
 Expenses_declaration/
 
 Lesson_development/data/IDRA_2019-01-02_12-00_raw_data.nc
+
+Lesson_development/Presentations/.quarto/
+Lesson_development/Presentations/_site/
+Lesson_development/Presentations/.luarc.json
+
+**/*.quarto_ipynb
