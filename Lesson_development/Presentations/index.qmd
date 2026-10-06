@@ -1,0 +1,24 @@
+---
+title: "Interoperability in Climate and Atmospheric sciences"
+subtitle: "FAIR NetCDF Data: workshop slides"
+format:
+  html:
+    toc: false
+    page-layout: article
+---
+
+## Introduction
+
+- [Welcome and context](00-intro.html)
+- [Introduction](01-introduction.html)
+
+## Morning session
+
+- [Structural interoperability](02-structural.html)
+- [Semantic interoperability](03-semantic.html)
+
+## Afternoon session
+
+- [Technical interoperability II: Data access protocols](04-technical-protocols.html)
+- [Technical interoperability II: API](05-technical-api.html)
+- [Cloud native layouts](06-cloud-native-layouts.html)

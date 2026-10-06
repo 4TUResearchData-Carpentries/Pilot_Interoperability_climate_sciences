@@ -1,0 +1,184 @@
+---
+title: "Introduction"
+subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF Data"
+---
+
+## The Problem
+
+::: {.columns}
+::: {.column width="65%"}
+::: {.bubble}
+Hi! I am Ash, and I am studying the spatial and temporal distribution of **rainfall and drizzle** in Europe
+:::
+
+::: {.fragment}
+![](images/introduction/types-of-precipitation.jpg){width=55% fig-alt="Types of precipitation: rain, drizzle, freezing rain, sleet, snow, hail, graupel, ice crystals"}
+:::
+:::
+::: {.column width="35%"}
+![](images/shared/ash.png){fig-alt="Ash, a researcher" width=80% fig-align="center"}
+:::
+:::
+
+## The Problem
+
+<p class="center-text small">She needs to compare multiple data from different sources</p>
+
+::: {.row}
+::: {.pill .pill-lg .p-orange}
+Climate models
+:::
+::: {.pill .pill-lg .p-grey}
+Satellite observations
+:::
+::: {.pill .pill-lg .p-red}
+Urban sensor data
+:::
+::: {.pill .pill-lg .p-tan}
+Radar observations
+:::
+::: {.pill .pill-lg .p-cream}
+National meteorological datasets
+:::
+:::
+
+::: {.fragment .center-text}
+Each type of data comes in **different formats**, different ways of **access** and many of them use **different variable names** for the same physical quantity.
+:::
+
+::: {.fragment .center-text}
+**Can these datasets be combined / work together to be able to answer Ash's scientific question?**
+:::
+
+::: notes
+She wants to compare climate model output with satellite observations, urban sensor measurements, radar or aircraft observations, national meteorological datasets, and datasets deposited in research repositories.
+
+At first, the data ecosystem looks rich. She can search across platforms such as Copernicus Climate Data Store, NASA EarthData, the KNMI Data Platform, and 4TU.ResearchData. Many datasets are open, downloadable, and described online. Some platforms provide climate model output, others provide satellite products, national weather observations, radar composites, or research datasets deposited by individual research groups.
+:::
+
+## {.center-text}
+
+**Interoperability** is about enabling data to work with other data, software, services and research workflows as "easy" as possible.
+
+::: notes
+"Easy" means with the fewest assumptions possible about how to integrate them, and also less manual intervention.
+:::
+
+## Interoperable datasets can connect to an ecosystem
+
+::: {.eco}
+::: {.pill .p-grey .top}
+Opened directly in a Python notebook
+:::
+::: {.a .atop}
+↑ it can be
+:::
+::: {.pill .p-grey .left}
+Combined with a second climate dataset
+:::
+::: {.a .aleft}
+← it can be
+:::
+::: {.pill .p-orange .center}
+Interoperable dataset
+:::
+::: {.a .aright}
+it can be →
+:::
+::: {.pill .p-grey .right}
+Visualized in an online viewer or dashboard
+:::
+::: {.a .abot}
+it can be ↓
+:::
+::: {.pill .p-grey .bottom}
+Accessed remotely through an API without downloading the file
+:::
+:::
+
+## Three layers of interoperability
+
+::: {.layers}
+::: {.layer .l-struct}
+**Structural**
+*representation*
+
+Can software understand how the data are organized?
+:::
+::: {.layer .l-tech}
+**Technical**
+*access*
+
+Can software retrieve or exchange the data through standard mechanisms?
+:::
+::: {.layer .l-sem}
+**Semantic**
+*meaning*
+
+Can another researcher or machine understand what the variables mean?
+:::
+:::
+
+::: notes
+Structural layer is also sometimes called syntactic layer.
+:::
+
+## Example: Ash wants to compare radar observations from 2009 and 2019 {.smaller}
+
+::: {.columns}
+::: {.column width="75%"}
+::: {.layers}
+::: {.layer .l-struct}
+**Structural**
+
+Do the variables and dimensions match?
+:::
+::: {.layer .l-tech}
+**Technical**
+
+Can both datasets be accessed programmatically?
+:::
+::: {.layer .l-sem}
+**Semantic**
+
+Given a variable with the same name, would that imply they represent the same physical quantity?
+:::
+:::
+:::
+::: {.column width="25%"}
+![](images/shared/ash.png){fig-alt="Ash, a researcher"}
+:::
+:::
+
+## Exercise: True or False
+
+1. As long as data is open access, it is interoperable
+2. Metadata standards help ensure interoperability
+3. As long as the data is using an open standard format, it is interoperable.
+
+::: notes
+"Easy" means with the fewest assumptions possible about how to integrate them, and also less manual intervention.
+:::
+
+## What is coming in the workshop
+
+::: {.columns}
+::: {.column width="50%" .center-text}
+::: {.pill .pill-lg}
+Morning session
+:::
+
+- Structural interoperability
+- Semantic interoperability
+:::
+::: {.column width="50%" .center-text}
+::: {.pill .pill-lg}
+Afternoon session
+:::
+
+- Technical interoperability: data access protocols
+- Technical interoperability: API
+- Cloud native layouts
+- Interoperable infrastructure in the AI era
+:::
+:::
