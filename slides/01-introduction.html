@@ -143,11 +143,14 @@
 <h2>The Problem</h2>
 <div class="columns">
 <div class="column" style="width:65%;">
+<div class="fragment">
 <div class="bubble">
 <p>Hi! I am Ash, and I am studying the spatial and temporal distribution of <strong>rainfall and drizzle</strong> in Europe</p>
 </div>
+</div>
 <div class="fragment">
 <p><img data-src="images/introduction/types-of-precipitation.jpg" style="width:55.0%" alt="Types of precipitation: rain, drizzle, freezing rain, sleet, snow, hail, graupel, ice crystals"></p>
+<p><em>Types of precipitation: <strong>rain, drizzle</strong> (liquid), freezing rain, sleet (liquid/solid), snow, hail, graupel, ice crystals (solid)</em></p>
 </div>
 </div><div class="column" style="width:35%;">
 <div class="quarto-figure quarto-figure-center">
@@ -157,33 +160,23 @@
 </div>
 </div></div>
 </section>
-<section id="the-problem-1" class="slide level2 center">
-<h2>The Problem</h2>
+<section id="approach" class="slide level2 center">
+<h2>Approach</h2>
 <p class="center-text small">
-She needs to compare multiple data from different sources
+She needs to integrate multiple data from different sources
 </p>
-<div class="row">
-<div class="pill pill-lg p-orange">
-<p>Climate models</p>
-</div>
-<div class="pill pill-lg p-grey">
-<p>Satellite observations</p>
-</div>
-<div class="pill pill-lg p-red">
-<p>Urban sensor data</p>
-</div>
-<div class="pill pill-lg p-tan">
-<p>Radar observations</p>
-</div>
-<div class="pill pill-lg p-cream">
-<p>National meteorological datasets</p>
-</div>
+<ul>
+<li class="fragment">Climate models</li>
+<li class="fragment">Satellite observations</li>
+<li class="fragment">Urban sensor data</li>
+<li class="fragment">Radar observations</li>
+<li class="fragment">National meteorological datasets</li>
+</ul>
+<div class="fragment center-text">
+<p>Most probably each type of data comes in <strong>different formats</strong>, different ways of <strong>access</strong> and many of them use <strong>different variable names</strong> for the same physical quantity.</p>
 </div>
 <div class="fragment center-text">
-<p>Each type of data comes in <strong>different formats</strong>, different ways of <strong>access</strong> and many of them use <strong>different variable names</strong> for the same physical quantity.</p>
-</div>
-<div class="fragment center-text">
-<p><strong>Can these datasets be combined / work together to be able to answer Ash’s scientific question?</strong></p>
+<p><strong>How can these datasets be combined together to be able to answer Ash’s scientific questions?</strong></p>
 </div>
 <aside class="notes">
 <p>She wants to compare climate model output with satellite observations, urban sensor measurements, radar or aircraft observations, national meteorological datasets, and datasets deposited in research repositories.</p>
@@ -200,9 +193,11 @@ She needs to compare multiple data from different sources
           display:block!important;
       }</style></aside>
 </section>
-<section id="section" class="slide level2 center-text center">
-<h2></h2>
+<section id="notion-of-interoperability" class="slide level2 center">
+<h2>Notion of interoperability</h2>
+<div class="fragment center-text">
 <p><strong>Interoperability</strong> is about enabling data to work with other data, software, services and research workflows as “easy” as possible.</p>
+</div>
 <aside class="notes">
 <p>“Easy” means with the fewest assumptions possible about how to integrate them, and also less manual intervention.</p>
 <style type="text/css">
@@ -220,49 +215,52 @@ She needs to compare multiple data from different sources
 <section id="interoperable-datasets-can-connect-to-an-ecosystem" class="slide level2 center">
 <h2>Interoperable datasets can connect to an ecosystem</h2>
 <div class="eco">
-<div class="pill p-grey top">
-<p>Opened directly in a Python notebook</p>
-</div>
-<div class="a atop">
-<p>↑ it can be</p>
-</div>
-<div class="pill p-grey left">
-<p>Combined with a second climate dataset</p>
-</div>
-<div class="a aleft">
-<p>← it can be</p>
-</div>
-<div class="pill p-orange center">
+<div class="pill p-orange center fragment" data-fragment-index="1">
 <p>Interoperable dataset</p>
 </div>
-<div class="a aright">
+<div class="a atop fragment" data-fragment-index="2">
+<p>↑ it can be</p>
+</div>
+<div class="pill p-grey top fragment" data-fragment-index="2">
+<p>Opened directly in a Python notebook</p>
+</div>
+<div class="a aright fragment" data-fragment-index="3">
 <p>it can be →</p>
 </div>
-<div class="pill p-grey right">
+<div class="pill p-grey right fragment" data-fragment-index="3">
 <p>Visualized in an online viewer or dashboard</p>
 </div>
-<div class="a abot">
+<div class="a abot fragment" data-fragment-index="4">
 <p>it can be ↓</p>
 </div>
-<div class="pill p-grey bottom">
+<div class="pill p-grey bottom fragment" data-fragment-index="4">
 <p>Accessed remotely through an API without downloading the file</p>
+</div>
+<div class="a aleft fragment" data-fragment-index="5">
+<p>← it can be</p>
+</div>
+<div class="pill p-grey left fragment" data-fragment-index="5">
+<p>Combined with a second climate dataset</p>
 </div>
 </div>
 </section>
 <section id="three-layers-of-interoperability" class="slide level2 center">
 <h2>Three layers of interoperability</h2>
 <div class="layers">
-<div class="layer l-struct">
-<p><strong>Structural</strong> <em>representation</em></p>
+<div class="layer l-struct fragment">
+<p><strong>Structural/Syntactic</strong><br>
+<em>representation</em></p>
 <p>Can software understand how the data are organized?</p>
 </div>
-<div class="layer l-tech">
-<p><strong>Technical</strong> <em>access</em></p>
-<p>Can software retrieve or exchange the data through standard mechanisms?</p>
-</div>
-<div class="layer l-sem">
-<p><strong>Semantic</strong> <em>meaning</em></p>
+<div class="layer l-sem fragment">
+<p><strong>Semantic</strong><br>
+<em>meaning</em></p>
 <p>Can another researcher or machine understand what the variables mean?</p>
+</div>
+<div class="layer l-tech fragment">
+<p><strong>Technical</strong><br>
+<em>access</em></p>
+<p>Can software retrieve or exchange the data through standard mechanisms?</p>
 </div>
 </div>
 <aside class="notes">
@@ -283,20 +281,20 @@ She needs to compare multiple data from different sources
 <h2>Example: Ash wants to compare radar observations from 2009 and 2019</h2>
 <div class="columns">
 <div class="column" style="width:75%;">
-<div class="layers">
-<div class="layer l-struct">
-<p><strong>Structural</strong></p>
-<p>Do the variables and dimensions match?</p>
-</div>
-<div class="layer l-tech">
-<p><strong>Technical</strong></p>
-<p>Can both datasets be accessed programmatically?</p>
-</div>
-<div class="layer l-sem">
-<p><strong>Semantic</strong></p>
-<p>Given a variable with the same name, would that imply they represent the same physical quantity?</p>
-</div>
-</div>
+<ul>
+<li class="fragment"><strong>Structural</strong>
+<ul>
+<li class="fragment">Do the variables and dimensions match?</li>
+</ul></li>
+<li class="fragment"><strong>Technical</strong>
+<ul>
+<li class="fragment">Can both datasets be accessed programmatically?</li>
+</ul></li>
+<li class="fragment"><strong>Semantic</strong>
+<ul>
+<li class="fragment">Given a variable with the same name, would that imply they represent the same physical quantity?</li>
+</ul></li>
+</ul>
 </div><div class="column" style="width:25%;">
 <p><img data-src="images/shared/ash.png" alt="Ash, a researcher"></p>
 </div></div>
@@ -304,44 +302,31 @@ She needs to compare multiple data from different sources
 <section id="exercise-true-or-false" class="slide level2 center">
 <h2>Exercise: True or False</h2>
 <ol type="1">
-<li>As long as data is open access, it is interoperable</li>
-<li>Metadata standards help ensure interoperability</li>
-<li>As long as the data is using an open standard format, it is interoperable.</li>
+<li class="fragment">As long as data is open access, it is interoperable</li>
+<li class="fragment">Metadata standards help ensure interoperability</li>
+<li class="fragment">As long as the data is using an open standard format, it is interoperable.</li>
 </ol>
-<aside class="notes">
-<p>“Easy” means with the fewest assumptions possible about how to integrate them, and also less manual intervention.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="what-is-coming-in-the-workshop" class="slide level2 center">
 <h2>What is coming in the workshop</h2>
 <div class="columns">
-<div class="column center-text" style="width:50%;">
-<div class="pill pill-lg">
-<p>Morning session</p>
-</div>
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>Morning session</strong>
 <ul>
 <li>Structural interoperability</li>
 <li>Semantic interoperability</li>
+</ul></li>
 </ul>
-</div><div class="column center-text" style="width:50%;">
-<div class="pill pill-lg">
-<p>Afternoon session</p>
-</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><strong>Afternoon session</strong>
 <ul>
 <li>Technical interoperability: data access protocols</li>
 <li>Technical interoperability: API</li>
-<li>Cloud native layouts</li>
+<li>Cloud-native layouts</li>
 <li>Interoperable infrastructure in the AI era</li>
+</ul></li>
 </ul>
 </div></div>
 
