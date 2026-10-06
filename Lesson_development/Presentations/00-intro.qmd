@@ -2,7 +2,7 @@
 title: "Interoperability in Climate and Atmospheric sciences"
 subtitle: "FAIR NetCDF Data"
 author: "Pilot workshop"
-date: "October 22nd, 2026"
+date: "October 22, 2026"
 title-slide-attributes:
   data-background-image: images/shared/4tu-logo.png
   data-background-size: 20%
