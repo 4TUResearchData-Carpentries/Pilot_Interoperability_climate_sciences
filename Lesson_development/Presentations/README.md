@@ -12,6 +12,19 @@ Quarto revealjs decks that share one theme.
 | `05-technical-api.qmd` | Technical interoperability II: API |
 | `06-cloud-native-layouts.qmd` | Cloud native layouts |
 
+## Prerequisites
+ 
+Rendering the slides locally requires:
+ 
+- [Quarto](https://quarto.org/docs/get-started/)
+- A recent web browser for previewing slides
+ 
+Verify your installation:
+ 
+```bash
+quarto check
+```
+
 ## Working on the slides
 
 ```bash
