@@ -1,0 +1,27 @@
+---
+title: "Interoperability in Climate and Atmospheric sciences"
+subtitle: "FAIR NetCDF Data: workshop slides"
+format:
+  html:
+    toc: false
+    page-layout: article
+---
+
+Slide decks for the pilot workshop, built with Quarto and revealjs.
+Open a deck, then press `S` for speaker notes, `F` for full screen and `?` for all shortcuts.
+
+## Introduction
+
+- [Welcome and context](00-intro.qmd)
+- [Introduction](01-introduction.qmd)
+
+## Morning session
+
+- [Structural interoperability](02-structural.qmd)
+- [Semantic interoperability](03-semantic.qmd)
+
+## Afternoon session
+
+- [Technical interoperability II: Data access protocols](04-technical-protocols.qmd)
+- [Technical interoperability II: API](05-technical-api.qmd)
+- [Cloud native layouts](06-cloud-native-layouts.qmd)
