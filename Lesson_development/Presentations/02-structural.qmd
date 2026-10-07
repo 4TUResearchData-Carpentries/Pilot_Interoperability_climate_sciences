@@ -3,213 +3,264 @@ title: "Structural interoperability"
 subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF Data"
 ---
 
+# What is structural interoperability?
 ## The Problem
 
 ::: {.columns}
+
 ::: {.column width="62%"}
-::: {.bubble}
-Can another tool/software understand how that data is organized and process it without making unnecessary assumptions?
+> Can another tool determine **how the dataset is organised** and process it **without bespoke instructions** from the person who created it?
 :::
-:::
+
 ::: {.column width="38%"}
 ![](images/shared/ash.png){fig-alt="Ash, a researcher" width="70%" fig-align="center"}
 :::
+
+:::
+
+## Structural Interoperability 
+### Different software tools can reliably understand the organisation of a dataset
+
+- What data objects exist (records, columns, arrays, variables)
+- How they are represented (data types, dimensions, coordinates)
+- How they relate to one another
+- Which values represent missing data
+- Whether the dataset follows expected structural rules
+
+. . .
+
+::: {.callout-note appearance="simple"}
+Machines can determine **how** a dataset is organised (structure), even if they do not yet understand **what** the values represent (semantics).
 :::
 
 ::: notes
-This does **not** mean that a machine automatically understands the scientific meaning of every value. Structural interoperability makes the organisation machine-actionable; semantic interoperability addresses whether terms such as `precipitation_flux`, `rainfall_rate`, or `DBZH` are defined and interpreted consistently.
+Structural interoperability sits between technical and semantic. This definition does not require every explanation to be written inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.
 :::
 
-## Structural<br>interoperability
+# How to achieve structural interoperability?
+## A shared data contract
 
-::: {.box}
-Organization and representation of the data
-:::
+A **shared data contract** is an agreement about how data are organised.
 
-::: {.fragment}
-::: {.pill}
-How they are encoded
-:::
-::: {.pill}
-What kind of data objects exist
-:::
-::: {.pill}
-How their relationships are expressed
-:::
-:::
+. . .
 
-::: notes
-This definition does not require every explanation to be written directly inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.
-:::
+At its centre is the **data model**: the logical structure that software expects to find.
 
-## Structural interoperability
+. . .
 
-::: {.columns}
-::: {.column width="30%"}
-::: {.box}
-A dataset is structurally interoperable when different software tools can determine:
+::: {.callout-warning appearance="simple"}
+A file extension (`.csv`, `.nc`, `.tif`, `.zarr`) is **not** the contract. It hints at how data are stored, but not how they are organised.
 :::
-:::
-::: {.column width="70%"}
-::: {.incremental .small}
-- what records, columns, arrays, variables, or coordinates are present;
-- their data types, shapes, and dimensions;
-- how different data objects relate to one another;
-- which values represent missing data; and
-- whether the dataset follows expected structural rules.
-:::
-:::
-:::
-
-::: {.note-box}
-This does **not** mean that a machine automatically understands the scientific meaning of every value. Structural interoperability just makes the organisation of the data predictable and machine-actionable.
-:::
-
-::: notes
-This definition does not require every explanation to be written directly inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.
-:::
-
-## Structural interoperability *is a shared data contract*
-
-**Data model:** the logical structure that software expects to find.
-
-::: {.fragment}
-::: {.pill}
-Tabular<br>(csv, Parquet)
-:::
-::: {.pill}
-Multidimensional arrays<br>(NetCDF, Zarr)
-:::
-::: {.pill}
-Sequential layered 2D gridded field<br>(GRIB)
-:::
-::: {.pill}
-Raster<br>(GeoTIFF)
-:::
-::: {.pill}
-Geospatial features<br>(GeoPackage)
-:::
-
-<p class="small">Choosing a representation that matches the underlying data model helps preserve relationships that software needs.</p>
-:::
-
-::: notes
-Example of a dataset: forecast data for 5 variables in 10 pressure levels and 24 time steps.
-:::
-
-## {background-image="images/structural/data-models.png" background-size="contain" background-color="#ffffff"}
 
 ## Choosing a data model
 
-::: {.box}
-The choice of data model reflects how you conceptualise the scientific data. Then choose a representation that preserves that structure with the **least** amount of flattening, reconstruction, or artificial complexity.
-:::
+The choice reflects **how you conceptualise the scientific data**. Choose a representation that preserves that structure with the **least** flattening, reconstruction, or artificial complexity.
 
-| If I think of my data as… | Natural model |
-|---------------------------|---------------|
+| I think of my data as… | Natural model |
+|---|---|
 | "a collection of observations" | Tabular |
 | "variables varying along several shared dimensions" | Multidimensional arrays |
 | "a collection of meteorological forecast fields" | GRIB |
 | "a georeferenced spatial surface" | Raster |
 | "geographic objects with properties" | Geospatial features |
 
-## NetCDF {.smaller}
+::: notes
+Example of a dataset: forecast data for 5 variables on 10 pressure levels and 24 time steps. Which model fits best? (Multidimensional arrays, or GRIB if it comes from an operational forecast.)
+:::
 
-*a shared data model for multidimensional scientific data*
+# Examples of data models and formats
+
+## {background-image="images/structural/data-models.png" background-size="contain" background-color="#ffffff"}
+
+## NetCDF: a data model for multidimensional scientific data
 
 ::: {.columns}
-::: {.column width="30%"}
-![A NetCDF file consists of dimensions, variables, and attributes](images/structural/netcdf-structure.png)
+::: {.column width="40%"}
+![](images/structural/netcdf-structure.png){fig-alt="Diagram of a NetCDF file consisting of dimensions, variables, and attributes" fig-align="center"}
 :::
-::: {.column width="70%"}
-::: {.small}
-- **NetCDF:** Network Common Data Form
-- Originated at Unidata (part of the University Corporation for Atmospheric Research) in USA in 1989.
-- **Why:** Unidata needed a common way for different applications and computer systems to access real-time meteorological data.
-- In **1987**, Unidata organised a workshop to explore ideas from NASA's Common Data Format (CDF). Glenn Davis and Russ Rew implemented the first version of NetCDF in 1989.
-- The original goal was therefore not simply to invent another file format. NetCDF was designed to provide a portable, self-describing interface for array-oriented scientific data, allowing the same data to be accessed by different software and hardware platforms.
-:::
+::: {.column width="60%"}
+*Network Common Data Form*: a portable, self-describing format for array data, created at Unidata (UCAR) in the late 1980s.
+
+- **Dimensions:** named axes and their lengths
+- **Variables:** typed N-dimensional arrays
+- **Attributes:** metadata on a variable or the whole dataset
+
+```text
+float air_temperature(time, latitude, longitude)
+float surface_pressure(time, latitude, longitude)
+
+air_temperature:units = "K"
+```
 :::
 :::
 
-::: {.note-box}
-**NetCDF was born from an interoperability problem:** how can scientists store multidimensional data once and allow different programs, programming languages, and computers to understand its structure?
-:::
+. . .
 
-::: notes
-We can ask who knows the meaning of the acronym.
-
-At the time, scientific data-access software was often tied to particular machines, applications, or disciplines, making software and data difficult to reuse. (does that ring a bell? haha)
-:::
-
-## NetCDF
-
-*a shared data model for multidimensional scientific data*
-
-::: {.columns}
-::: {.column width="35%"}
-![A NetCDF file consists of dimensions, variables, and attributes](images/structural/netcdf-structure.png)
-:::
-::: {.column width="65%"}
-The classic NetCDF data model answers this question using three central structural elements: **dimensions, variables, and attributes.**
-
-- **Dimensions** define named axes and their lengths.
-- **Variables** are typed N-dimensional arrays whose shapes are defined using dimensions.
-- **Attributes** store metadata associated either with individual variables or with the dataset as a whole.
-:::
-:::
-
-::: notes
-We can ask who knows the meaning of the acronym.
-
-At the time, scientific data-access software was often tied to particular machines, applications, or disciplines, making software and data difficult to reuse. (does that ring a bell? haha)
-:::
+Both variables **share dimensions**: the relationship is explicit, not inferred from where values sit in the file.
 
 ## What NetCDF does not guarantee
 
 ::: {.columns}
-::: {.column width="30%"}
-![A NetCDF file consists of dimensions, variables, and attributes](images/structural/netcdf-structure.png)
-:::
-::: {.column width="70%"}
-::: {.small}
-NetCDF defines how dimensions, variables, data types, and attributes can be represented, but it does not by itself require communities to use the same:
+::: {.column width="50%"}
+**Dataset A**
 
-- coordinate rules;
-- variable names;
-- scientific units;
-- grid descriptions;
-- missing-value practices; or
-- terminology for physical quantities.
+```text
+float temp(time, latitude, longitude)
+temp:units = "K"
+```
+:::
+::: {.column width="50%"}
+**Dataset B**
 
-NetCDF can tell software that these are variables and describe their data types, dimensions, and attributes. However, the NetCDF data model alone does not guarantee that software will understand that they represent the same physical quantity.
+```text
+float T(time, lat, lon)
+T:units = "degC"
+```
 :::
 :::
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+::: {.callout-note appearance="simple" title="NetCDF tells software"}
+✔ these are variables<br>
+✔ type, dimensions, shape<br>
+✔ attributes attached to them
+:::
+:::
+::: {.column width="50%"}
+::: {.callout-warning appearance="simple" title="It does not tell software"}
+? same physical quantity?<br>
+? same units?<br>
+? are `lat` and `latitude` the same axis?
+:::
+:::
+:::
+
+. . .
+
+::: {.callout-tip appearance="simple"}
+**CF Conventions** add the community rules: standard names, units, coordinates, grid mappings:
+`temp:standard_name = "air_temperature"`
 :::
 
 ::: notes
-We can ask who knows the meaning of the acronym.
 
-At the time, scientific data-access software was often tied to particular machines, applications, or disciplines, making software and data difficult to reuse. (does that ring a bell? haha)
+~1-2 min. Ask: can software combine A and B? Structure is fine, but the meaning (and units) differ. Meaning and units are the topic of the semantic interoperability session later in this workshop. Other names for the same quantity that appear in practice: temperature, air_temp, T.
 :::
 
-## Exercise: identify the structural elements in a NetCDF dataset {.smaller}
 
-Open the OPeNDAP inspection page for the IDRA dataset:\
+## Exercise: help Ash inspect a NetCDF file {.smaller}
+
+::: {.columns}
+::: {.column width="70%"}
+Ash has received a radar dataset and wants to know **how it is organised before writing any code.**
+
+Open the OPeNDAP page for the IDRA dataset:\
 <https://opendap.4tu.nl/thredds/dodsC/IDRA/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc.html>
 
-Identify:
+Help Ash identify:
 
-1. the global attributes;
-2. the dimensions and their lengths;
-3. the coordinate variables;
-4. three data variables and their dimensions;
-5. the data types of those variables;
-6. one variable-level attribute that controls the representation of missing data; and
-7. any variables that appear to contain descriptive metadata as data values rather than as global attributes.
+1. the global attributes
+2. the dimensions and their lengths
+3. the coordinate variables
+4. three data variables and their dimensions
+5. the data types of those variables
+6. one variable-level attribute that controls how missing data are represented
+7. any variables that hold descriptive metadata as *data values* rather than as global attributes
 
-<span class="small">More: <https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/structural-interoperability.html></span>
+:::
+::: {.column width="30%"}
+![](images/shared/ash.png){fig-alt="Ash, a researcher" width="80%" fig-align="center"}
+:::
+:::
+
+⏱ 10 minutes, in pairs. Do as much as the allows. More: <https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/structural-interoperability.html>
 
 ::: notes
-"Easy" means with the fewest assumptions possible about how to integrate them, and also less manual intervention.
+Allow about 10 minutes: pairs need a couple of minutes just to find their way around the OPeNDAP page (look for the Data Descriptor Structure, DDS, and the attributes). The starred items (2, 3, 4, 6) cover the core NetCDF concepts: dimensions, coordinate variables, variables, and the fill value attribute. Items 1, 5 and 7 are extras for faster pairs. Walk around and check that people find the DDS. At about minute 8, check how far people have got, and stop at 10 even if some pairs haven't finished the extras. The solution follows on the next two slides. The point is that Ash can answer all of this from the file itself, without asking its creator.
+:::
+
+## Solution: Ash's findings (1/2) {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**1. Global attributes**
+
+`title`, `institution`, `history`, `references`, `Conventions`, `location`, `source`, `example`
+
+`Conventions = "CF-1.4"`: the producer's *intention* to follow CF, not proof of conformance.
+
+**2. Dimensions**
+
+```text
+time_raw_data       = 73728
+sample_beat_signal  = 1024
+time_processed_data = 144
+range               = 512
+scalar              = 1
+```
+:::
+::: {.column width="50%"}
+**3. Coordinate variables**
+
+```text
+time_raw_data(time_raw_data)
+sample_beat_signal(sample_beat_signal)
+time_processed_data(time_processed_data)
+range(range)
+```
+
+`scalar` has no variable of the same name: it is just a length-one dimension used by several variables.
+:::
+:::
+
+## Solution: Ash's findings (2/2) {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**4 and 5. Data variables, dimensions, types**
+
+```text
+i_hh(time_raw_data, sample_beat_signal)
+    16-bit integer
+equivalent_reflectivity_factor(
+    time_processed_data, range)
+    32-bit real
+radial_velocity(time_processed_data, range)
+azimuth_processed_data(time_processed_data)
+```
+:::
+::: {.column width="50%"}
+**6. Missing data**
+
+`_FillValue: -999.0` on `equivalent_reflectivity_factor`, `differential_reflectivity`, `radial_velocity`, `spectrum_width`.
+
+Its existence, location, and type are *structural*. Whether to exclude or interpolate missing values is an *analytical* decision.
+
+**7. Metadata stored as variables**
+
+`iso_dataset`, `product`, `station_details`: string variables, **not** global attributes.
+:::
+:::
+
+::: {.callout-note appearance="simple"}
+Ash learned all of this from the file itself, with no bespoke instructions: that is structural interoperability at work.
+:::
+
+::: notes
+Point out that the same structure is visible for any NetCDF file, so Ash's workflow is reusable. Note that `Conventions = CF-1.4` is only a declaration, and that whether the variables are scientifically comparable is a question for the semantic session later. Retrieving the data (OPeNDAP) is covered in the technical session.
+:::
+
+## Key takeaways
+
+- Structural interoperability is a **shared, machine-actionable contract** about how data are organised
+- A file extension is **not** the contract; the **data model** is
+- Choose the representation that matches your **data model**
+- NetCDF provides a shared model: **dimensions, variables, attributes**
+- **CF** adds the community rules for scientific interpretation
+
+::: notes
+Next: semantic interoperability (what do the values mean?) and technical interoperability (how do we retrieve them?).
 :::
