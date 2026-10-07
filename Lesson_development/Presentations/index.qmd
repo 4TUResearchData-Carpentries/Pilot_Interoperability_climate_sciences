@@ -22,3 +22,7 @@ format:
 - [Technical interoperability II: Data access protocols](04-technical-protocols.html)
 - [Technical interoperability II: API](05-technical-api.html)
 - [Cloud native layouts](06-cloud-native-layouts.html)
+
+## Lesson Materials 
+
+[Full lesson materials](https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/index.html)
