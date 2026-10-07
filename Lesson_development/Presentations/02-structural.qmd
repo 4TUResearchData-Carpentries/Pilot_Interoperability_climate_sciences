@@ -8,7 +8,7 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 ::: {.columns}
 ::: {.column width="62%"}
 ::: {.bubble}
-Can another tool/software understand how that data is organized and process it without making unnecessary assumptions?
+Can another software understand how that data is **organized** and process it without making without complex instructions from the person who created it?
 :::
 :::
 ::: {.column width="38%"}
@@ -20,7 +20,14 @@ Can another tool/software understand how that data is organized and process it w
 This does **not** mean that a machine automatically understands the scientific meaning of every value. Structural interoperability makes the organisation machine-actionable; semantic interoperability addresses whether terms such as `precipitation_flux`, `rainfall_rate`, or `DBZH` are defined and interpreted consistently.
 :::
 
-## Structural<br>interoperability
+## Structural interoperability
+
+Organization and representation of the data
+
+ - How they are encoded
+ - What kind of data objects exist
+ - How their relationships are expressed
+
 
 ::: {.box}
 Organization and representation of the data
@@ -37,6 +44,18 @@ What kind of data objects exist
 How their relationships are expressed
 :::
 :::
+
+<!--
+```{mermaid}
+flowchart TD
+    A("Organization and representation of the data")
+    A --> B("How they are encoded")
+    A --> C("What kind of data objects exist")
+    A --> D("How their relationships are expressed")
+```
+-->
+
+
 
 ::: notes
 This definition does not require every explanation to be written directly inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.
