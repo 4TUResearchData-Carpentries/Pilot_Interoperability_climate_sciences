@@ -6,30 +6,42 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 ## The Problem
 
 ::: {.columns}
-::: {.column width="62%"}
+::: {.column width="65%"}
+::: {.fragment}
 ::: {.bubble}
 Can others understand and reuse the data correctly without making unnecessary assumptions?
 :::
 :::
-::: {.column width="38%"}
+
+:::
+::: {.column width="35%"}
 ![](images/shared/ash.png){fig-alt="Ash, a researcher" width=70% fig-align="center"}
 :::
 :::
 
-## Semantic interoperability
 
-::: {.box}
+## Notion of semantic interoperability
+
+
+::: {.fragment .center-text}
+
 Shared and explicit meaning
+
+::: {.fragment}
+
+* This definition does not require every explanation to be written directly inside one file.
+* Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods.
+* What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.
+
 :::
+
+:::
+
+
 
 ::: {.fragment}
 ::: {.row}
-::: {.labelled}
-::: {.pill .p-orange}
-Free-text label
-:::
-Human-readable description without controlled meaning, e.g. long name="radar velocity"
-:::
+
 ::: {.labelled}
 ::: {.pill .p-grey}
 Controlled vocabularies
@@ -57,12 +69,11 @@ Formal concepts, properties, and relationships that may support logical reasonin
 :::
 :::
 
-::: notes
-This definition does not require every explanation to be written directly inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.
-:::
 
 ## A semantic resource is more useful when:
 
+
+::: {.fragment}
 ::: {.columns}
 ::: {.column width="45%"}
 ![](images/semantic/road.jpg){fig-alt="Country highway receding to horizon"}
@@ -75,6 +86,7 @@ This definition does not require every explanation to be written directly inside
 - synonyms and deprecated terms are managed;
 - relationships between concepts are explicit where needed; and
 - the resource is maintained through an open community process.
+:::
 :::
 :::
 :::
