@@ -27,7 +27,6 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 - Which values represent missing data
 - Whether the dataset follows expected structural rules
 
-. . .
 
 ::: {.callout-note appearance="simple"}
 Machines can determine **how** a dataset is organised (structure), even if they do not yet understand **what** the values represent (semantics).
@@ -98,56 +97,51 @@ air_temperature:units = "K"
 
 Both variables **share dimensions**: the relationship is explicit, not inferred from where values sit in the file.
 
-## What NetCDF does not guarantee
+## NetCDF guarantees a structure, not a common one
+## Same data, different structure
 
 ::: {.columns}
 ::: {.column width="50%"}
 **Dataset A**
 
 ```text
-float temp(time, latitude, longitude)
-temp:units = "K"
+dimensions:
+  time = 24, lat = 180, lon = 360
+variables:
+  float time(time)
+  float lat(lat)
+  float lon(lon)
+  float temp(time, lat, lon)
+  temp:_FillValue = -999.0
 ```
 :::
 ::: {.column width="50%"}
 **Dataset B**
 
 ```text
-float T(time, lat, lon)
-T:units = "degC"
+dimensions:
+  lon = 360, lat = 180, t = 24
+variables:
+  float T(lon, lat, t)
+  (no coordinate variables)
+  (missing values = -999,
+   not declared)
 ```
 :::
 :::
 
 . . .
 
-::: {.columns}
-::: {.column width="50%"}
-::: {.callout-note appearance="simple" title="NetCDF tells software"}
-✔ these are variables<br>
-✔ type, dimensions, shape<br>
-✔ attributes attached to them
-:::
-:::
-::: {.column width="50%"}
-::: {.callout-warning appearance="simple" title="It does not tell software"}
-? same physical quantity?<br>
-? same units?<br>
-? are `lat` and `latitude` the same axis?
-:::
-:::
-:::
+Both are **valid NetCDF**. A generic tool can read both, but it cannot tell which axis is which, or what marks missing data, without extra rules.
 
 . . .
 
 ::: {.callout-tip appearance="simple"}
-**CF Conventions** add the community rules: standard names, units, coordinates, grid mappings:
-`temp:standard_name = "air_temperature"`
+**NetCDF** is the shared data model. **CF Conventions** are the community contract for using it consistently: coordinate variables, axes, fill values, grid mappings.
 :::
 
 ::: notes
-
-~1-2 min. Ask: can software combine A and B? Structure is fine, but the meaning (and units) differ. Meaning and units are the topic of the semantic interoperability session later in this workshop. Other names for the same quantity that appear in practice: temperature, air_temp, T.
+~1-2 min. Ask: what can software tell for both files? (Dimensions, variables, types.) What can it not tell? (Which dimension is time, what the order should be, how missing data are marked.) The meaning of the values and units belongs to the semantic session later in the workshop.
 :::
 
 
