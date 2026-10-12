@@ -3,28 +3,81 @@ title: "Introduction"
 subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF Data"
 ---
 
-## The Problem
+# Big picture {background-image="images/shared/4tu-logo.png" background-size="20%" background-position="96% 94%" background-repeat="no-repeat"}
+
+::: {.incremental}
+
+::: {.fragment}
+
+::: {.callout-note appearance="simple"}
+General definition
+:::
+
+- The lesson introduces interoperability as the **ability** to make research data **usable** across different tools, systems, and workflows with **minimal dataset-specific intervention**.
+
+:::
+
+::: {.fragment}
+
+::: {.callout-note appearance="simple"}
+Practical context
+:::
+
+- Climate and atmospheric research routinely **combines heterogeneous and often large datasets produced by models, satellites, radar systems, sensors, and research infrastructures**.
+
+:::
+
+::: {.fragment}
+
+::: {.callout-note appearance="simple"}
+Challenges
+:::
+
+- **Making these data available is not enough.** Researchers and software must also be able to determine: **how the data are organised**, **understand what they mean**, and **access them through predictable mechanisms**.
+
+:::
+
+:::
+
+
+# The Problem
+
+## Ash case study
+
+::: {.fragment}
 
 ::: {.columns}
-::: {.column width="65%"}
-::: {.fragment}
-::: {.bubble}
-Hi! I am Ash, and I am studying the spatial and temporal distribution of **rainfall and drizzle** in Europe
-:::
+
+::: {.column width="62%"}
+
+> Hi! I am Ash, and I am studying the spatial and temporal distribution of **rainfall and drizzle** in Europe
+
 :::
 
-::: {.fragment}
-![](images/introduction/types-of-precipitation.jpg){width=55% fig-alt="Types of precipitation: rain, drizzle, freezing rain, sleet, snow, hail, graupel, ice crystals"}
+::: {.column width="38%"}
 
-*Types of precipitation: **rain, drizzle** (liquid), freezing rain, sleet (liquid/solid), snow, hail, graupel, ice crystals (solid)*
-:::
-:::
-::: {.column width="35%"}
-![](images/shared/ash.png){fig-alt="Ash, a researcher" width=80% fig-align="center"}
-:::
+![](images/shared/ash.png){fig-alt="Ash, a researcher" width="55%" fig-align="center"}
+
 :::
 
-## Approach
+:::
+
+:::
+
+
+# Rainfall and drizzle
+
+::: {.fragment .center-text}
+
+![](images/introduction/types-of-precipitation.png){width="50%" fig-alt="Types of precipitation: rain, drizzle, freezing rain, sleet, snow, hail, graupel, ice crystals" fig-align="center"}
+
+<p class="center-text small">
+<em>Types of precipitation: <strong>rain, drizzle</strong> (liquid), freezing rain, sleet (liquid/solid), snow, hail, graupel, ice crystals (solid)</em>
+</p>
+
+:::
+
+## Ash's approach to study the rainfall and drizzle
 
 <p class="center-text small">She needs to integrate multiple data from different sources</p>
 
@@ -43,9 +96,11 @@ Hi! I am Ash, and I am studying the spatial and temporal distribution of **rainf
 Most probably each type of data comes in **different formats**, different ways of **access** and many of them use **different variable names** for the same physical quantity.
 :::
 
-::: {.fragment .center-text}
-**How can these datasets be combined together to be able to answer Ash's scientific questions?**
-:::
+# Challenge
+
+
+## How can these datasets be combined together to be able to answer Ash's scientific questions?
+
 
 ::: notes
 She wants to compare climate model output with satellite observations, urban sensor measurements, radar or aircraft observations, national meteorological datasets, and datasets deposited in research repositories.
@@ -151,11 +206,12 @@ Structural layer is also sometimes called syntactic layer.
 - **Structural**
   - Do the variables and dimensions match?
 
-- **Technical**
-  - Can both datasets be accessed programmatically?
 
 - **Semantic**
   - Given a variable with the same name, would that imply they represent the same physical quantity?
+
+  - **Technical**
+  - Can both datasets be accessed programmatically?
 
 :::
 
