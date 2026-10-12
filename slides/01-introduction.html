@@ -139,29 +139,93 @@
 </div>
 
 </section>
-<section id="the-problem" class="slide level2 center">
-<h2>The Problem</h2>
+<section id="big-picture" class="title-slide slide level1 center" data-background-image="images/shared/4tu-logo.png" data-background-size="20%" data-background-position="96% 94%" data-background-repeat="no-repeat">
+<h1>Big picture</h1>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>General definition</p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">The lesson introduces interoperability as the <strong>ability</strong> to make research data <strong>usable</strong> across different tools, systems, and workflows with <strong>minimal dataset-specific intervention</strong>.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Practical context</p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Climate and atmospheric research routinely <strong>combines heterogeneous and often large datasets produced by models, satellites, radar systems, sensors, and research infrastructures</strong>.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Challenges</p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><strong>Making these data available is not enough.</strong> Researchers and software must also be able to determine: <strong>how the data are organised</strong>, <strong>understand what they mean</strong>, and <strong>access them through predictable mechanisms</strong>.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<section id="the-problem" class="title-slide slide level1 center">
+<h1>The Problem</h1>
+
+</section>
+<section id="ash-case-study" class="slide level2 center">
+<h2>Ash case study</h2>
+<div class="fragment">
 <div class="columns">
-<div class="column" style="width:65%;">
-<div class="fragment">
-<div class="bubble">
+<div class="column" style="width:62%;">
+<blockquote>
 <p>Hi! I am Ash, and I am studying the spatial and temporal distribution of <strong>rainfall and drizzle</strong> in Europe</p>
-</div>
-</div>
-<div class="fragment">
-<p><img data-src="images/introduction/types-of-precipitation.jpg" style="width:55.0%" alt="Types of precipitation: rain, drizzle, freezing rain, sleet, snow, hail, graupel, ice crystals"></p>
-<p><em>Types of precipitation: <strong>rain, drizzle</strong> (liquid), freezing rain, sleet (liquid/solid), snow, hail, graupel, ice crystals (solid)</em></p>
-</div>
-</div><div class="column" style="width:35%;">
+</blockquote>
+</div><div class="column" style="width:38%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/shared/ash.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Ash, a researcher"></p>
+<p><img data-src="images/shared/ash.png" class="quarto-figure quarto-figure-center" style="width:55.0%" alt="Ash, a researcher"></p>
 </figure>
 </div>
 </div></div>
+</div>
+</section></section>
+<section>
+<section id="rainfall-and-drizzle" class="title-slide slide level1 center">
+<h1>Rainfall and drizzle</h1>
+<div class="fragment center-text">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/introduction/types-of-precipitation.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Types of precipitation: rain, drizzle, freezing rain, sleet, snow, hail, graupel, ice crystals"></p>
+</figure>
+</div>
+<p class="center-text small">
+<em>Types of precipitation: <strong>rain, drizzle</strong> (liquid), freezing rain, sleet (liquid/solid), snow, hail, graupel, ice crystals (solid)</em>
+</p>
+</div>
 </section>
-<section id="approach" class="slide level2 center">
-<h2>Approach</h2>
+<section id="ashs-approach-to-study-the-rainfall-and-drizzle" class="slide level2 center">
+<h2>Ash’s approach to study the rainfall and drizzle</h2>
 <p class="center-text small">
 She needs to integrate multiple data from different sources
 </p>
@@ -175,9 +239,14 @@ She needs to integrate multiple data from different sources
 <div class="fragment center-text">
 <p>Most probably each type of data comes in <strong>different formats</strong>, different ways of <strong>access</strong> and many of them use <strong>different variable names</strong> for the same physical quantity.</p>
 </div>
-<div class="fragment center-text">
-<p><strong>How can these datasets be combined together to be able to answer Ash’s scientific questions?</strong></p>
-</div>
+</section></section>
+<section>
+<section id="challenge" class="title-slide slide level1 center">
+<h1>Challenge</h1>
+
+</section>
+<section id="how-can-these-datasets-be-combined-together-to-be-able-to-answer-ashs-scientific-questions" class="slide level2 center">
+<h2>How can these datasets be combined together to be able to answer Ash’s scientific questions?</h2>
 <aside class="notes">
 <p>She wants to compare climate model output with satellite observations, urban sensor measurements, radar or aircraft observations, national meteorological datasets, and datasets deposited in research repositories.</p>
 <p>At first, the data ecosystem looks rich. She can search across platforms such as Copernicus Climate Data Store, NASA EarthData, the KNMI Data Platform, and 4TU.ResearchData. Many datasets are open, downloadable, and described online. Some platforms provide climate model output, others provide satellite products, national weather observations, radar composites, or research datasets deposited by individual research groups.</p>
@@ -286,13 +355,11 @@ She needs to integrate multiple data from different sources
 <ul>
 <li class="fragment">Do the variables and dimensions match?</li>
 </ul></li>
-<li class="fragment"><strong>Technical</strong>
-<ul>
-<li class="fragment">Can both datasets be accessed programmatically?</li>
-</ul></li>
 <li class="fragment"><strong>Semantic</strong>
 <ul>
-<li class="fragment">Given a variable with the same name, would that imply they represent the same physical quantity?</li>
+<li class="fragment"><p>Given a variable with the same name, would that imply they represent the same physical quantity?</p></li>
+<li class="fragment"><p><strong>Technical</strong></p></li>
+<li class="fragment"><p>Can both datasets be accessed programmatically?</p></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:25%;">
@@ -330,7 +397,7 @@ She needs to integrate multiple data from different sources
 </ul>
 </div></div>
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/shared/logo.png" class="slide-logo"></p>
