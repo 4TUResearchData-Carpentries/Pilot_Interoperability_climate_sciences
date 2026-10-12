@@ -10,7 +10,10 @@ title-slide-attributes:
   data-background-repeat: no-repeat
 ---
 
-## Who are we {background-image="images/shared/4tu-logo.png" background-size="20%" background-position="96% 94%" background-repeat="no-repeat"}
+
+# Who are we {background-image="images/shared/4tu-logo.png" background-size="20%" background-position="96% 94%" background-repeat="no-repeat"}
+
+
 
 ::: {.columns}
 ::: {.column width="50%" .center-text}
@@ -29,28 +32,58 @@ E: [A.E.Wilczynska@tudelft.nl](mailto:A.E.Wilczynska@tudelft.nl)
 :::
 :::
 
-## Context
+
+
+
+
+
+
+# Context of the lesson {background-image="images/shared/4tu-logo.png" background-size="20%" background-position="96% 94%" background-repeat="no-repeat"}
 
 ::: {.columns}
+
 ::: {.column width="33%" .center-text}
+
+::: {.fragment data-fragment-index="1"}
 ![](images/shared/4tu-logo.png){width=70% fig-alt="4TU.ResearchData logo"}
+:::
+
+::: {.fragment data-fragment-index="2"}
 
 <span class="small">The repository for Natural, Engineering and Design sciences in NL</span>
 
 ![](images/intro/earth-atmospheric-sciences.png){width=70% fig-alt="Earth Sciences and Atmospheric Sciences"}
 
-*Domain specific training needs*
+<span class="small">**Domain specific training needs**</span>
+
 :::
+
+:::
+
 ::: {.column width="34%" .center-text}
+
+::: {.fragment data-fragment-index="1"}
 ![](images/intro/dutch-interoperability-network.png){width=80% fig-alt="Dutch Interoperability Network logo"}
-
-*A national need on having best practices to embed interoperability into everyday research workflows of different disciplines.*
 :::
+
+::: {.fragment data-fragment-index="3"}
+<span class="small">**A national need on having best practices to embed interoperability into everyday research workflows of different disciplines.**</span>
+:::
+
+:::
+
 ::: {.column width="33%" .center-text}
-![](images/intro/carpentries-hex.png){width=55% fig-alt="Carpentries Collaborative Lesson Development Training hex sticker"}
 
-*Opportunity to build accessible, and reusable lesson materials for the community*
+::: {.fragment data-fragment-index="1"}
+![](images/intro/carpentries-hex.png){width=55% fig-alt="Carpentries Collaborative Lesson Development Training hex sticker"}
 :::
+
+::: {.fragment data-fragment-index="4"}
+<span class="small">**Opportunity to build accessible and reusable lesson materials for the community**</span>
+:::
+
+:::
+
 :::
 
 ::: notes
@@ -61,16 +94,45 @@ We have many initiatives in the NL that revolve around building awareness on int
 
 [![](images/intro/lesson-website.png){fig-alt="Screenshot of the lesson website" width=80% fig-align="center"}](https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/index.html)
 
-<p class="center-text small"><https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/index.html></p>
+::: {.center-text .small}
 
-## Interoperability in Climate and Atmospheric sciences
+<https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/index.html>
 
-**Today is the Pilot of the lesson, thanks for participating!**
+**We began in November 2025 to develop this lesson**
 
-## Interoperability in Climate and Atmospheric sciences
+:::
+
+# Today is the Pilot of the lesson, thanks for participating!
+
+
+- Requirement to complete the development of the lesson and make it available to the community. 
+- Your feedback will be fundamental to make it ready for others to teach also! 
+
+
+# It is a Carpentry workshop
+
+::: {.incremental .center-text}
+
+- It will be a combination between informational and hands-on workshop
+
+- We will use the **Carpentries Code of Conduct** to ensure a safe and welcoming environment for everyone.
+
+::: {.fragment .nonincremental .center-text}
+
+- Use welcoming and inclusive language
+- Be respectful of different viewpoints and experiences
+- Gracefully accept constructive criticism
+- Focus on what is best for the community
+- Show courtesy and respect towards other community members
+
+:::
+
+:::
+
+# Who are you? {background-image="images/shared/4tu-logo.png" background-size="20%" background-position="96% 94%" background-repeat="no-repeat"}
 
 ::: {.center-text}
-**Who are you?**
+
 
 <https://vevox.app/#/m/144372812>
 
