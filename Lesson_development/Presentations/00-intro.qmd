@@ -90,7 +90,7 @@ E: [A.E.Wilczynska@tudelft.nl](mailto:A.E.Wilczynska@tudelft.nl)
 We have many initiatives in the NL that revolve around building awareness on interoperability from a specific discipline standpoint.
 :::
 
-## Interoperability in Climate and Atmospheric sciences
+# Interoperability in Climate and Atmospheric sciences {background-image="images/shared/4tu-logo.png" background-size="20%" background-position="96% 94%" background-repeat="no-repeat"}
 
 [![](images/intro/lesson-website.png){fig-alt="Screenshot of the lesson website" width=80% fig-align="center"}](https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/index.html)
 
@@ -102,14 +102,14 @@ We have many initiatives in the NL that revolve around building awareness on int
 
 :::
 
-# Today is the Pilot of the lesson, thanks for participating!
+# Today is the Pilot of the lesson, thanks for participating! {background-image="images/shared/4tu-logo.png" background-size="20%" background-position="96% 94%" background-repeat="no-repeat"}
 
 
 - Requirement to complete the development of the lesson and make it available to the community. 
 - Your feedback will be fundamental to make it ready for others to teach also! 
 
 
-# It is a Carpentry workshop
+# It is a Carpentry workshop {background-image="images/shared/4tu-logo.png" background-size="20%" background-position="96% 94%" background-repeat="no-repeat"}
 
 ::: {.incremental .center-text}
 
