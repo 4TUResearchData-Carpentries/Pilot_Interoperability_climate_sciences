@@ -33,7 +33,7 @@ Practical context
 Challenges
 :::
 
-- **Making these data available is not enough.** Researchers and software must also be able to determine: **how the data are organised**, **understand what they mean**, and **access them through predictable mechanisms**.
+- **Making these data available is not enough.** Researchers and software must be able to determine: **how the data are organised**, **understand what they mean**, and **access them through predictable mechanisms**.
 
 :::
 
@@ -210,7 +210,7 @@ Structural layer is also sometimes called syntactic layer.
 - **Semantic**
   - Given a variable with the same name, would that imply they represent the same physical quantity?
 
-  - **Technical**
+- **Technical**
   - Can both datasets be accessed programmatically?
 
 :::
