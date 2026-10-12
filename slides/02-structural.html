@@ -33,8 +33,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="02-structural_files/libs/revealjs/dist/theme/quarto-c8b8339db12f65f462dbceeb438f3968.css">
+  <link rel="stylesheet" href="02-structural_files/libs/revealjs/dist/theme/quarto-3cebb80fea2b5f4b0134c8d60aabf23b.css">
   <link href="02-structural_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="02-structural_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="02-structural_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -139,13 +205,18 @@
 </div>
 
 </section>
+<section>
+<section id="what-is-structural-interoperability" class="title-slide slide level1 center">
+<h1>What is structural interoperability?</h1>
+
+</section>
 <section id="the-problem" class="slide level2 center">
 <h2>The Problem</h2>
 <div class="columns">
 <div class="column" style="width:62%;">
-<div class="bubble">
-<p>Can another tool/software understand how that data is organized and process it without making unnecessary assumptions?</p>
-</div>
+<blockquote>
+<p>Can another tool determine <strong>how the dataset is organised</strong> and process it <strong>without bespoke instructions</strong> from the person who created it?</p>
+</blockquote>
 </div><div class="column" style="width:38%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -153,73 +224,29 @@
 </figure>
 </div>
 </div></div>
-<aside class="notes">
-<p>This does <strong>not</strong> mean that a machine automatically understands the scientific meaning of every value. Structural interoperability makes the organisation machine-actionable; semantic interoperability addresses whether terms such as <code>precipitation_flux</code>, <code>rainfall_rate</code>, or <code>DBZH</code> are defined and interpreted consistently.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="structural-interoperability" class="slide level2 center">
-<h2>Structural<br>interoperability</h2>
-<div class="box">
-<p>Organization and representation of the data</p>
-</div>
-<div class="fragment">
-<div class="pill">
-<p>How they are encoded</p>
-</div>
-<div class="pill">
-<p>What kind of data objects exist</p>
-</div>
-<div class="pill">
-<p>How their relationships are expressed</p>
-</div>
-</div>
-<aside class="notes">
-<p>This definition does not require every explanation to be written directly inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="structural-interoperability-1" class="slide level2 center">
-<h2>Structural interoperability</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<div class="box">
-<p>A dataset is structurally interoperable when different software tools can determine:</p>
-</div>
-</div><div class="column" style="width:70%;">
-<div class="small">
+<h2>Structural Interoperability</h2>
+<h3 id="different-software-tools-can-reliably-understand-the-organisation-of-a-dataset">Different software tools can reliably understand the organisation of a dataset</h3>
 <ul>
-<li class="fragment">what records, columns, arrays, variables, or coordinates are present;</li>
-<li class="fragment">their data types, shapes, and dimensions;</li>
-<li class="fragment">how different data objects relate to one another;</li>
-<li class="fragment">which values represent missing data; and</li>
-<li class="fragment">whether the dataset follows expected structural rules.</li>
+<li>What data objects exist (records, columns, arrays, variables)</li>
+<li>How they are represented (data types, dimensions, coordinates)</li>
+<li>How they relate to one another</li>
+<li>Which values represent missing data</li>
+<li>Whether the dataset follows expected structural rules</li>
 </ul>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</div></div>
-<div class="note-box">
-<p>This does <strong>not</strong> mean that a machine automatically understands the scientific meaning of every value. Structural interoperability just makes the organisation of the data predictable and machine-actionable.</p>
+<div class="callout-content">
+<p>Machines can determine <strong>how</strong> a dataset is organised (structure), even if they do not yet understand <strong>what</strong> the values represent (semantics).</p>
+</div>
+</div>
 </div>
 <aside class="notes">
-<p>This definition does not require every explanation to be written directly inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.</p>
+<p>Structural interoperability sits between technical and semantic. This definition does not require every explanation to be written inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -231,60 +258,42 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="how-to-achieve-structural-interoperability" class="title-slide slide level1 center">
+<h1>How to achieve structural interoperability?</h1>
+
 </section>
-<section id="structural-interoperability-is-a-shared-data-contract" class="slide level2 center">
-<h2>Structural interoperability <em>is a shared data contract</em></h2>
-<p><strong>Data model:</strong> the logical structure that software expects to find.</p>
+<section id="a-shared-data-contract" class="slide level2 center">
+<h2>A shared data contract</h2>
+<p>A <strong>shared data contract</strong> is an agreement about how data are organised.</p>
 <div class="fragment">
-<div class="pill">
-<p>Tabular<br>(csv, Parquet)</p>
+<p>At its centre is the <strong>data model</strong>: the logical structure that software expects to find.</p>
 </div>
-<div class="pill">
-<p>Multidimensional arrays<br>(NetCDF, Zarr)</p>
+<div class="fragment">
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="pill">
-<p>Sequential layered 2D gridded field<br>(GRIB)</p>
+<div class="callout-content">
+<p>A file extension (<code>.csv</code>, <code>.nc</code>, <code>.tif</code>, <code>.zarr</code>) is <strong>not</strong> the contract. It hints at how data are stored, but not how they are organised.</p>
 </div>
-<div class="pill">
-<p>Raster<br>(GeoTIFF)</p>
 </div>
-<div class="pill">
-<p>Geospatial features<br>(GeoPackage)</p>
 </div>
-<p class="small">
-Choosing a representation that matches the underlying data model helps preserve relationships that software needs.
-</p>
 </div>
-<aside class="notes">
-<p>Example of a dataset: forecast data for 5 variables in 10 pressure levels and 24 time steps.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section" class="slide level2 center" data-background-image="images/structural/data-models.png" data-background-size="contain" data-background-color="#ffffff">
-<h2></h2>
 </section>
 <section id="choosing-a-data-model" class="slide level2 center">
 <h2>Choosing a data model</h2>
-<div class="box">
-<p>The choice of data model reflects how you conceptualise the scientific data. Then choose a representation that preserves that structure with the <strong>least</strong> amount of flattening, reconstruction, or artificial complexity.</p>
-</div>
+<p>The choice reflects <strong>how you conceptualise the scientific data</strong>. Choose a representation that preserves that structure with the <strong>least</strong> flattening, reconstruction, or artificial complexity.</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 64%">
-<col style="width: 35%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>If I think of my data as…</th>
+<th>I think of my data as…</th>
 <th>Natural model</th>
 </tr>
 </thead>
@@ -311,35 +320,8 @@ Choosing a representation that matches the underlying data model helps preserve 
 </tr>
 </tbody>
 </table>
-</section>
-<section id="netcdf" class="slide level2 smaller center">
-<h2>NetCDF</h2>
-<p><em>a shared data model for multidimensional scientific data</em></p>
-<div class="columns">
-<div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/structural/netcdf-structure.png"></p>
-<figcaption>A NetCDF file consists of dimensions, variables, and attributes</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:70%;">
-<div class="small">
-<ul>
-<li><strong>NetCDF:</strong> Network Common Data Form</li>
-<li>Originated at Unidata (part of the University Corporation for Atmospheric Research) in USA in 1989.</li>
-<li><strong>Why:</strong> Unidata needed a common way for different applications and computer systems to access real-time meteorological data.</li>
-<li>In <strong>1987</strong>, Unidata organised a workshop to explore ideas from NASA’s Common Data Format (CDF). Glenn Davis and Russ Rew implemented the first version of NetCDF in 1989.</li>
-<li>The original goal was therefore not simply to invent another file format. NetCDF was designed to provide a portable, self-describing interface for array-oriented scientific data, allowing the same data to be accessed by different software and hardware platforms.</li>
-</ul>
-</div>
-</div></div>
-<div class="note-box">
-<p><strong>NetCDF was born from an interoperability problem:</strong> how can scientists store multidimensional data once and allow different programs, programming languages, and computers to understand its structure?</p>
-</div>
 <aside class="notes">
-<p>We can ask who knows the meaning of the acronym.</p>
-<p>At the time, scientific data-access software was often tied to particular machines, applications, or disciplines, making software and data difficult to reuse. (does that ring a bell? haha)</p>
+<p>Example of a dataset: forecast data for 5 variables on 10 pressure levels and 24 time steps. Which model fits best? (Multidimensional arrays, or GRIB if it comes from an operational forecast.)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -351,29 +333,82 @@ Choosing a representation that matches the underlying data model helps preserve 
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="examples-of-data-models-and-formats" class="title-slide slide level1 center">
+<h1>Examples of data models and formats</h1>
+
 </section>
-<section id="netcdf-1" class="slide level2 center">
-<h2>NetCDF</h2>
-<p><em>a shared data model for multidimensional scientific data</em></p>
+<section id="section" class="slide level2 center" data-background-image="images/structural/data-models.png" data-background-size="contain" data-background-color="#ffffff">
+<h2></h2>
+</section>
+<section id="netcdf-a-data-model-for-multidimensional-scientific-data" class="slide level2 center">
+<h2>NetCDF: a data model for multidimensional scientific data</h2>
 <div class="columns">
-<div class="column" style="width:35%;">
+<div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/structural/netcdf-structure.png"></p>
-<figcaption>A NetCDF file consists of dimensions, variables, and attributes</figcaption>
+<p><img data-src="images/structural/netcdf-structure.png" class="quarto-figure quarto-figure-center" alt="Diagram of a NetCDF file consisting of dimensions, variables, and attributes"></p>
 </figure>
 </div>
-</div><div class="column" style="width:65%;">
-<p>The classic NetCDF data model answers this question using three central structural elements: <strong>dimensions, variables, and attributes.</strong></p>
+</div><div class="column" style="width:60%;">
+<p><em>Network Common Data Form</em>: a portable, self-describing format for array data, created at Unidata (UCAR) in the late 1980s.</p>
 <ul>
-<li><strong>Dimensions</strong> define named axes and their lengths.</li>
-<li><strong>Variables</strong> are typed N-dimensional arrays whose shapes are defined using dimensions.</li>
-<li><strong>Attributes</strong> store metadata associated either with individual variables or with the dataset as a whole.</li>
+<li><strong>Dimensions:</strong> named axes and their lengths</li>
+<li><strong>Variables:</strong> typed N-dimensional arrays</li>
+<li><strong>Attributes:</strong> metadata on a variable or the whole dataset</li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="" aria-label="1"></a>float air_temperature(time, latitude, longitude)</span>
+<span id="cb1-2"><a href="" aria-label="2"></a>float surface_pressure(time, latitude, longitude)</span>
+<span id="cb1-3"><a href="" aria-label="3"></a></span>
+<span id="cb1-4"><a href="" aria-label="4"></a>air_temperature:units = "K"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
+<div class="fragment">
+<p>Both variables <strong>share dimensions</strong>: the relationship is explicit, not inferred from where values sit in the file.</p>
+</div>
+</section>
+<section id="netcdf-guarantees-a-structure-not-a-common-one" class="slide level2 center">
+<h2>NetCDF guarantees a structure, not a common one</h2>
+</section>
+<section id="same-data-different-structure" class="slide level2 center">
+<h2>Same data, different structure</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Dataset A</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="" aria-label="1"></a>dimensions:</span>
+<span id="cb2-2"><a href="" aria-label="2"></a>  time = 24, lat = 180, lon = 360</span>
+<span id="cb2-3"><a href="" aria-label="3"></a>variables:</span>
+<span id="cb2-4"><a href="" aria-label="4"></a>  float time(time)</span>
+<span id="cb2-5"><a href="" aria-label="5"></a>  float lat(lat)</span>
+<span id="cb2-6"><a href="" aria-label="6"></a>  float lon(lon)</span>
+<span id="cb2-7"><a href="" aria-label="7"></a>  float temp(time, lat, lon)</span>
+<span id="cb2-8"><a href="" aria-label="8"></a>  temp:_FillValue = -999.0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Dataset B</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="" aria-label="1"></a>dimensions:</span>
+<span id="cb3-2"><a href="" aria-label="2"></a>  lon = 360, lat = 180, t = 24</span>
+<span id="cb3-3"><a href="" aria-label="3"></a>variables:</span>
+<span id="cb3-4"><a href="" aria-label="4"></a>  float T(lon, lat, t)</span>
+<span id="cb3-5"><a href="" aria-label="5"></a>  (no coordinate variables)</span>
+<span id="cb3-6"><a href="" aria-label="6"></a>  (missing values = -999,</span>
+<span id="cb3-7"><a href="" aria-label="7"></a>   not declared)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<div class="fragment">
+<p>Both are <strong>valid NetCDF</strong>. A generic tool can read both, but it cannot tell which axis is which, or what marks missing data, without extra rules.</p>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>NetCDF</strong> is the shared data model. <strong>CF Conventions</strong> are the community contract for using it consistently: coordinate variables, axes, fill values, grid mappings.</p>
+</div>
+</div>
+</div>
 <aside class="notes">
-<p>We can ask who knows the meaning of the acronym.</p>
-<p>At the time, scientific data-access software was often tied to particular machines, applications, or disciplines, making software and data difficult to reuse. (does that ring a bell? haha)</p>
+<p>~1-2 min. Ask: what can software tell for both files? (Dimensions, variables, types.) What can it not tell? (Which dimension is time, what the order should be, how missing data are marked.) The meaning of the values and units belongs to the semantic session later in the workshop.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -385,63 +420,123 @@ Choosing a representation that matches the underlying data model helps preserve 
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
 </section>
-<section id="what-netcdf-does-not-guarantee" class="slide level2 center">
-<h2>What NetCDF does not guarantee</h2>
+<section id="exercise-help-ash-inspect-a-netcdf-file" class="slide level2 smaller center">
+<h2>Exercise: help Ash inspect a NetCDF file</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/structural/netcdf-structure.png"></p>
-<figcaption>A NetCDF file consists of dimensions, variables, and attributes</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:70%;">
-<div class="small">
-<p>NetCDF defines how dimensions, variables, data types, and attributes can be represented, but it does not by itself require communities to use the same:</p>
-<ul>
-<li>coordinate rules;</li>
-<li>variable names;</li>
-<li>scientific units;</li>
-<li>grid descriptions;</li>
-<li>missing-value practices; or</li>
-<li>terminology for physical quantities.</li>
-</ul>
-<p>NetCDF can tell software that these are variables and describe their data types, dimensions, and attributes. However, the NetCDF data model alone does not guarantee that software will understand that they represent the same physical quantity.</p>
-</div>
-</div></div>
-<aside class="notes">
-<p>We can ask who knows the meaning of the acronym.</p>
-<p>At the time, scientific data-access software was often tied to particular machines, applications, or disciplines, making software and data difficult to reuse. (does that ring a bell? haha)</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="exercise-identify-the-structural-elements-in-a-netcdf-dataset" class="slide level2 smaller center">
-<h2>Exercise: identify the structural elements in a NetCDF dataset</h2>
-<p>Open the OPeNDAP inspection page for the IDRA dataset:<br>
+<div class="column" style="width:70%;">
+<p>Ash has received a radar dataset and wants to know <strong>how it is organised before writing any code.</strong></p>
+<p>Open the OPeNDAP page for the IDRA dataset:<br>
 <a href="https://opendap.4tu.nl/thredds/dodsC/IDRA/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc.html" class="uri">https://opendap.4tu.nl/thredds/dodsC/IDRA/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc.html</a></p>
-<p>Identify:</p>
+<p>Help Ash identify:</p>
 <ol type="1">
-<li>the global attributes;</li>
-<li>the dimensions and their lengths;</li>
-<li>the coordinate variables;</li>
-<li>three data variables and their dimensions;</li>
-<li>the data types of those variables;</li>
-<li>one variable-level attribute that controls the representation of missing data; and</li>
-<li>any variables that appear to contain descriptive metadata as data values rather than as global attributes.</li>
+<li>the global attributes</li>
+<li>the dimensions and their lengths</li>
+<li>the coordinate variables</li>
+<li>three data variables and their dimensions</li>
+<li>the data types of those variables</li>
+<li>one variable-level attribute that controls how missing data are represented</li>
+<li>any variables that hold descriptive metadata as <em>data values</em> rather than as global attributes</li>
 </ol>
-<p><span class="small">More: <a href="https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/structural-interoperability.html" class="uri">https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/structural-interoperability.html</a></span></p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/shared/ash.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Ash, a researcher"></p>
+</figure>
+</div>
+</div></div>
+<p>⏱ 10 minutes, in pairs. Do as much as the allows. More: <a href="https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/structural-interoperability.html" class="uri">https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/structural-interoperability.html</a></p>
 <aside class="notes">
-<p>“Easy” means with the fewest assumptions possible about how to integrate them, and also less manual intervention.</p>
+<p>Allow about 10 minutes: pairs need a couple of minutes just to find their way around the OPeNDAP page (look for the Data Descriptor Structure, DDS, and the attributes). The starred items (2, 3, 4, 6) cover the core NetCDF concepts: dimensions, coordinate variables, variables, and the fill value attribute. Items 1, 5 and 7 are extras for faster pairs. Walk around and check that people find the DDS. At about minute 8, check how far people have got, and stop at 10 even if some pairs haven’t finished the extras. The solution follows on the next two slides. The point is that Ash can answer all of this from the file itself, without asking its creator.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="solution-ashs-findings-12" class="slide level2 smaller center">
+<h2>Solution: Ash’s findings (1/2)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>1. Global attributes</strong></p>
+<p><code>title</code>, <code>institution</code>, <code>history</code>, <code>references</code>, <code>Conventions</code>, <code>location</code>, <code>source</code>, <code>example</code></p>
+<p><code>Conventions = "CF-1.4"</code>: the producer’s <em>intention</em> to follow CF, not proof of conformance.</p>
+<p><strong>2. Dimensions</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="" aria-label="1"></a>time_raw_data       = 73728</span>
+<span id="cb4-2"><a href="" aria-label="2"></a>sample_beat_signal  = 1024</span>
+<span id="cb4-3"><a href="" aria-label="3"></a>time_processed_data = 144</span>
+<span id="cb4-4"><a href="" aria-label="4"></a>range               = 512</span>
+<span id="cb4-5"><a href="" aria-label="5"></a>scalar              = 1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>3. Coordinate variables</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="" aria-label="1"></a>time_raw_data(time_raw_data)</span>
+<span id="cb5-2"><a href="" aria-label="2"></a>sample_beat_signal(sample_beat_signal)</span>
+<span id="cb5-3"><a href="" aria-label="3"></a>time_processed_data(time_processed_data)</span>
+<span id="cb5-4"><a href="" aria-label="4"></a>range(range)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>scalar</code> has no variable of the same name: it is just a length-one dimension used by several variables.</p>
+</div></div>
+</section>
+<section id="solution-ashs-findings-22" class="slide level2 smaller center">
+<h2>Solution: Ash’s findings (2/2)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>4 and 5. Data variables, dimensions, types</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="" aria-label="1"></a>i_hh(time_raw_data, sample_beat_signal)</span>
+<span id="cb6-2"><a href="" aria-label="2"></a>    16-bit integer</span>
+<span id="cb6-3"><a href="" aria-label="3"></a>equivalent_reflectivity_factor(</span>
+<span id="cb6-4"><a href="" aria-label="4"></a>    time_processed_data, range)</span>
+<span id="cb6-5"><a href="" aria-label="5"></a>    32-bit real</span>
+<span id="cb6-6"><a href="" aria-label="6"></a>radial_velocity(time_processed_data, range)</span>
+<span id="cb6-7"><a href="" aria-label="7"></a>azimuth_processed_data(time_processed_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
+<p><strong>6. Missing data</strong></p>
+<p><code>_FillValue: -999.0</code> on <code>equivalent_reflectivity_factor</code>, <code>differential_reflectivity</code>, <code>radial_velocity</code>, <code>spectrum_width</code>.</p>
+<p>Its existence, location, and type are <em>structural</em>. Whether to exclude or interpolate missing values is an <em>analytical</em> decision.</p>
+<p><strong>7. Metadata stored as variables</strong></p>
+<p><code>iso_dataset</code>, <code>product</code>, <code>station_details</code>: string variables, <strong>not</strong> global attributes.</p>
+</div></div>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Ash learned all of this from the file itself, with no bespoke instructions: that is structural interoperability at work.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Point out that the same structure is visible for any NetCDF file, so Ash’s workflow is reusable. Note that <code>Conventions = CF-1.4</code> is only a declaration, and that whether the variables are scientifically comparable is a question for the semantic session later. Retrieving the data (OPeNDAP) is covered in the technical session.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="key-takeaways" class="slide level2 center">
+<h2>Key takeaways</h2>
+<ul>
+<li>Structural interoperability is a <strong>shared, machine-actionable contract</strong> about how data are organised</li>
+<li>A file extension is <strong>not</strong> the contract; the <strong>data model</strong> is</li>
+<li>Choose the representation that matches your <strong>data model</strong></li>
+<li>NetCDF provides a shared model: <strong>dimensions, variables, attributes</strong></li>
+<li><strong>CF</strong> adds the community rules for scientific interpretation</li>
+</ul>
+<aside class="notes">
+<p>Next: semantic interoperability (what do the values mean?) and technical interoperability (how do we retrieve them?).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -454,7 +549,7 @@ Choosing a representation that matches the underlying data model helps preserve 
           display:block!important;
       }</style></aside>
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/shared/logo.png" class="slide-logo"></p>
