@@ -33,8 +33,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="03-semantic_files/libs/revealjs/dist/theme/quarto-3cebb80fea2b5f4b0134c8d60aabf23b.css">
+  <link rel="stylesheet" href="03-semantic_files/libs/revealjs/dist/theme/quarto-66c3e5e245275cef1f768cabc292ec25.css">
   <link href="03-semantic_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="03-semantic_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="03-semantic_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -139,16 +205,14 @@
 </div>
 
 </section>
-<section id="the-problem" class="slide level2 center">
-<h2>The Problem</h2>
+<section id="problem" class="title-slide slide level1 center">
+<h1>Problem</h1>
 <div class="columns">
-<div class="column" style="width:65%;">
-<div class="fragment">
-<div class="bubble">
-<p>Can others understand and reuse the data correctly without making unnecessary assumptions?</p>
-</div>
-</div>
-</div><div class="column" style="width:35%;">
+<div class="column" style="width:62%;">
+<blockquote>
+<p>Can others understand the meaning of the data orrectly without making unnecessary assumptions?</p>
+</blockquote>
+</div><div class="column" style="width:38%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/shared/ash.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Ash, a researcher"></p>
@@ -156,18 +220,57 @@
 </div>
 </div></div>
 </section>
-<section id="notion-of-semantic-interoperability" class="slide level2 center">
-<h2>Notion of semantic interoperability</h2>
+
+<section>
+<section id="notion-of-semantic-interoperability" class="title-slide slide level1 center">
+<h1>Notion of semantic interoperability</h1>
+<aside class="notes">
+<p>it is about shared and explicit meaning</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-is-semantic-interoperability" class="slide level2 center">
+<h2>What is semantic interoperability?</h2>
 <div class="fragment center-text">
-<p>Shared and explicit meaning</p>
+<p>A dataset is semantically interoperable when different people and software systems can interpret its variables, categories, relationships, and measurement context consistently because those meanings are expressed using documented, community-agreed terms and rules.</p>
 <div class="fragment">
+<h3 id="good-to-know-that">Good to know that:</h3>
 <ul>
-<li>This definition does not require every explanation to be written directly inside one file.</li>
-<li>Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods.</li>
-<li>What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.</li>
+<li class="fragment">This definition does not require every explanation to be written directly inside one file.</li>
+<li class="fragment">Meaning can be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods.</li>
+<li class="fragment">What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.</li>
 </ul>
 </div>
 </div>
+</section></section>
+<section id="structure-and-meaning-are-different-but-connected" class="title-slide slide level1 center">
+<h1>Structure and meaning are different, but connected</h1>
+<ul>
+<li class="fragment">The <em>structural rule</em> tells software <em>where to find</em> the information and which variable it describes, while the <em>semantic rule</em> tells software <em>how to interpret</em> that information.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Example:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="" aria-label="1"></a>float temperature(time, lat, lon);</span>
+<span id="cb1-2"><a href="" aria-label="2"></a>    temperature:standard_name = "air_temperature";</span>
+<span id="cb1-3"><a href="" aria-label="3"></a>    temperature:units = "K";</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Structural rule: The <em>standard_name</em> attribute must be attached to the <em>variable</em> it describes. In this case, <em>temperature</em>.</p>
+<p>Semantic rule: The value <em>air_temperature</em> must be a recognized/standard term, where it has a precise scientific definition.</p>
+</div>
+</section>
+
+<section id="semantic-resources-to-express-meaning" class="title-slide slide level1 center">
+<h1>Semantic resources to express meaning</h1>
 <div class="fragment">
 <div class="row">
 <div class="labelled">
@@ -184,9 +287,9 @@
 </div>
 <div class="labelled">
 <div class="pill p-tan">
-<p>Taxonomy</p>
+<p>Peristent identifiers</p>
 </div>
-<p>Concepts organised through broader, narrower, or related links</p>
+<p>Links that connect a dataset or metadata element to an authoritative definition, instrument, method, vocabulary term, or other related resource.</p>
 </div>
 <div class="labelled">
 <div class="pill p-cream">
@@ -197,136 +300,109 @@
 </div>
 </div>
 </section>
-<section id="a-semantic-resource-is-more-useful-when" class="slide level2 center">
-<h2>A semantic resource is more useful when:</h2>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><img data-src="images/semantic/road.jpg" alt="Country highway receding to horizon"></p>
-</div><div class="column" style="width:55%;">
-<div class="small">
+
+<section id="semantic-interoperability-through-the-climate-and-forecast-cf-conventions" class="title-slide slide level1 center">
+<h1>Semantic interoperability through the Climate and Forecast (CF) Conventions</h1>
 <ul>
-<li>its terms have stable identifiers;</li>
-<li>definitions are publicly accessible;</li>
-<li>versions and changes are documented;</li>
-<li>synonyms and deprecated terms are managed;</li>
-<li>relationships between concepts are explicit where needed; and</li>
-<li>the resource is maintained through an open community process.</li>
+<li class="fragment">The CF Metadata Conventions provide <strong>standard ways</strong> to describe the <strong>meaning and context of variables in NetCDF datasets</strong>. This helps researchers and software determine what the data represents and where and when it applies.</li>
 </ul>
-</div>
-</div></div>
-</div>
 </section>
-<section id="relevant-resources" class="slide level2 center">
-<h2>Relevant resources</h2>
-<div class="columns">
-<div class="column center-text" style="width:33%;">
-<div class="small">
-<p>The home of ontologies and semantic artefacts in Earth System, environment and related domains.</p>
+
+<section id="main-cf-elements" class="title-slide slide level1 center">
+<h1>Main CF elements</h1>
+<ul>
+<li class="fragment"><code>standard_name</code> — What is being measured? Gives a variable a standardised name with a defined scientific meaning, such as <code>air_temperature</code> or <code>precipitation_flux</code>.</li>
+<li class="fragment"><code>units</code> — How are the values expressed? Specifies the physical units of the variable. When a <code>standard_name</code> is used, the units must be physically compatible with its canonical units.</li>
+<li class="fragment"><code>bounds</code> and <code>cell_methods</code> — What does each value represent? <code>bounds</code> can describe the extent of a coordinate interval, while <code>cell_methods</code> describes operations such as a mean, sum, or maximum over space or time.</li>
+<li class="fragment"><code>featureType</code> — What kind of observations are these? Describes discrete sampling geometries such as time series, profiles, or trajectories.</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p><a href="https://earthportal.eu/"><img data-src="images/semantic/earthportal.png" style="width:60.0%" alt="EarthPortal"></a></p>
-<p><a href="https://earthportal.eu/" class="uri">https://earthportal.eu/</a></p>
-</div><div class="column center-text" style="width:34%;">
-<div class="small">
-<p>The CF metadata conventions are designed to promote the processing and sharing of NetCDF files. The conventions define metadata that provide a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data.</p>
+<div class="callout-content">
+<p>Together, these elements make the scientific meaning and context of the data more explicit and machine-readable.</p>
 </div>
-<p><a href="https://cfconventions.org/"><img data-src="images/semantic/cf-metadata.png" style="width:45.0%" alt="CF Metadata"></a></p>
-<p><a href="https://cfconventions.org/" class="uri">https://cfconventions.org/</a></p>
-</div><div class="column center-text" style="width:33%;">
-<div class="small">
-<p>The authoritative resource that governs the standard names used in CF-compliant datasets</p>
 </div>
-<p><a href="https://cfconventions.org/Data/cf-standard-names/current/build/cf-standard-name-table.html"><img data-src="images/semantic/cf-standard-name-table.png" style="width:70.0%" alt="CF Standard Name Table"></a></p>
-<p><span class="small"><a href="https://cfconventions.org/Data/cf-standard-names/current/build/cf-standard-name-table.html">cf-standard-name-table</a></span></p>
-</div></div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>CF compliance does not guarantee that the scientific values are correct.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- # Exercise in pairs (5 mins)
+
+::: {.center-text}
+**Can these variables be compared?** (Think-Pair-Discuss)
+
+<span class="small"><https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/semantic-interoperability.html#semantic-interoperability-through-the-cf-conventions></span>
+:::
+
+::: notes
+"Easy" means with the fewest assumptions possible about how to integrate them, and also less manual intervention.
+::: -->
 </section>
-<section id="exercise" class="slide level2 center">
-<h2>Exercise</h2>
-<div class="center-text">
-<p><strong>Can these variables be compared?</strong> (Think-Pair-Discuss)</p>
-<p><span class="small"><a href="https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/semantic-interoperability.html#semantic-interoperability-through-the-cf-conventions" class="uri">https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/semantic-interoperability.html#semantic-interoperability-through-the-cf-conventions</a></span></p>
-</div>
-<aside class="notes">
-<p>“Easy” means with the fewest assumptions possible about how to integrate them, and also less manual intervention.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="exercise-plenum" class="slide level2 center">
-<h2>Exercise (plenum)</h2>
+
+<section id="exercise-plenum" class="title-slide slide level1 center">
+<h1>Exercise (plenum)</h1>
 <div class="center-text">
 <p><strong>Semantic interoperability: True or False?</strong></p>
-<p><span class="small"><a href="https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/semantic-interoperability.html#semantic-interoperability-through-the-cf-conventions" class="uri">https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/semantic-interoperability.html#semantic-interoperability-through-the-cf-conventions</a></span></p>
+<div class="small">
+<ul>
+<li class="fragment">A NetCDF file with dimensions, variables, and units is semantically interoperable by default.
+<ul>
+<li class="fragment"><strong>False</strong> : NetCDF provides a self-describing structure, but dimensions and units do not fully define scientific meaning, context, statistical treatment, or relationships.</li>
+</ul></li>
+<li class="fragment">Climate and Forecast (CF) standard names allow software to distinguish different kinds of temperature.
+<ul>
+<li class="fragment"><strong>True</strong> : CF standard names distinguish concepts such as <code>air_temperature</code>, <code>sea_surface_temperature</code>, and <code>surface_temperature</code> through controlled terms and definitions.</li>
+</ul></li>
+<li class="fragment">Semantic interoperability mainly benefits human readers, not automated workflows.
+<ul>
+<li class="fragment"><strong>False</strong> : Semantic interoperability is about shared and explicit meaning, which allows both humans and software to interpret the data consistently.</li>
+</ul></li>
+<li class="fragment">Two datasets using the same CF standard name can always be compared directly without further interpretation.
+<ul>
+<li class="fragment"><strong>False</strong> : A shared standard name is strong evidence that variables represent the same physical quantity, but direct comparison still depends on coordinates, units, heights or depths, cell methods, bounds, etc.</li>
+</ul></li>
+<li class="fragment">Semantic interoperability can be achieved reliably through locally invented variable names, without community-agreed definitions.
+<ul>
+<li class="fragment"><strong>False</strong> : Local names may be understandable within one project, but reliable interoperability requires mappings to shared definitions, vocabularies, or identifiers.</li>
+</ul></li>
+<li class="fragment">A descriptive <em>long_name</em> has the same machine-actionable status as a valid CF standard_name.
+<ul>
+<li class="fragment"><strong>False</strong> : <em>long_name</em> is normally free text. A CF <em>standard_name</em> must be selected from the governed Standard Name Table and has a defined meaning and canonical unit.</li>
+</ul></li>
+</ul>
 </div>
-<aside class="notes">
-<p>“Easy” means with the fewest assumptions possible about how to integrate them, and also less manual intervention.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
 </section>
-<section id="main-elements-climate-and-forecast-conventions" class="slide level2 center">
-<h2>Main elements: Climate and Forecast conventions</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 77%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Element</th>
-<th>What question does it answer?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>standard_name</code></td>
-<td>What is being measured?</td>
-</tr>
-<tr class="even">
-<td><code>long_name</code></td>
-<td>How can we describe it for people?</td>
-</tr>
-<tr class="odd">
-<td><code>Feature_Type</code></td>
-<td>What kind of observations are these? E.g. time series, profiles, trajectories</td>
-</tr>
-<tr class="even">
-<td><code>units</code></td>
-<td>How are the values expressed? (must be compatible with the canonical units of the <code>standard_name</code>)</td>
-</tr>
-<tr class="odd">
-<td>Ancillary variables</td>
-<td>What additional information is associated with the values? E.g. instrument, quality-control flags</td>
-</tr>
-<tr class="even">
-<td><code>bounds</code> / <code>cell_methods</code></td>
-<td>What does each value represent?</td>
-</tr>
-<tr class="odd">
-<td>Coordinates</td>
-<td>Where and when?</td>
-</tr>
-</tbody>
-</table>
+
+<section id="what-does-cf-compliant-mean" class="title-slide slide level1 center">
+<h1>What does CF-compliant mean?</h1>
+<ul>
+<li class="fragment">A NetCDF file is CF-compliant relative to a declared CF version when it satisfies the requirements of that version and uses CF terms according to their defined meanings.</li>
+<li class="fragment">CF compliance report distinguish between:
+<ul>
+<li class="fragment">requirements, which must be satisfied for conformance; and</li>
+<li class="fragment">recommendations, which improve interoperability but are not always mandatory.</li>
+</ul></li>
+<li class="fragment">Compliance is version specific, and a file may be compliant with one version but not another.</li>
+</ul>
 </section>
-<section id="compliance-check" class="slide level2 center">
-<h2>Compliance check</h2>
+
+<section id="compliance-check" class="title-slide slide level1 center">
+<h1>Compliance check</h1>
 <div class="columns">
 <div class="column center-text" style="width:50%;">
 <div class="pill pill-lg">
@@ -346,7 +422,7 @@
 </div>
 </div></div>
 <aside class="notes">
-<p>“Easy” means with the fewest assumptions possible about how to integrate them, and also less manual intervention.</p>
+<p>Show an example of a report from the compliance check. Lesson_development_report_IDRA_2019-01-02_12-00.txt</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -358,6 +434,43 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+
+<section id="recommended-workflow" class="title-slide slide level1 center">
+<h1>Recommended workflow</h1>
+<div class="workflow">
+<div class="step step-start">
+<p><strong>Original NetCDF dataset</strong></p>
+<p><span class="small">Missing or inconsistent CF metadata</span></p>
+</div>
+<div class="workflow-arrow">
+↓
+</div>
+<div class="step">
+<p><strong>1. Validate</strong></p>
+<p><span class="small">IOOS Compliance Checker</span></p>
+</div>
+<div class="workflow-arrow">
+↓
+</div>
+<div class="step">
+<p><strong>2. Inspect and correct</strong></p>
+<p><span class="small">Python <code>xarray</code> or NetCDF operators</span></p>
+</div>
+<div class="workflow-arrow">
+↓
+</div>
+<div class="step">
+<p><strong>3. Validate again</strong></p>
+<p><span class="small">Check whether outstanding CF violations remain</span></p>
+</div>
+<div class="workflow-arrow">
+↓
+</div>
+<div class="step step-success">
+<p><strong>✓ Validated NetCDF dataset</strong></p>
+</div>
+</div>
 
 </section>
     </div>
