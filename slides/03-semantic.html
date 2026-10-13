@@ -100,7 +100,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="03-semantic_files/libs/revealjs/dist/theme/quarto-66c3e5e245275cef1f768cabc292ec25.css">
+  <link rel="stylesheet" href="03-semantic_files/libs/revealjs/dist/theme/quarto-5005fb0c1424fe3825a502301fbaa832.css">
   <link href="03-semantic_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="03-semantic_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="03-semantic_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -406,10 +406,12 @@
 <div class="columns">
 <div class="column center-text" style="width:50%;">
 <div class="pill pill-lg">
-<p>Data</p>
+<p>Data -&gt; 900MB</p>
 </div>
-<p><span class="small"><a href="https://opendap.4tu.nl/thredds/catalog/IDRA/2019/01/02/catalog.html?dataset=IDRA_scan/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc">opendap.4tu.nl: IDRA_2019-01-02_12-00_raw_data.nc</a></span></p>
+<p><span class="small"><a href="https://opendap.4tu.nl/thredds/catalog/IDRA/2019/01/02/catalog.html?dataset=IDRA_scan/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc">https://edu.nl/4apba</a></span></p>
 <p><img data-src="images/semantic/opendap-dataset-page.png" style="width:90.0%" alt="OPeNDAP dataset access form for the IDRA dataset"></p>
+<p>or Download via command line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="" aria-label="1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> data.nc https://edu.nl/4apba</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column center-text" style="width:50%;">
 <div class="pill pill-lg">
 <p>Tool</p>
@@ -435,6 +437,11 @@
           display:block!important;
       }</style></aside>
 </section>
+
+<section id="example-report" class="title-slide slide level1 center">
+<h1>Example report</h1>
+
+<img data-src="images/semantic/checker_report_snapshot.png" style="width:90.0%" alt="IOOS Compliance Checker report for the IDRA dataset" class="r-stretch"></section>
 
 <section id="recommended-workflow" class="title-slide slide level1 center">
 <h1>Recommended workflow</h1>
@@ -471,6 +478,18 @@
 <p><strong>✓ Validated NetCDF dataset</strong></p>
 </div>
 </div>
+</section>
+
+<section id="key-takeaways" class="title-slide slide level1 center">
+<h1>Key takeaways</h1>
+<ul>
+<li>Semantic interoperability concerns shared, explicit, and machine-actionable meaning.</li>
+<li>File formats and readable labels provide containers for meaning but do not guarantee semantic agreement.</li>
+<li>Controlled vocabulary terms, units, coordinates, bounds, cell methods, grid mappings, flags, and qualified relationships work together to express scientific meaning.</li>
+<li>A CF <code>standard_name</code> identifies a physical quantity; <code>long_name</code> remains free text for human readability.</li>
+<li>CF compliance is relative to a specific version and does not prove scientific correctness, data quality, or suitability for a particular analysis.</li>
+<li>The global Conventions attribute is a conformance claim, not evidence that every requirement is satisfied.</li>
+</ul>
 
 </section>
     </div>
