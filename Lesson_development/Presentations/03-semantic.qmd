@@ -204,12 +204,18 @@ CF compliance does not guarantee that the scientific values are correct.
 ::: {.columns}
 ::: {.column width="50%" .center-text}
 ::: {.pill .pill-lg}
-Data
+Data -> 900MB
 :::
 
-<span class="small">[opendap.4tu.nl: IDRA_2019-01-02_12-00_raw_data.nc](https://opendap.4tu.nl/thredds/catalog/IDRA/2019/01/02/catalog.html?dataset=IDRA_scan/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc)</span>
+<span class="small">[https://edu.nl/4apba](https://opendap.4tu.nl/thredds/catalog/IDRA/2019/01/02/catalog.html?dataset=IDRA_scan/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc)</span>
 
 ![](images/semantic/opendap-dataset-page.png){fig-alt="OPeNDAP dataset access form for the IDRA dataset" width=90%}
+
+or Download via command line:
+```bash
+curl -L -o data.nc https://edu.nl/4apba
+```
+
 :::
 ::: {.column width="50%" .center-text}
 ::: {.pill .pill-lg}
@@ -233,6 +239,10 @@ Report
 ::: notes
 Show an example of a report from the compliance check. Lesson_development\data\compliance_report_IDRA_2019-01-02_12-00.txt
 :::
+
+# Example report
+
+![](images/semantic/checker_report_snapshot.png){fig-alt="IOOS Compliance Checker report for the IDRA dataset" width=90%}
 
 # Recommended workflow
 
@@ -276,3 +286,12 @@ Show an example of a report from the compliance check. Lesson_development\data\c
 :::
 
 :::
+
+# Key takeaways
+
+- Semantic interoperability concerns shared, explicit, and machine-actionable meaning.
+- File formats and readable labels provide containers for meaning but do not guarantee semantic agreement.
+- Controlled vocabulary terms, units, coordinates, bounds, cell methods, grid mappings, flags, and qualified relationships work together to express scientific meaning.
+- A CF `standard_name` identifies a physical quantity; `long_name` remains free text for human readability.
+- CF compliance is relative to a specific version and does not prove scientific correctness, data quality, or suitability for a particular analysis.
+- The global Conventions attribute is a conformance claim, not evidence that every requirement is satisfied.
