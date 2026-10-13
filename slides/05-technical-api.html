@@ -209,60 +209,46 @@
 <h2>The Problem</h2>
 <div class="columns">
 <div class="column" style="width:62%;">
-<div class="bubble">
-<p><strong>How can one computer system access data held by another system?</strong></p>
-</div>
-<div class="grey-box">
-<p>How can software interact programmatically with the functions and resources provided by another system?</p>
-</div>
-</div><div class="column" style="width:38%;">
+<blockquote>
+<p>How can one computer system access data held by another system?</p>
+</blockquote>
+<div class="column" style="width:38%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/shared/ash.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Ash, a researcher"></p>
 </figure>
 </div>
-</div></div>
+</div></div></div>
 </section>
-<section id="technical-interoperability" class="slide level2 center">
-<h2>Technical interoperability</h2>
-<p><em>ensures</em></p>
-<div class="box">
-<p>Software systems can reliably exchange data and metadata without human intervention</p>
+<section>
+<section id="notion-of-technical-interoperability" class="title-slide slide level1 center">
+<h1>Notion of technical interoperability</h1>
+
+</section>
+<section id="what-is-technical-interoperability" class="slide level2 center">
+<h2>What is technical interoperability?</h2>
+<div class="fragment center-text">
+<p>Tecnical interoperability refers to the ability of software systems to reliably exchange data and metadata without human intervention</p>
 </div>
 <div class="fragment">
-<p><em>is achieved by</em></p>
-<div class="box">
-<p>standardized protocols, e.g.&nbsp;API</p>
+<ul>
+<li>standardized protocols like OPeNDAP</li>
+<li><strong>APIs (Application Programming Interfaces) that define how software systems can interact with each other in a structured and predictable way</strong></li>
+</ul>
 </div>
+</section></section>
+<section>
+<section id="what-are-apis" class="title-slide slide level1 center">
+<h1><span class="badge">01</span> What are APIs</h1>
+<div class="fragment center-text">
+<p>An API (<strong>Application Programming Interface</strong>) defines how one software system can interact with another in a structured and predictable way.</p>
 </div>
-<aside class="notes">
-<p>This definition does not require every explanation to be written directly inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="what-are-apis" class="slide level2 center">
-<h2><span class="badge">01</span> What are APIs</h2>
-<div class="columns">
-<div class="column center-text" style="width:40%;">
-<p>An API (<strong>Application Programming Interface</strong>) defines</p>
-</div><div class="column" style="width:60%;">
-<p>how one software system can interact with another in a structured and predictable way.</p>
-</div></div>
-</section>
-<section id="what-are-apis-in-pictures" class="slide level2 center">
-<h2>What are APIs, in pictures</h2>
+<section id="customer-waiter-chef-analogy" class="slide level2 center">
+<h2>Customer, waiter, chef analogy</h2>
 
 <img data-src="images/api/client-server-waiter.png" class="quarto-figure quarto-figure-center r-stretch" style="width:65.0%" alt="Client and server communicating through an API, and the waiter analogy: customer, waiter, chef"><aside class="notes">
-<p>An API is like a waiter in a restaurant. You don’t go into the kitchen and cook the meal yourself. You just place an order and hope the kitchen doesn’t return a 500 Internal Server Error.</p>
+<p>An API is like a waiter in a restaurant. You don’t go into the kitchen and cook the meal yourself. You just place an order and hope the kitchen doesn’t return it to you.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -278,44 +264,36 @@
 <section id="apis-can-take-different-forms-depending-on-where-and-how-systems-communicate" class="slide level2 center">
 <h2><span class="badge">02</span> APIs can take different forms depending on where and how systems communicate</h2>
 <div class="columns">
-<div class="column" style="width:35%;">
-<p><strong>APIs examples</strong></p>
-</div><div class="column center-text" style="width:65%;">
+<div class="column" style="width:50%;">
+<div class="fragment center-text">
 <div class="pill pill-lg p-orange">
 <p>Library APIs</p>
 </div>
+<p><strong>Library or programming APIs</strong> allow software code to interact with functions, classes, or modules provided by a software package.</p>
+</div>
+<div class="fragment center-text">
 <div class="pill pill-lg p-red">
 <p>OS APIs</p>
 </div>
+<p><strong>Operating system APIs</strong> allow applications to interact with system resources such as files, memory, or hardware.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment center-text">
 <div class="pill pill-lg p-grey">
 <p>Database APIs</p>
 </div>
+<p><strong>Database APIs</strong> allow applications to query and modify information stored in databases.</p>
+</div>
+<div class="fragment center-text focus">
 <div class="pill pill-lg p-cream">
 <p>Web APIs</p>
 </div>
+<p><strong>Web APIs</strong> provide a machine-accessible interface through which one system can request data or services from another over the web.</p>
+</div>
 </div></div>
-<aside class="notes">
-<p><strong>Library or programming APIs</strong> allow software code to interact with functions, classes, or modules provided by a software package.</p>
-<p><strong>Operating system APIs</strong> allow applications to interact with system resources such as files, memory, or hardware.</p>
-<p><strong>Database APIs</strong> allow applications to query and modify information stored in databases.</p>
-<p><strong>Web APIs</strong> allow applications and services to communicate over a network, usually using standard web technologies.</p>
-<p>A <strong>Web API</strong> provides a machine-accessible interface through which one system can request data or services from another over the web.</p>
-<p>Web APIs are an important mechanism for <strong>technical interoperability</strong> because they allow systems to exchange data and metadata programmatically, without requiring a person to interact manually with a website.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="web-apis-usually-define" class="slide level2 smaller center">
+<section id="web-apis-usually-define" class="slide level2 center">
 <h2><span class="badge">03</span> Web APIs usually define:</h2>
-<p><strong>Core concepts of Web APIs</strong></p>
 <ol type="1">
 <li><strong>Endpoints</strong>: the address of the resource exposed by the API</li>
 <li><strong>HTTP methods</strong>: they use a <strong>shared vocabulary</strong> of methods. GET, POST, PUT, DELETE to define how to exchange <strong>resources</strong> across the web.</li>
@@ -378,54 +356,36 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="why-apis-are-relevant-for-research" class="slide level2 center">
-<h2><span class="badge">04</span> Why APIs are relevant for research</h2>
-<div class="columns api-relevance">
-<div class="column" style="width:78%;">
-<div class="bubble">
-<p>Climate and atmospheric research often depends on <strong>large, distributed, and continuously updated datasets</strong> produced by satellites, radar systems, weather stations, numerical models, and research infrastructures.</p>
-</div>
-<p class="small center-text">
-<b>Relevance of APIs for your discipline</b>
-</p>
-</div><div class="column" style="width:22%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/shared/ash.png" class="quarto-figure quarto-figure-center" alt="Ash, a researcher" height="280"></p>
-</figure>
-</div>
-</div></div>
+<section id="why-apis-are-relevant-for-research-a-typical-workflow" class="slide level2 center">
+<h2><span class="badge">04</span> Why APIs are relevant for research : A typical workflow</h2>
 <div class="fragment">
-<p class="small center-text">
-A typical workflow:
-</p>
 <div class="row">
-<div class="pill p-orange">
-<p>Query a data service from radar observations</p>
+<div class="pill pill-lg p-orange">
+<p><strong>Query</strong> a data service from radar observations</p>
 </div>
 <div class="arrow">
 <p>→</p>
 </div>
-<div class="pill p-grey">
-<p>Retrieve metadata and identify data files</p>
+<div class="pill pill-lg p-grey">
+<p><strong>Retrieve</strong> metadata and identify data files</p>
 </div>
 <div class="arrow">
 <p>→</p>
 </div>
-<div class="pill p-red">
-<p>Process the selected data in Python</p>
+<div class="pill pill-lg p-red">
+<p><strong>Process</strong> the selected data in Python</p>
 </div>
 <div class="arrow">
 <p>→</p>
 </div>
-<div class="pill p-tan">
-<p>Generate derived products</p>
+<div class="pill pill-lg p-tan">
+<p><strong>Generate</strong> derived products</p>
 </div>
 <div class="arrow">
 <p>→</p>
 </div>
-<div class="pill p-cream">
-<p>Publish the results and metadata to a research repository</p>
+<div class="pill pill-lg p-cream">
+<p><strong>Publish</strong> the results and metadata to a research repository</p>
 </div>
 </div>
 </div>
@@ -443,78 +403,97 @@ A typical workflow:
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="true-or-false-exercise" class="title-slide slide level1 center">
+<h1>True or False Exercise</h1>
+
 </section>
-<section id="true-or-false-exercise" class="slide level2 center">
-<h2>True or False Exercise</h2>
-<p><a href="https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/technical-interoperability.html" class="uri">https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/technical-interoperability.html</a></p>
-<aside class="notes">
-<p>HTTP: Hyper Text Transfer Protocol</p>
-<p>JSON: JavaScript Object Notation</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="a-web-api-can-allow-software-to-retrieve-data-from-a-repository-without-a-user-manually-interacting-with-the-repository-website." class="slide level2 center">
+<h2>A Web API can allow software to retrieve data from a repository without a user manually interacting with the repository website.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>True</strong></p>
+</div>
+</div>
 </section>
-<section id="hands-on-4tu.researchdata-web-api" class="slide level2 center">
-<h2>Hands on 4TU.ResearchData Web API</h2>
-<ol type="1">
-<li>The Unix terminal allows HTTP requests using <code>curl</code>.</li>
-</ol>
-<p><code>curl</code> = client URL: send requests and receive responses.</p>
-<p><strong>curl anatomy:</strong></p>
+<section id="all-apis-are-web-apis." class="slide level2 center">
+<h2>All APIs are Web APIs.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>False</strong></p>
+</div>
+</div>
+</section>
+<section id="web-api-must-return-json-in-order-to-be-technically-interoperable." class="slide level2 center">
+<h2>Web API must return JSON in order to be technically interoperable.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>False</strong></p>
+</div>
+</div>
+</section>
+<section id="if-two-systems-can-exchange-data-through-an-api-this-automatically-means-that-they-interpret-the-scientific-meaning-of-the-data-in-the-same-way." class="slide level2 center">
+<h2>If two systems can exchange data through an API, this automatically means that they interpret the scientific meaning of the data in the same way.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>False</strong></p>
+</div>
+</div>
+</section>
+<section id="apis-remove-the-need-for-structural-and-semantic-interoperability." class="slide level2 center">
+<h2>APIs remove the need for structural and semantic interoperability.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>False</strong> : Data still need predictable structures and shared meaning to be reused correctly!!</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="hands-on-4tu.researchdata-web-api" class="title-slide slide level1 center">
+<h1>Hands on 4TU.ResearchData Web API</h1>
+
+</section>
+<section id="hands-on-4tu.researchdata-web-api-1" class="slide level2 center">
+<h2><span class="badge">05</span> Hands-on: 4TU.ResearchData Web API</h2>
+<div class="pill pill-lg p-cream">
+<p>The Unix terminal allows HTTP requests using <code>curl</code>.</p>
+<p><code>curl</code> = client URL &gt; send requests and receive responses.</p>
+</div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="" aria-label="1"></a><span class="ex">curl</span> <span class="at">-X</span> <span class="op">&lt;</span>HTTP_METHOD<span class="op">&gt;</span> <span class="op">&lt;</span>URL<span class="op">&gt;</span> -H <span class="st">"&lt;HEADER_KEY&gt;: &lt;HEADER_VALUE&gt;"</span> <span class="at">-d</span> <span class="st">'&lt;BODY_DATA&gt;'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<aside class="notes">
-<p>HTTP: Hyper Text Transfer Protocol</p>
-<p>JSON: JavaScript Object Notation</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="hands-on-4tu.researchdata-web-api-1" class="slide level2 smaller center">
-<h2>Hands on 4TU.ResearchData Web API</h2>
 <ul>
 <li>Base URL: <a href="https://data.4tu.nl" class="uri">https://data.4tu.nl</a></li>
 <li>Specific resource URL (endpoint): <a href="https://data.4tu.nl/v2/articles" class="uri">https://data.4tu.nl/v2/articles</a></li>
 <li>Open your Unix terminal</li>
 </ul>
-<div class="cream-box">
-<p><strong>Exercise: checking the connection with the server using the web browser and <code>curl</code> in the Unix terminal</strong></p>
+</section>
+<section id="exercise-1-checking-the-connection-with-the-server-using-the-web-browser-and-curl-in-the-unix-terminal" class="slide level2 center">
+<h2><strong>Exercise 1: checking the connection with the server using the web browser and <code>curl</code> in the Unix terminal</strong></h2>
 <ul>
 <li><p>Open a web browser and write: <a href="https://data.4tu.nl/v2/articles" class="uri">https://data.4tu.nl/v2/articles</a></p></li>
 <li><p>On the Unix terminal write:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="" aria-label="1"></a><span class="ex">curl</span> <span class="at">-X</span> GET https://data.4tu.nl/v2/articles <span class="kw">|</span> <span class="ex">jq</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>How are both responses compared to each other?</p></li>
 </ul>
-</div>
-<aside class="notes">
-<p>HTTP: Hyper Text Transfer Protocol</p>
-<p>JSON: JavaScript Object Notation</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</section>
+<section id="exercise-2-exploring-the-4tu.researchdata-api-documentation" class="slide level2 center">
+<h2>Exercise 2: Exploring the 4TU.ResearchData API documentation:</h2>
+<p>API documentation: <a href="https://data.4tu.nl/api/docs" class="uri">https://data.4tu.nl/api/docs</a></p>
+<ol type="1">
+<li>Show in the terminal the metadata of 2 datasets published since May 1st 2025 using <code>curl</code> and <code>jq</code> to format the output.</li>
+<li>Save the information of 2 datasets published since May 1st 2025 using <code>curl</code> to a file called <code>data.json</code> in the current directory.</li>
+<li>Show in the screen the metadata of 10 software published since January 1st 2025.</li>
+</ol>
+</section></section>
+<section id="key-takeways" class="title-slide slide level1 center">
+<h1>Key takeways</h1>
+<ul>
+<li><p>APIs operationalize technical interoperability by enabling standardized machine-to-machine interaction.</p></li>
+<li><p>Web APIs use HTTP methods, predictable endpoints, JSON representations, stable identifiers, and authentication mechanisms.</p></li>
+<li><p>APIs depend on structural interoperability (schemas) and semantic interoperability (controlled vocabularies).</p></li>
+<li><p>Command-line tools such as curl provide direct access to API functionality and enable automation.</p></li>
+<li><p>The 4TU.ResearchData API supports full dataset lifecycle management: discovery, creation, metadata update, file upload, and submission for review</p></li>
+</ul>
 
 </section>
     </div>
