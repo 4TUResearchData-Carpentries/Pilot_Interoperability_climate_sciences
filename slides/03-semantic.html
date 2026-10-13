@@ -340,54 +340,61 @@
 </div>
 </div>
 </div>
-<!-- # Exercise in pairs (5 mins)
-
-::: {.center-text}
-**Can these variables be compared?** (Think-Pair-Discuss)
-
-<span class="small"><https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/semantic-interoperability.html#semantic-interoperability-through-the-cf-conventions></span>
-:::
-
-::: notes
-"Easy" means with the fewest assumptions possible about how to integrate them, and also less manual intervention.
-::: -->
 </section>
 
-<section id="exercise-plenum" class="title-slide slide level1 center">
-<h1>Exercise (plenum)</h1>
-<div class="center-text">
-<p><strong>Semantic interoperability: True or False?</strong></p>
-<div class="small">
-<ul>
-<li class="fragment">A NetCDF file with dimensions, variables, and units is semantically interoperable by default.
-<ul>
-<li class="fragment"><strong>False</strong> : NetCDF provides a self-describing structure, but dimensions and units do not fully define scientific meaning, context, statistical treatment, or relationships.</li>
-</ul></li>
-<li class="fragment">Climate and Forecast (CF) standard names allow software to distinguish different kinds of temperature.
-<ul>
-<li class="fragment"><strong>True</strong> : CF standard names distinguish concepts such as <code>air_temperature</code>, <code>sea_surface_temperature</code>, and <code>surface_temperature</code> through controlled terms and definitions.</li>
-</ul></li>
-<li class="fragment">Semantic interoperability mainly benefits human readers, not automated workflows.
-<ul>
-<li class="fragment"><strong>False</strong> : Semantic interoperability is about shared and explicit meaning, which allows both humans and software to interpret the data consistently.</li>
-</ul></li>
-<li class="fragment">Two datasets using the same CF standard name can always be compared directly without further interpretation.
-<ul>
-<li class="fragment"><strong>False</strong> : A shared standard name is strong evidence that variables represent the same physical quantity, but direct comparison still depends on coordinates, units, heights or depths, cell methods, bounds, etc.</li>
-</ul></li>
-<li class="fragment">Semantic interoperability can be achieved reliably through locally invented variable names, without community-agreed definitions.
-<ul>
-<li class="fragment"><strong>False</strong> : Local names may be understandable within one project, but reliable interoperability requires mappings to shared definitions, vocabularies, or identifiers.</li>
-</ul></li>
-<li class="fragment">A descriptive <em>long_name</em> has the same machine-actionable status as a valid CF standard_name.
-<ul>
-<li class="fragment"><strong>False</strong> : <em>long_name</em> is normally free text. A CF <em>standard_name</em> must be selected from the governed Standard Name Table and has a defined meaning and canonical unit.</li>
-</ul></li>
-</ul>
+<section>
+<section id="exercise-plenum-true-or-false" class="title-slide slide level1 center">
+<h1>Exercise (plenum) : True or False?</h1>
+
+</section>
+<section id="a-netcdf-file-with-dimensions-variables-and-units-is-semantically-interoperable-by-default." class="slide level2 center">
+<h2>A NetCDF file with dimensions, variables, and units is semantically interoperable by default.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>False</strong>: : NetCDF provides a self-describing structure, but dimensions and units do not fully define scientific meaning, context, statistical treatment, or relationships.</p>
 </div>
 </div>
 </section>
-
+<section id="climate-and-forecast-cf-standard-names-allow-software-to-distinguish-different-kinds-of-temperature." class="slide level2 center">
+<h2>Climate and Forecast (CF) standard names allow software to distinguish different kinds of temperature.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>True</strong> : CF standard names distinguish concepts such as <code>air_temperature</code>, <code>sea_surface_temperature</code>, and <code>surface_temperature</code> through controlled terms and definitions.</p>
+</div>
+</div>
+</section>
+<section id="semantic-interoperability-mainly-benefits-human-readers-not-automated-workflows." class="slide level2 center">
+<h2>Semantic interoperability mainly benefits human readers, not automated workflows.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>False</strong> : Semantic interoperability is about shared and explicit meaning, which allows both humans and software to interpret the data consistently.</p>
+</div>
+</div>
+</section>
+<section id="two-datasets-using-the-same-cf-standard-name-can-always-be-compared-directly-without-further-interpretation." class="slide level2 center">
+<h2>Two datasets using the same CF standard name can always be compared directly without further interpretation.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>False</strong> : A shared standard name is strong evidence that variables represent the same physical quantity, but direct comparison still depends on coordinates, units, heights or depths, cell methods, bounds, etc.</p>
+</div>
+</div>
+</section>
+<section id="semantic-interoperability-can-be-achieved-reliably-through-locally-invented-variable-names-without-community-agreed-definitions." class="slide level2 center">
+<h2>Semantic interoperability can be achieved reliably through locally invented variable names, without community-agreed definitions.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>False</strong> : Local names may be understandable within one project, but reliable interoperability requires mappings to shared definitions, vocabularies, or identifiers.</p>
+</div>
+</div>
+</section>
+<section id="a-descriptive-long_name-has-the-same-machine-actionable-status-as-a-valid-cf-standard_name." class="slide level2 center">
+<h2>A descriptive <em>long_name</em> has the same machine-actionable status as a valid CF <em>standard_name</em>.</h2>
+<div class="fragment">
+<div class="pill pill-lg p-cream">
+<p><strong>False</strong> : <em>long_name</em> is normally free text. A CF <em>standard_name</em> must be selected from the governed Standard Name Table and has a defined meaning and canonical unit.</p>
+</div>
+</div>
+</section></section>
 <section id="what-does-cf-compliant-mean" class="title-slide slide level1 center">
 <h1>What does CF-compliant mean?</h1>
 <ul>
