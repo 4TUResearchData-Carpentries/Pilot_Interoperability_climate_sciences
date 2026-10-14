@@ -144,3 +144,20 @@ $c-edge:   #6b4a2f;
   margin-top: 0.5em;
   background: rgba(242, 140, 40, 0.06);
 }
+
+/*-- scss:rules --*/
+.reveal .slides table {
+  width: 100% !important;
+  background: transparent !important;
+  color: inherit !important;
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: transparent;
+}
+
+.reveal .slides table th,
+.reveal .slides table td,
+.reveal .slides table tr {
+  background: transparent !important;
+  font-size: 2rem !important;   
+  padding: 0.5em 0.9em;
+}
