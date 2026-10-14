@@ -96,6 +96,35 @@ Challenges
 Most probably each type of data comes in **different formats**, different ways of **access** and many of them use **different variable names** for the same physical quantity.
 :::
 
+## Ash's data: IDRA radar
+
+::: {.columns}
+::: {.column width="55%"}
+At 4TU.ResearchData, Ash finds a dataset from the **IRCTR Drizzle Radar (IDRA)**.
+
+- High-resolution, **polarimetric X-band radar** developed by **TU Delft**
+- Located at the **Cabauw** experimental site, the Netherlands
+- Designed to observe **drizzle and light rain**, which are hard to capture consistently across observation systems
+- Data are published as **NetCDF files**
+:::
+::: {.column width="45%"}
+![Image: TU Delft IDRA, <http://ftp.tudelft.nl/TUDelft/irctr-rse/idra/index.html>](images/introduction/idra-cabauw.jpg){height=500 fig-alt="The IDRA radar at the Cabauw experimental site, the Netherlands"}
+:::
+:::
+
+::: footer
+Data: IRCTR Drizzle Radar (IDRA), 4TU.ResearchData, <https://doi.org/10.4121/uuid:5f3bcaa2-a456-4a66-a67b-1eec928cae6d>
+:::
+
+::: notes
+IDRA is the IRCTR Drizzle Radar, installed on the meteorological tower at the Cabauw experimental site for atmospheric research (CESAR). It scans horizontally at a low elevation angle and is operated by TU Delft's ATMOS group. Because drizzle and light precipitation have low reflectivity, they are difficult to capture consistently across observation systems, which makes the dataset highly relevant to Ash's research question.
+
+We will use these files throughout the session: in the hands-on, and in the optional demo where Ash compares a 2009 and a 2019 file.
+
+Dimensions in the files: time_raw_data, sample_beat_signal, time_processed_data and range.
+Processed variables used later: equivalent_reflectivity_factor, differential_reflectivity, radial_velocity, spectrum_width, differential_phase.
+:::
+
 # Challenge
 
 
