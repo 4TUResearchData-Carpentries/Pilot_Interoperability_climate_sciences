@@ -239,6 +239,44 @@ She needs to integrate multiple data from different sources
 <div class="fragment center-text">
 <p>Most probably each type of data comes in <strong>different formats</strong>, different ways of <strong>access</strong> and many of them use <strong>different variable names</strong> for the same physical quantity.</p>
 </div>
+</section>
+<section id="ashs-data-idra-radar" class="slide level2 center">
+<h2>Ash’s data: IDRA radar</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>At 4TU.ResearchData, Ash finds a dataset from the <strong>IRCTR Drizzle Radar (IDRA)</strong>.</p>
+<ul>
+<li>High-resolution, <strong>polarimetric X-band radar</strong> developed by <strong>TU Delft</strong></li>
+<li>Located at the <strong>Cabauw</strong> experimental site, the Netherlands</li>
+<li>Designed to observe <strong>drizzle and light rain</strong>, which are hard to capture consistently across observation systems</li>
+<li>Data are published as <strong>NetCDF files</strong></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/introduction/idra-cabauw.jpg" alt="The IDRA radar at the Cabauw experimental site, the Netherlands" height="500"></p>
+<figcaption>Image: TU Delft IDRA, <a href="http://ftp.tudelft.nl/TUDelft/irctr-rse/idra/index.html" class="uri">http://ftp.tudelft.nl/TUDelft/irctr-rse/idra/index.html</a></figcaption>
+</figure>
+</div>
+</div></div>
+<div class="footer">
+<p>Data: IRCTR Drizzle Radar (IDRA), 4TU.ResearchData, <a href="https://doi.org/10.4121/uuid:5f3bcaa2-a456-4a66-a67b-1eec928cae6d" class="uri">https://doi.org/10.4121/uuid:5f3bcaa2-a456-4a66-a67b-1eec928cae6d</a></p>
+</div>
+<aside class="notes">
+<p>IDRA is the IRCTR Drizzle Radar, installed on the meteorological tower at the Cabauw experimental site for atmospheric research (CESAR). It scans horizontally at a low elevation angle and is operated by TU Delft’s ATMOS group. Because drizzle and light precipitation have low reflectivity, they are difficult to capture consistently across observation systems, which makes the dataset highly relevant to Ash’s research question.</p>
+<p>We will use these files throughout the session: in the hands-on, and in the optional demo where Ash compares a 2009 and a 2019 file.</p>
+<p>Dimensions in the files: time_raw_data, sample_beat_signal, time_processed_data and range. Processed variables used later: equivalent_reflectivity_factor, differential_reflectivity, radial_velocity, spectrum_width, differential_phase.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="challenge" class="title-slide slide level1 center">
