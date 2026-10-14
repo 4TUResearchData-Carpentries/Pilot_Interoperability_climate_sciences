@@ -71,6 +71,8 @@ Example of a dataset: forecast data for 5 variables on 10 pressure levels and 24
 
 ## {background-image="images/structural/data-models.png" background-size="contain" background-color="#ffffff"}
 
+# NetCDF: Network Common Data Form
+
 ## NetCDF: a data model for multidimensional scientific data
 
 ::: {.columns}
@@ -98,7 +100,6 @@ air_temperature:units = "K"
 Both variables **share dimensions**: the relationship is explicit, not inferred from where values sit in the file.
 
 ## NetCDF guarantees a structure, not a common one
-## Same data, different structure
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -144,8 +145,9 @@ Both are **valid NetCDF**. A generic tool can read both, but it cannot tell whic
 ~1-2 min. Ask: what can software tell for both files? (Dimensions, variables, types.) What can it not tell? (Which dimension is time, what the order should be, how missing data are marked.) The meaning of the values and units belongs to the semantic session later in the workshop.
 :::
 
+# Exercise
 
-## Exercise: help Ash inspect a NetCDF file {.smaller}
+## Help Ash inspect a NetCDF file {.smaller}
 
 ::: {.columns}
 ::: {.column width="70%"}
@@ -246,6 +248,8 @@ Ash learned all of this from the file itself, with no bespoke instructions: that
 ::: notes
 Point out that the same structure is visible for any NetCDF file, so Ash's workflow is reusable. Note that `Conventions = CF-1.4` is only a declaration, and that whether the variables are scientifically comparable is a question for the semantic session later. Retrieving the data (OPeNDAP) is covered in the technical session.
 :::
+
+# Wrap-up
 
 ## Key takeaways
 
