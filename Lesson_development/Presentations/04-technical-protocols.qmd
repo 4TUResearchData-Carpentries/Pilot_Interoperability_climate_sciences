@@ -1,5 +1,5 @@
 ---
-title: "Technical interoperability II: Data access protocols"
+title: "Technical interoperability I: Data access protocols"
 subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF Data"
 ---
 
@@ -7,13 +7,10 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 
 ::: {.columns}
 ::: {.column width="62%"}
-::: {.bubble}
-**How can one computer system access data held by another system?**
-:::
 
-::: {.grey-box}
-How can a computer access scientific data stored on a remote system without necessarily downloading the entire file?
-:::
+> How can one computer system access data held by another system?
+
+> How can a computer access scientific data stored on a remote system without necessarily downloading the entire file?
 :::
 ::: {.column width="38%"}
 ![](images/shared/ash.png){fig-alt="Ash, a researcher" width=70% fig-align="center"}
