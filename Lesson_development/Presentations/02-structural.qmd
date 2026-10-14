@@ -153,8 +153,8 @@ Both are **valid NetCDF**. A generic tool can read both, but it cannot tell whic
 ::: {.column width="70%"}
 Ash has received a radar dataset and wants to know **how it is organised before writing any code.**
 
-Open the OPeNDAP page for the IDRA dataset:\
-<https://opendap.4tu.nl/thredds/dodsC/IDRA/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc.html>
+Open the OPeNDAP page for the IDRA dataset:
+**<https://edu.nl/rgb3j>**
 
 Help Ash identify:
 
