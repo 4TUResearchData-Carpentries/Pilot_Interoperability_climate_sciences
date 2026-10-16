@@ -1,0 +1,407 @@
+---
+title: "Open literature for interoperability in climate & atmospheric sciences"
+subtitle: "An annotated reading map for seven workshop topics"
+author: "4TU.ResearchData · Training resources"
+date: "2026-10-16"
+format:
+  revealjs:
+    theme: simple
+    width: 1600
+    height: 900
+    margin: 0.065
+    slide-level: 2
+    slide-number: c/t
+    transition: fade
+    navigation-mode: linear
+    progress: true
+    controls: true
+    auto-stretch: false
+    footer: "Interoperability in Climate & Atmospheric Sciences · Reading guide"
+    include-in-header:
+      text: |
+        <style>
+        .reveal { --r-heading-color: #16436b; --r-link-color: #135f97; --r-selection-background-color: #d4ecf7; }
+        .reveal .slides section { text-align: left; }
+        .reveal .slides h2 { font-size: 1.18em; font-weight: 750; letter-spacing: -0.015em; margin-bottom: .32em; }
+        .reveal .slides h3 { font-size: .68em; font-weight: 750; margin: 0 0 .47em; color: #285b81; }
+        .reveal .reading-lens { font-size: .62em; background: #eef5fa; border-left: 5px solid #4189aa; border-radius: 4px; padding: .38em .65em; margin-bottom: .75em; }
+        .reveal .column { padding-right: .5em; }
+        .reveal ul { margin: 0 .2em 0 .9em; padding: 0; }
+        .reveal ul li { font-size: .64em; line-height: 1.26; margin-bottom: .67em; }
+        .reveal ul li::marker { color: #4d9fbc; }
+        .reveal .ref-desc { color: #425568; display: block; margin-top: .16em; font-size: .89em; }
+        .reveal .ref-kind { display: inline-block; color: #647486; font-size: .79em; margin-left: .35em; }
+        .reveal .section-note { margin-top: .55em; color: #53697e; font-size: .48em; font-style: italic; border-top: 1px solid #cbd8e3; padding-top: .5em; }
+        .reveal a { text-decoration: none; }
+        .reveal a:hover { text-decoration: underline; }
+        .reveal .slide-number { font-size: 16px; }
+        </style>
+---
+
+## 00 · Foundations of interoperability
+
+::: {.reading-lens}
+**Guiding question:** What does **interoperable** add beyond discoverable and downloadable data?
+:::
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Start here · essential
+
+- **[The FAIR Guiding Principles](https://www.nature.com/articles/sdata201618)**  
+  <span class="ref-desc">Why accessible data still need shared representations and meanings.</span>
+
+- **[Pythia Foundations](https://foundations.projectpythia.org/)**  
+  <span class="ref-desc">Accessible, hands-on geoscience introduction to NetCDF, CF and Xarray.</span>
+
+:::
+
+::: {.column width="50%"}
+
+### Explore further · optional / instructor
+
+- **[EOSC Interoperability Framework](https://op.europa.eu/en/publication-detail/-/publication/d787ea54-6a87-11eb-aeb5-01aa75ed71a1)** <span class="ref-kind">Instructor</span>  
+  <span class="ref-desc">Connects technical and semantic dimensions to broader infrastructures.</span>
+
+- **[FAIR Data in the IPCC Assessment Cycle](https://journals.plos.org/climate/article?id=10.1371/journal.pclm.0000533)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Real climate-science example of sharing and reusing data.</span>
+
+:::
+
+:::
+
+::: {.section-note}
+**Teaching connection:** Assign the FAIR article and relevant Pythia chapters; use the IPCC example for motivation.
+:::
+
+::: {.notes}
+**Full source annotations: 00 · Foundations of interoperability**
+
+- **The FAIR Guiding Principles for Scientific Data Management and Stewardship** — Essential. Introduces FAIR and I1–I3; use to discuss why findable and accessible datasets need not be interpretable or directly comparable. Source: https://www.nature.com/articles/sdata201618
+- **EOSC Interoperability Framework: Report from the EOSC Executive Board Working Groups FAIR and Architecture** — Instructor. Provides a broader interoperability framework, including technical and semantic as well as organizational dimensions; not the same taxonomy as the course. Source: https://op.europa.eu/en/publication-detail/-/publication/d787ea54-6a87-11eb-aeb5-01aa75ed71a1
+- **Pythia Foundations** — Essential. Open geoscience computational textbook; use selected NetCDF/CF and Xarray chapters instead of assigning the entire book. Source: https://foundations.projectpythia.org/
+- **Implementing FAIR Data Principles in the IPCC Seventh Assessment Cycle: Lessons Learned and Future Prospects** — Optional. Shows why FAIR data stewardship and reuse matter in a real climate-science assessment workflow. Source: https://journals.plos.org/climate/article?id=10.1371/journal.pclm.0000533
+
+These notes are visible in Reveal.js speaker view rather than the slide itself.
+:::
+
+## 01 · Structural interoperability
+
+::: {.reading-lens}
+**Guiding question:** How do shared **data models and schemas** help software understand a dataset’s layout?
+:::
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Start here · essential
+
+- **[The NetCDF User’s Guide](https://docs.unidata.ucar.edu/nug/current/)**  
+  <span class="ref-desc">Primary reference for dimensions, variables, attributes and storage.</span>
+
+- **[NetCDF in Python: From Beginner to Pro](https://nordatanet.github.io/NetCDF_in_Python_from_beginner_to_pro/intro.html)**  
+  <span class="ref-desc">Guided inspection and creation of NetCDF and CF metadata.</span>
+
+:::
+
+::: {.column width="50%"}
+
+### Explore further · optional / instructor
+
+- **[Xarray: N-D Labeled Arrays and Datasets](https://doi.org/10.5334/jors.148)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Links the NetCDF model to practical labelled arrays in Python.</span>
+
+- **[The CF Data Model and cf-python](https://gmd.copernicus.org/articles/10/4619/2017/)** <span class="ref-kind">Instructor</span>  
+  <span class="ref-desc">Clarifies how the CF data model relates to its NetCDF encoding.</span>
+
+- **[Frictionless Table Schema](https://specs.frictionlessdata.io/table-schema/)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Shows why CSV benefits from explicit data types and constraints.</span>
+
+- **[WMO Manual on Codes (GRIB/BUFR)](https://community.wmo.int/site/knowledge-hub/programmes-and-initiatives/wmo-information-system-wis/about-manual-codes-volume-i2/latest-version)** <span class="ref-kind">Instructor</span>  
+  <span class="ref-desc">Alternative structured encodings used in meteorology.</span>
+
+:::
+
+:::
+
+::: {.section-note}
+**Teaching connection:** Show how identical arrays may have different storage arrangements and metadata.
+:::
+
+::: {.notes}
+**Full source annotations: 01 · Structural interoperability**
+
+- **The NetCDF User's Guide** — Essential. The authoritative explanation of NetCDF data models, dimensions, variables, attributes, encoding, and chunking. Source: https://docs.unidata.ucar.edu/nug/current/
+- **NetCDF in Python: From Beginner to Pro** — Essential. Practical, freely available course with NetCDF file inspection, CF metadata creation, cell methods, and file organization. Source: https://nordatanet.github.io/NetCDF_in_Python_from_beginner_to_pro/intro.html
+- **xarray: N-D Labeled Arrays and Datasets in Python** — Optional. Peer-reviewed conceptual bridge between the multidimensional NetCDF data model and its use in Python. Source: https://doi.org/10.5334/jors.148
+- **A Data Model of the Climate and Forecast Metadata Conventions (CF-1.6) with a Software Implementation (cf-python v2.1)** — Instructor. Excellent conceptual treatment of the distinctions and relationships between the NetCDF representation and the CF data model. Source: https://gmd.copernicus.org/articles/10/4619/2017/
+- **Table Schema Specification** — Optional. Demonstrates why CSV alone lacks a fully specified machine-readable schema and how field types and constraints can be described. Source: https://specs.frictionlessdata.io/table-schema/
+- **Manual on Codes (WMO-No. 306), Volume I.2: Machine-Readable Codes** — Instructor. Domain-specific counterexample illustrating structured meteorological encodings such as GRIB and BUFR beyond NetCDF. Source: https://community.wmo.int/site/knowledge-hub/programmes-and-initiatives/wmo-information-system-wis/about-manual-codes-volume-i2/latest-version
+
+These notes are visible in Reveal.js speaker view rather than the slide itself.
+:::
+
+## 02 · Semantic interoperability
+
+::: {.reading-lens}
+**Guiding question:** How can scientists distinguish identical variable labels from **identical scientific meaning**?
+:::
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Start here · essential
+
+- **[CF Metadata Conventions 1.13](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.13/cf-conventions.html)**  
+  <span class="ref-desc">Normative rules for coordinates, units, bounds and scientific interpretation.</span>
+
+- **[CF Standard Name Table](https://cfconventions.org/vocabularies.html)**  
+  <span class="ref-desc">Practice matching physical quantities with agreed names and units.</span>
+
+- **[Semantic Interoperability in Environmental Sciences](https://www.nature.com/articles/s41597-024-03669-3)**  
+  <span class="ref-desc">Survey of semantic artefacts, vocabularies and governance.</span>
+
+- **[IOOS Compliance Checker](https://ioos.github.io/compliance-checker/)**  
+  <span class="ref-desc">Validate CF/ACDD conventions; validation is not scientific equivalence.</span>
+
+:::
+
+::: {.column width="50%"}
+
+### Explore further · optional / instructor
+
+- **[Attribute Convention for Data Discovery](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Dataset-level discovery metadata that complement CF variable metadata.</span>
+
+- **[CfRadial](https://ncar.github.io/CfRadial/)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Domain-specific CF extension for radar and lidar observations.</span>
+
+- **[NERC Vocabulary Server](https://vocab.nerc.ac.uk/collection/)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Controlled terms and machine-accessible vocabularies.</span>
+
+- **[Xarray with MetPy](https://unidata.github.io/MetPy/latest/tutorials/xarray_tutorial.html)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Meteorological example of software interpreting units and coordinates.</span>
+
+:::
+
+:::
+
+::: {.section-note}
+**Teaching connection:** Ask learners to compare `long_name`, `standard_name`, units, coordinates, and cell methods.
+:::
+
+::: {.notes}
+**Full source annotations: 02 · Semantic interoperability**
+
+- **NetCDF Climate and Forecast (CF) Metadata Conventions (Version 1.13)** — Essential. Primary normative reference on standard_name, coordinates, units, calendar, cell_methods, bounds, and semantic context. Latest stable release at research date. Source: https://cfconventions.org/Data/cf-conventions/cf-conventions-1.13/cf-conventions.html
+- **CF Standard Names and Other CF Controlled Vocabularies (Standard Name Table v95)** — Essential. Use as a lookup exercise for physical quantities and canonical units; versioned separately from CF Conventions. Source: https://cfconventions.org/vocabularies.html
+- **Assessing Semantic Interoperability in Environmental Sciences: Variety of Approaches and Semantic Artefacts** — Essential. Comparative survey of 540 environmental semantic artefacts; illuminates vocabularies, ontologies, formal representations, and governance. Source: https://www.nature.com/articles/s41597-024-03669-3
+- **Attribute Convention for Data Discovery (ACDD), Version 1.3** — Optional. Shows how discovery-oriented, dataset-level descriptive metadata complement CF variable-level descriptions. Source: https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3
+- **CfRadial: NetCDF CF Conventions for Radial Coordinate Data for RADAR and LIDAR** — Optional. Radar-specific extension of NetCDF/CF, closely matched to the lesson’s precipitation and IDRA radar use case. Source: https://ncar.github.io/CfRadial/
+- **NERC Vocabulary Server: Controlled Vocabulary Collections** — Optional. A domain semantic-resource registry including versioned CF standard names and machine-accessible terminology. Source: https://vocab.nerc.ac.uk/collection/
+- **IOOS Compliance Checker Documentation** — Essential. Practical validation resource for CF and ACDD; explain that syntactic conformance is not proof of full scientific comparability. Source: https://ioos.github.io/compliance-checker/
+- **xarray with MetPy Tutorial** — Optional. Meteorological use case showing how CF-aware software can interpret units and coordinates and why metadata quality matters. Source: https://unidata.github.io/MetPy/latest/tutorials/xarray_tutorial.html
+
+These notes are visible in Reveal.js speaker view rather than the slide itself.
+:::
+
+## 03 · Technical interoperability: OPeNDAP
+
+::: {.reading-lens}
+**Guiding question:** How does a common **data-access protocol** connect independently developed clients and servers?
+:::
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Start here · essential
+
+- **[OPeNDAP User Guide](https://opendap.github.io/documentation/UserGuideComprehensive.html)**  
+  <span class="ref-desc">Client–server data access, metadata queries and selective retrieval.</span>
+
+- **[THREDDS Data Server](https://docs.unidata.ucar.edu/tds/current/adminguide/what_is_the_tds.html)**  
+  <span class="ref-desc">Exposes data collections through multiple interoperable services.</span>
+
+:::
+
+::: {.column width="50%"}
+
+### Explore further · optional / instructor
+
+- **[DAP4 Specification](https://opendap.github.io/dap4-specification/DAP4.html)** <span class="ref-kind">Instructor</span>  
+  <span class="ref-desc">Protocol architecture distinct from specific server software.</span>
+
+- **[NASA OPeNDAP Constraint Expressions](https://www.earthdata.nasa.gov/fr/engage/open-data-services-software/earthdata-developer-portal/opendap/user-guide)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Concrete URL requests for subsetting remote datasets.</span>
+
+:::
+
+:::
+
+::: {.section-note}
+**Teaching connection:** Compare a DAP request with a full file download; separate the protocol from THREDDS.
+:::
+
+::: {.notes}
+**Full source annotations: 03 · Technical interoperability: OPeNDAP**
+
+- **OPeNDAP User Guide** — Essential. Explains client–server separation, DDS/DAS (DAP2), constraint expressions, and server-side selective retrieval. Source: https://opendap.github.io/documentation/UserGuideComprehensive.html
+- **The Data Access Protocol Version 4 (DAP4) Specification** — Instructor. Normative DAP4 architecture and protocol reference; particularly useful for distinguishing the DAP protocol from its server implementations. Source: https://opendap.github.io/dap4-specification/DAP4.html
+- **What Is the THREDDS Data Server?** — Essential. Explains how THREDDS exposes one data collection through several standard data-access services, including OPeNDAP. Source: https://docs.unidata.ucar.edu/tds/current/adminguide/what_is_the_tds.html
+- **OPeNDAP User Guide: Constraint Expressions** — Optional. Concrete HTTP URL and constraint-expression examples for extracting subsets rather than downloading whole datasets. Source: https://www.earthdata.nasa.gov/fr/engage/open-data-services-software/earthdata-developer-portal/opendap/user-guide
+
+These notes are visible in Reveal.js speaker view rather than the slide itself.
+:::
+
+## 04 · Technical interoperability: APIs
+
+::: {.reading-lens}
+**Guiding question:** What does agreeing on a **web API** guarantee—and what does it *not* guarantee?
+:::
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Start here · essential
+
+- **[OGC API: Environmental Data Retrieval Workshop](https://ogcapi-workshop.ogc.org/api-deep-dive/environmental-data-retrieval/)**  
+  <span class="ref-desc">Hands-on environmental data discovery and spatial subsetting.</span>
+
+:::
+
+::: {.column width="50%"}
+
+### Explore further · optional / instructor
+
+- **[Federated Earth Observation Processing](https://www.nature.com/articles/s41597-025-04513-y)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">openEO and standardized APIs across independent providers.</span>
+
+- **[OGC API: Environmental Data Retrieval 1.2](https://docs.ogc.org/is/19-086r9/19-086r9.html)** <span class="ref-kind">Instructor</span>  
+  <span class="ref-desc">Published specification for environmental data access services.</span>
+
+- **[OGC API: Common](https://ogcapi.ogc.org/common/overview.html)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Shared API components and machine-readable interfaces.</span>
+
+:::
+
+:::
+
+::: {.section-note}
+**Teaching connection:** Ask whether a valid API response guarantees scientifically comparable datasets.
+:::
+
+::: {.notes}
+**Full source annotations: 04 · Technical interoperability: APIs**
+
+- **Federated and Reusable Processing of Earth Observation Data** — Optional. Open-access research article examining openEO and interoperable workflows across providers; a case study showing what standardized APIs enable and where data/processing semantics still matter. Source: https://www.nature.com/articles/s41597-025-04513-y
+- **OGC API - Environmental Data Retrieval: Workshop Module** — Essential. A guided exercise on standardized environmental web APIs, discovery, and location-specific requests. Source: https://ogcapi-workshop.ogc.org/api-deep-dive/environmental-data-retrieval/
+- **OGC API - Environmental Data Retrieval Standard, Version 1.2 (OGC 19-086r9)** — Instructor. The published 2026 standard for machine-to-machine spatiotemporal discovery and subsetting; complements DAP rather than replacing it. Source: https://docs.ogc.org/is/19-086r9/19-086r9.html
+- **OGC API - Common: Overview** — Optional. Provides a clear example of machine-readable API descriptions, shared paths and responses, and standardized client interoperability. Source: https://ogcapi.ogc.org/common/overview.html
+
+These notes are visible in Reveal.js speaker view rather than the slide itself.
+:::
+
+## 05 · Cloud-native data layouts
+
+::: {.reading-lens}
+**Guiding question:** What changes when the same scientific arrays move from files to **chunks and object storage**?
+:::
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Start here · essential
+
+- **[Cloud-Optimized Geospatial Formats Guide](https://guide.cloudnativegeo.org/)**  
+  <span class="ref-desc">Clear comparisons of chunked layouts, object stores and formats.</span>
+
+- **[Virtual Zarr Cookbook](https://projectpythia.org/kerchunk-cookbook/README.html)**  
+  <span class="ref-desc">Use Kerchunk/VirtualiZarr without rewriting source files.</span>
+
+- **[Basics of Virtual Zarr Stores](https://projectpythia.org/kerchunk-cookbook/notebooks/foundations/kerchunk-basics/)**  
+  <span class="ref-desc">Step-by-step example with a downscaled climate dataset.</span>
+
+:::
+
+::: {.column width="50%"}
+
+### Explore further · optional / instructor
+
+- **[Zarr Core Specification v3.1](https://zarr-specs.readthedocs.io/en/latest/v3/core/index.html)** <span class="ref-kind">Instructor</span>  
+  <span class="ref-desc">Defines arrays, groups, chunks and metadata: not scientific meaning.</span>
+
+- **[Pangeo Forge](https://www.frontiersin.org/journals/climate/articles/10.3389/fclim.2021.782909/full)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Reproducible pipelines for analysis-ready, cloud-optimized datasets.</span>
+
+- **[Kerchunk in Practice](https://guide.cloudnativegeo.org/kerchunk/kerchunk-in-practice.html)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">Access to CMIP6-related NetCDF through virtual references.</span>
+
+:::
+
+:::
+
+::: {.section-note}
+**Teaching connection:** Compare a NetCDF file with chunked Zarr or a virtual Zarr view of existing data.
+:::
+
+::: {.notes}
+**Full source annotations: 05 · Cloud-native data layouts**
+
+- **Cloud-Optimized Geospatial Formats Guide** — Essential. Illustrated open guide comparing cloud-friendly storage layouts; start with the Zarr chapter and object-storage concepts. Source: https://guide.cloudnativegeo.org/
+- **Zarr Core Specification, Version 3.1** — Instructor. Defines Zarr arrays, groups, metadata documents, chunk grids and object stores; distinguish the format from the scientific semantic conventions. Source: https://zarr-specs.readthedocs.io/en/latest/v3/core/index.html
+- **Pangeo Forge: Crowdsourcing Analysis-Ready, Cloud Optimized Data Production** — Optional. Peer-reviewed open-access analysis of reproducible pipelines for publishing analysis-ready geoscientific datasets in cloud-optimized formats; connects storage layout to reuse and computational workflows. Source: https://www.frontiersin.org/journals/climate/articles/10.3389/fclim.2021.782909/full
+- **Virtual Zarr Cookbook (Kerchunk and VirtualiZarr)** — Essential. Executable notebooks showing how to expose existing NetCDF/HDF data as virtual Zarr without rewriting source files. Source: https://projectpythia.org/kerchunk-cookbook/README.html
+- **Basics of Virtual Zarr Stores** — Essential. One-file walkthrough using a concrete downscaled climate dataset; especially close to the course’s Kerchunk exercise. Source: https://projectpythia.org/kerchunk-cookbook/notebooks/foundations/kerchunk-basics/
+- **Kerchunk in Practice** — Optional. Practical notebook for virtual access to publicly available CMIP6-related NetCDF data. Source: https://guide.cloudnativegeo.org/kerchunk/kerchunk-in-practice.html
+
+These notes are visible in Reveal.js speaker view rather than the slide itself.
+:::
+
+## 06 · Interoperable infrastructure in the AI era
+
+::: {.reading-lens}
+**Guiding question:** Which kinds of interoperability must be in place before scientific datasets become **AI-ready**?
+:::
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Primary reading · instructor context
+
+- **[Building Blocks for AI-Ready Geospatial Data](https://docs.ogc.org/techpaper/26-050/26-050.html)** <span class="ref-kind">Instructor</span>  
+  <span class="ref-desc">A discussion paper connecting semantics, structure and services to AI.</span>
+
+:::
+
+::: {.column width="50%"}
+
+### Complementary reading
+
+- **[Recommendations for FAIR Data Services](https://www.sciencedirect.com/science/article/pii/S2666389920300696)** <span class="ref-kind">Optional</span>  
+  <span class="ref-desc">FAIR infrastructure design: APIs, metadata, ontologies and repositories.</span>
+
+:::
+
+:::
+
+::: {.section-note}
+**Teaching connection:** Discuss which requirements are solved by storage alone and which need governed semantics.
+:::
+
+::: {.notes}
+**Full source annotations: 06 · Interoperable infrastructure in the AI era**
+
+- **Building Blocks for Interoperable, AI-Ready Geospatial Data: The Next Chapter of Spatial Data Infrastructures and Geospatial Ecosystems** — Instructor. Recently published discussion paper directly distinguishing semantic, structural, and technical layers for AI-readiness. It is a proposal, not a normative OGC standard. Source: https://docs.ogc.org/techpaper/26-050/26-050.html
+- **Recommendations for Services in a FAIR Data Ecosystem** — Optional. Explains the role of APIs, domain ontologies, and repositories in machine-actionable FAIR research infrastructures. Source: https://www.sciencedirect.com/science/article/pii/S2666389920300696
+
+These notes are visible in Reveal.js speaker view rather than the slide itself.
+:::
+

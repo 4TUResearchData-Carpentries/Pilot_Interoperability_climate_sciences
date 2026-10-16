@@ -3,29 +3,35 @@ title: "Cloud Native Layouts"
 subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF Data"
 ---
 
-## The Problem
+
+# Problem
 
 ::: {.columns}
+
 ::: {.column width="62%"}
-::: {.bubble}
-Is my data optimised for access even if it is stored in the cloud with a predictable format and following standard metadata conventions?
-:::
+> Is my data optimised for access even if it is stored in the cloud with a predictable format and following standard metadata conventions?
 
-::: {.small}
-Climate datasets are often huge, but researchers usually need only a small subset.
-
-Example: In the [Climate Data Store from Copernicus](https://cds.climate.copernicus.eu/datasets), you are allowed to:
-
-- Select datasets
-- Select variables
-- Select regions
-- Select time-period
-:::
-:::
 ::: {.column width="38%"}
-![](images/shared/ash.png){fig-alt="Ash, a researcher" width=70% fig-align="center"}
+![](images/shared/ash.png){fig-alt="Ash, a researcher" width="70%" fig-align="center"}
 :::
+
 :::
+
+:::
+
+# A bit of context
+
+::: {.fragment}
+
+Climate datasets are often huge, but researchers usually need only a small part of the data for a particular analysis. A researcher might only need one variable, a short time period, one pressure level, or a small geographical region.
+
+See [Climate Data Store from Copernicus](https://cds.climate.copernicus.eu/datasets)
+
+Large data collections such as [ERA5](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview) can extend across **terabytes** or **petabytes** of data.
+
+:::
+
+
 
 ::: notes
 Large data collections such as [ERA5](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview) or [CMIP6](https://wcrp-cmip.org/cmip-phases/cmip6/) can extend across terabytes or petabytes of data.
@@ -33,35 +39,47 @@ Large data collections such as [ERA5](https://cds.climate.copernicus.eu/datasets
 Researchers, however, rarely need an entire collection for a particular analysis. A researcher might only need one variable, a short time period, one pressure level, or a small geographical region.
 :::
 
-## But how can that be achieved? {.center-text}
+# But, how can that be achieved? {.center-text}
 
-::: notes
-Large data collections such as [ERA5](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview) or [CMIP6](https://wcrp-cmip.org/cmip-phases/cmip6/) can extend across terabytes or petabytes of data.
 
-Researchers, however, rarely need an entire collection for a particular analysis. A researcher might only need one variable, a short time period, one pressure level, or a small geographical region.
+
+
+::: {.fragment}
+
+::: {.callout-warning appearance="simple"}
+
+Cloud native does not just mean "in the cloud"
+
 :::
 
-## Cloud native does not just mean "in the cloud"
+:::
 
-::: {.box}
+
+::: {.fragment}
+
+
+::: {.callout-note appearance="simple"}
 Cloud native is about the access model
 :::
 
+:::
+
+::: {.fragment}
+
 ::: {.small}
 1. Cloud native layouts support workflows in which software retrieves only selected parts of a dataset and can perform multiple reads in parallel.
-2. The important idea is therefore not simply **where the data are stored**, but **how the data are organised for access**.
+2. The important idea is NOT only **where the data are stored**, but **how the data are organised for access**.
 :::
 
-## The traditional file-based workflow
-
-::: {.columns}
-::: {.column width="35%"}
-**Rationale: One file, one unit of access**
 :::
-::: {.column width="65%"}
+
+# Lets take a step back on how the traditional file-based works 
+
+## One file, one unit of access
+
+
 ![](images/cloud/file-based-workflow.png){fig-alt="A researcher accessing one large NetCDF file stored in the cloud"}
-:::
-:::
+
 
 ::: notes
 Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.
@@ -69,20 +87,15 @@ Many traditional scientific workflows are organised around files. A researcher f
 
 ## Cloud native layouts
 
-::: {.columns}
-::: {.column width="35%"}
-**Rationale: Break down each file into smaller independently accessible parts**
-:::
-::: {.column width="65%"}
+Rationale: Break down each file into smaller independently accessible parts
+
 ![](images/cloud/cloud-native-layout.png){fig-alt="Several users reading separate parts of a dataset stored in the cloud"}
-:::
-:::
 
-::: notes
-Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.
-:::
 
-## NetCDF vs Zarr {.smaller}
+
+# NetCDF vs Zarr {.smaller}
+
+## NetCDF
 
 ::: {.row}
 ::: {.center-text}
@@ -106,47 +119,43 @@ It gets uploaded to an object storage cloud infrastructure
 :::
 :::
 
-::: {.dark-box}
+::: {.fragment}
+::: {.callout-warning appearance="simple"}
 But it is not a scalable model for workflows involving many repeated subsets, many parallel readers
 :::
-
-::: notes
-This definition does not require every explanation to be written directly inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.
 :::
+
+
 
 ## {background-image="images/cloud/netcdf-in-object-storage.png" background-size="contain" background-color="#ffffff"}
 
-## NetCDF vs Zarr {.smaller}
+## Zarr : a cloud-oriented chunked representation
 
-::: {.row}
-::: {.center-text}
-**Zarr:**\
-a cloud-oriented chunked representation
+![](images/cloud/zarr.png){fig-alt="Zarr storage layout"}
 
-Zarr divides arrays into smaller pieces called **chunks**. A chunk represents a region of a multidimensional array, can be read independently from the others and its size is a design choice that should match the expected access pattern.
+::: {.fragment}
+
+- Zarr divides arrays into smaller pieces called **chunks**. 
+- A chunk represents a region of a multidimensional array, can be read independently from the others 
+- The size of the chunk is a design choice that should match the expected access pattern.
+
 :::
-::: {.arrow}
-→
-:::
-::: {.center-text}
-It gets uploaded to an object storage cloud infrastructure
-:::
-::: {.arrow}
-→
-:::
+
+
+## If a Zarr object is stored in an object storage cloud infrastructure
+
+::: {.fragment}
 ::: {.checks}
 - Remote access is possible.
 - Each chunk can be retrieved independently
 - Supports parallel access
 :::
+
+
+::: {.pill .pill-lg .p-cream}
+A  Zarr storage layout can expose those chunks as **independently addressable parts of the storage system**
 :::
 
-::: {.box}
-The key difference from a cloud perspective is that a Zarr storage layout can expose those chunks as **independently addressable parts of the storage system**
-:::
-
-::: notes
-Zarr is a format for storing multidimensional arrays together with the metadata needed to interpret them. Like NetCDF, it can represent scientific data with multiple dimensions and variables, but it uses a different physical storage model.
 :::
 
 ## {background-image="images/cloud/zarr-in-object-storage.png" background-size="contain" background-color="#ffffff"}
@@ -160,27 +169,30 @@ Zarr is a format for storing multidimensional arrays together with the metadata 
 - Both can represent multidimensional scientific data. What changes is how that data is physically organised and retrieved.
 :::
 
-::: notes
-Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.
-:::
 
-## Exercise: What changes in interoperability? {.smaller}
+## Exercise: What changes in interoperability? {.smaller} (Think/Discuss)
 
-Imagine that the same scientific dataset is moved from a conventional NetCDF file representation to a cloud-native layout such as Zarr. **Think individually for 1–2 minutes, then discuss with a partner:**
+Imagine that the same scientific dataset is moved from a conventional NetCDF file representation to a cloud-native layout such as Zarr. Which aspects of interoperability change when moving from a conventional NetCDF file representation to a cloud-native layout such as Zarr? Which aspect is not automatically changed or improved by this move?
 
-Which aspects of interoperability change when moving from a conventional NetCDF file representation to a cloud-native layout such as Zarr? Which aspect is not automatically changed or improved by this move?
+As you discuss, consider these three questions:
 
-Be prepared to explain your reasoning to the group.
+- Does the physical organisation of the data change?
+- Does the way software accesses the data change?
+- Does the scientific meaning of variables, units, and coordinates automatically change?
 
-::: notes
-Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.
-:::
+
 
 ## Self-paced demo
 
 **Hands-on:**\
-**NetCDF to virtual Zarr-compatible access with Kerchunk**
+**Creating Zarr-compatible access from NetCDF , with Kerchunk**
 
-::: notes
-Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.
-:::
+# Key takeaways
+
+- Cloud-native data layouts address the problem of efficiently accessing small parts of very large remote datasets.
+- Object storage manages independently addressable objects rather than providing the same access model as a traditional filesystem.
+- A conventional NetCDF file can be stored in the cloud without becoming a cloud-native data layout.
+- Zarr uses a chunk-oriented representation that maps naturally onto selective and parallel access in object storage.
+- Cloud-native layouts affect structural and technical interoperability; semantic interoperability still depends on conventions such as CF.
+- Kerchunk provides a Zarr-compatible reference view of existing NetCDF or HDF5 data without duplicating the underlying scientific data.
+- OPeNDAP, Zarr, and Kerchunk provide different approaches to efficient remote scientific-data access.

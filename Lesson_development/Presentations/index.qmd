@@ -26,3 +26,7 @@ format:
 ## Lesson Materials 
 
 [Full lesson materials](https://4turesearchdata-carpentries.github.io/interoperability-climate-sciences/index.html)
+
+## References
+
+- [References](07-references.html)
