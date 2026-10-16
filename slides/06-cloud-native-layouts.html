@@ -139,30 +139,29 @@
 </div>
 
 </section>
-<section id="the-problem" class="slide level2 center">
-<h2>The Problem</h2>
+<section id="problem" class="title-slide slide level1 center">
+<h1>Problem</h1>
 <div class="columns">
 <div class="column" style="width:62%;">
-<div class="bubble">
+<blockquote>
 <p>Is my data optimised for access even if it is stored in the cloud with a predictable format and following standard metadata conventions?</p>
-</div>
-<div class="small">
-<p>Climate datasets are often huge, but researchers usually need only a small subset.</p>
-<p>Example: In the <a href="https://cds.climate.copernicus.eu/datasets">Climate Data Store from Copernicus</a>, you are allowed to:</p>
-<ul>
-<li>Select datasets</li>
-<li>Select variables</li>
-<li>Select regions</li>
-<li>Select time-period</li>
-</ul>
-</div>
-</div><div class="column" style="width:38%;">
+</blockquote>
+<div class="column" style="width:38%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/shared/ash.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Ash, a researcher"></p>
 </figure>
 </div>
-</div></div>
+</div></div></div>
+</section>
+
+<section id="a-bit-of-context" class="title-slide slide level1 center">
+<h1>A bit of context</h1>
+<div class="fragment">
+<p>Climate datasets are often huge, but researchers usually need only a small part of the data for a particular analysis. A researcher might only need one variable, a short time period, one pressure level, or a small geographical region.</p>
+<p>See <a href="https://cds.climate.copernicus.eu/datasets">Climate Data Store from Copernicus</a></p>
+<p>Large data collections such as <a href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview">ERA5</a> can extend across <strong>terabytes</strong> or <strong>petabytes</strong> of data.</p>
+</div>
 <aside class="notes">
 <p>Large data collections such as <a href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview">ERA5</a> or <a href="https://wcrp-cmip.org/cmip-phases/cmip6/">CMIP6</a> can extend across terabytes or petabytes of data.</p>
 <p>Researchers, however, rarely need an entire collection for a particular analysis. A researcher might only need one variable, a short time period, one pressure level, or a small geographical region.</p>
@@ -178,44 +177,52 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="but-how-can-that-be-achieved" class="slide level2 center-text center">
-<h2>But how can that be achieved?</h2>
-<aside class="notes">
-<p>Large data collections such as <a href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview">ERA5</a> or <a href="https://wcrp-cmip.org/cmip-phases/cmip6/">CMIP6</a> can extend across terabytes or petabytes of data.</p>
-<p>Researchers, however, rarely need an entire collection for a particular analysis. A researcher might only need one variable, a short time period, one pressure level, or a small geographical region.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="cloud-native-does-not-just-mean-in-the-cloud" class="slide level2 center">
-<h2>Cloud native does not just mean “in the cloud”</h2>
-<div class="box">
+
+<section id="but-how-can-that-be-achieved" class="title-slide slide level1 center-text center">
+<h1>But, how can that be achieved?</h1>
+<div class="fragment">
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Cloud native does not just mean “in the cloud”</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
 <p>Cloud native is about the access model</p>
 </div>
+</div>
+</div>
+</div>
+<div class="fragment">
 <div class="small">
 <ol type="1">
 <li>Cloud native layouts support workflows in which software retrieves only selected parts of a dataset and can perform multiple reads in parallel.</li>
-<li>The important idea is therefore not simply <strong>where the data are stored</strong>, but <strong>how the data are organised for access</strong>.</li>
+<li>The important idea is NOT only <strong>where the data are stored</strong>, but <strong>how the data are organised for access</strong>.</li>
 </ol>
 </div>
+</div>
 </section>
-<section id="the-traditional-file-based-workflow" class="slide level2 center">
-<h2>The traditional file-based workflow</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
-<p><strong>Rationale: One file, one unit of access</strong></p>
-</div><div class="column" style="width:65%;">
-<p><img data-src="images/cloud/file-based-workflow.png" alt="A researcher accessing one large NetCDF file stored in the cloud"></p>
-</div></div>
-<aside class="notes">
+
+<section>
+<section id="lets-take-a-step-back-on-how-the-traditional-file-based-works" class="title-slide slide level1 center">
+<h1>Lets take a step back on how the traditional file-based works</h1>
+
+</section>
+<section id="one-file-one-unit-of-access" class="slide level2 center">
+<h2>One file, one unit of access</h2>
+
+<img data-src="images/cloud/file-based-workflow.png" alt="A researcher accessing one large NetCDF file stored in the cloud" class="r-stretch"><aside class="notes">
 <p>Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -231,28 +238,16 @@
 </section>
 <section id="cloud-native-layouts" class="slide level2 center">
 <h2>Cloud native layouts</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
-<p><strong>Rationale: Break down each file into smaller independently accessible parts</strong></p>
-</div><div class="column" style="width:65%;">
-<p><img data-src="images/cloud/cloud-native-layout.png" alt="Several users reading separate parts of a dataset stored in the cloud"></p>
-</div></div>
-<aside class="notes">
-<p>Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>Rationale: Break down each file into smaller independently accessible parts</p>
+
+<img data-src="images/cloud/cloud-native-layout.png" alt="Several users reading separate parts of a dataset stored in the cloud" class="r-stretch"></section></section>
+<section>
+<section id="netcdf-vs-zarr" class="title-slide slide level1 smaller center">
+<h1>NetCDF vs Zarr</h1>
+
 </section>
-<section id="netcdf-vs-zarr" class="slide level2 smaller center">
-<h2>NetCDF vs Zarr</h2>
+<section id="netcdf" class="slide level2 center">
+<h2>NetCDF</h2>
 <div class="row">
 <div class="center-text">
 <p><strong>NetCDF:</strong><br>
@@ -275,43 +270,36 @@ a primarily file-oriented representation</p>
 </ul>
 </div>
 </div>
-<div class="dark-box">
+<div class="fragment">
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
 <p>But it is not a scalable model for workflows involving many repeated subsets, many parallel readers</p>
 </div>
-<aside class="notes">
-<p>This definition does not require every explanation to be written directly inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
+</div>
+</div>
 </section>
 <section id="section" class="slide level2 center" data-background-image="images/cloud/netcdf-in-object-storage.png" data-background-size="contain" data-background-color="#ffffff">
 <h2></h2>
 </section>
-<section id="netcdf-vs-zarr-1" class="slide level2 smaller center">
-<h2>NetCDF vs Zarr</h2>
-<div class="row">
-<div class="center-text">
-<p><strong>Zarr:</strong><br>
-a cloud-oriented chunked representation</p>
-<p>Zarr divides arrays into smaller pieces called <strong>chunks</strong>. A chunk represents a region of a multidimensional array, can be read independently from the others and its size is a design choice that should match the expected access pattern.</p>
+<section id="zarr-a-cloud-oriented-chunked-representation" class="slide level2 center">
+<h2>Zarr : a cloud-oriented chunked representation</h2>
+
+<img data-src="images/cloud/zarr.png" alt="Zarr storage layout" class="r-stretch"><div class="fragment">
+<ul>
+<li>Zarr divides arrays into smaller pieces called <strong>chunks</strong>.</li>
+<li>A chunk represents a region of a multidimensional array, can be read independently from the others</li>
+<li>The size of the chunk is a design choice that should match the expected access pattern.</li>
+</ul>
 </div>
-<div class="arrow">
-<p>→</p>
-</div>
-<div class="center-text">
-<p>It gets uploaded to an object storage cloud infrastructure</p>
-</div>
-<div class="arrow">
-<p>→</p>
-</div>
+</section>
+<section id="if-a-zarr-object-is-stored-in-an-object-storage-cloud-infrastructure" class="slide level2 center">
+<h2>If a Zarr object is stored in an object storage cloud infrastructure</h2>
+<div class="fragment">
 <div class="checks">
 <ul>
 <li>Remote access is possible.</li>
@@ -319,23 +307,10 @@ a cloud-oriented chunked representation</p>
 <li>Supports parallel access</li>
 </ul>
 </div>
+<div class="pill pill-lg p-cream">
+<p>A Zarr storage layout can expose those chunks as <strong>independently addressable parts of the storage system</strong></p>
 </div>
-<div class="box">
-<p>The key difference from a cloud perspective is that a Zarr storage layout can expose those chunks as <strong>independently addressable parts of the storage system</strong></p>
 </div>
-<aside class="notes">
-<p>Zarr is a format for storing multidimensional arrays together with the metadata needed to interpret them. Like NetCDF, it can represent scientific data with multiple dimensions and variables, but it uses a different physical storage model.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="section-1" class="slide level2 center" data-background-image="images/cloud/zarr-in-object-storage.png" data-background-size="contain" data-background-color="#ffffff">
 <h2></h2>
@@ -350,56 +325,33 @@ a cloud-oriented chunked representation</p>
 <li>Both can represent multidimensional scientific data. What changes is how that data is physically organised and retrieved.</li>
 </ul>
 </div>
-<aside class="notes">
-<p>Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="exercise-what-changes-in-interoperability" class="slide level2 smaller center">
-<h2>Exercise: What changes in interoperability?</h2>
-<p>Imagine that the same scientific dataset is moved from a conventional NetCDF file representation to a cloud-native layout such as Zarr. <strong>Think individually for 1–2 minutes, then discuss with a partner:</strong></p>
-<p>Which aspects of interoperability change when moving from a conventional NetCDF file representation to a cloud-native layout such as Zarr? Which aspect is not automatically changed or improved by this move?</p>
-<p>Be prepared to explain your reasoning to the group.</p>
-<aside class="notes">
-<p>Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="exercise-what-changes-in-interoperability-.smaller-thinkdiscuss" class="slide level2 center">
+<h2>Exercise: What changes in interoperability? {.smaller} (Think/Discuss)</h2>
+<p>Imagine that the same scientific dataset is moved from a conventional NetCDF file representation to a cloud-native layout such as Zarr. Which aspects of interoperability change when moving from a conventional NetCDF file representation to a cloud-native layout such as Zarr? Which aspect is not automatically changed or improved by this move?</p>
+<p>As you discuss, consider these three questions:</p>
+<ul>
+<li>Does the physical organisation of the data change?</li>
+<li>Does the way software accesses the data change?</li>
+<li>Does the scientific meaning of variables, units, and coordinates automatically change?</li>
+</ul>
 </section>
 <section id="self-paced-demo" class="slide level2 center">
 <h2>Self-paced demo</h2>
 <p><strong>Hands-on:</strong><br>
-<strong>NetCDF to virtual Zarr-compatible access with Kerchunk</strong></p>
-<aside class="notes">
-<p>Many traditional scientific workflows are organised around files. A researcher finds a file on a repository or server, downloads or opens it, selects the required observations, and then performs the analysis.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<strong>Creating Zarr-compatible access from NetCDF , with Kerchunk</strong></p>
+</section></section>
+<section id="key-takeaways" class="title-slide slide level1 center">
+<h1>Key takeaways</h1>
+<ul>
+<li>Cloud-native data layouts address the problem of efficiently accessing small parts of very large remote datasets.</li>
+<li>Object storage manages independently addressable objects rather than providing the same access model as a traditional filesystem.</li>
+<li>A conventional NetCDF file can be stored in the cloud without becoming a cloud-native data layout.</li>
+<li>Zarr uses a chunk-oriented representation that maps naturally onto selective and parallel access in object storage.</li>
+<li>Cloud-native layouts affect structural and technical interoperability; semantic interoperability still depends on conventions such as CF.</li>
+<li>Kerchunk provides a Zarr-compatible reference view of existing NetCDF or HDF5 data without duplicating the underlying scientific data.</li>
+<li>OPeNDAP, Zarr, and Kerchunk provide different approaches to efficient remote scientific-data access.</li>
+</ul>
 
 </section>
     </div>
