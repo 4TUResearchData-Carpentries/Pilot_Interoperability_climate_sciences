@@ -170,15 +170,9 @@ A  Zarr storage layout can expose those chunks as **independently addressable pa
 :::
 
 
-## Exercise: What changes in interoperability? {.smaller} (Think/Discuss)
+## Cloud optimized Geospatail data 
 
-Imagine that the same scientific dataset is moved from a conventional NetCDF file representation to a cloud-native layout such as Zarr. Which aspects of interoperability change when moving from a conventional NetCDF file representation to a cloud-native layout such as Zarr? Which aspect is not automatically changed or improved by this move?
-
-As you discuss, consider these three questions:
-
-- Does the physical organisation of the data change?
-- Does the way software accesses the data change?
-- Does the scientific meaning of variables, units, and coordinates automatically change?
+![From https://guide.cloudnativegeo.org/](images/cloud/cloud-optimized-geospatial-formats.png)
 
 
 
