@@ -172,102 +172,32 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="what-makes-data-infrastructure-ai-ready" class="slide level1 center">
-<h1>What makes data infrastructure AI-ready?</h1>
+<section id="what-does-ai-ready-mean" class="slide level1 center">
+<h1>What does “AI-ready” mean?</h1>
 <div class="fragment center-text">
 <p><strong>AI-ready infrastructure</strong> enables a <strong>defined machine-learning workflow</strong> to discover, access, interpret, retrieve, transform, and trace the data it needs with minimal dataset-specific manual intervention.</p>
 </div>
 <div class="fragment">
-<div class="row">
-<div class="labelled">
-<div class="pill p-grey">
-<p>Structural</p>
+<ul>
+<li><p>AI readiness is task-dependent.</p></li>
+<li><p>No single data format or technology automatically makes a dataset AI-ready.</p></li>
+<li><p>AI readiness therefore builds on interoperability, but extends beyond it.</p></li>
+</ul>
 </div>
-<p>Predictable arrays, dimensions, and coordinates</p>
-</div>
-<div class="labelled">
-<div class="pill p-red">
-<p>Semantic</p>
-</div>
-<p>Explicit quantities, units, and measurement context</p>
-</div>
-<div class="labelled">
-<div class="pill p-tan">
-<p>Technical</p>
-</div>
-<p>Programmatic, repeatable access to required data</p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><strong>Scale matters, but format alone is not enough.</strong> NetCDF through OPeNDAP, Zarr, or a Kerchunk-based virtual representation can all be useful, depending on the workflow. None automatically guarantees suitable training data.</p>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>AI readiness is task-dependent: a dataset appropriate for one forecasting model might lack the temporal resolution, spatial coverage, variables, or labels needed by another.</p>
-<p>Structural interoperability means software can locate and interpret the organisation of arrays and coordinates. Semantic interoperability means that variables and their scientific context are described consistently. Technical interoperability means software can retrieve data without manual downloads.</p>
-<p>Large-scale workflows may repeatedly retrieve small spatial or temporal subsets, so chunking and remote access patterns also matter. A cloud-native layout such as Zarr can help with suitable workloads, but it is not compulsory. NetCDF served by OPeNDAP may already meet the needs of a specific workflow; Kerchunk can expose existing files through a Zarr-compatible reference model.</p>
-<p>Interoperable source data still require task-specific preparation, such as coordinate alignment, resampling, unit conversion, missing-value handling, and label creation. A repository need not anticipate every possible ML task.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="what-interoperability-can-and-cannot-solve" class="slide level1 center">
-<h1>What interoperability can and cannot solve</h1>
-<div class="fragment center-text">
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="interoperability-requirements">Interoperability requirements</h3>
-<div class="labelled">
-<div class="pill p-grey">
-<p>Structural</p>
-</div>
-<p>Harmonise or map the inconsistent time dimension.</p>
-</div>
-<div class="labelled">
-<div class="pill p-red">
-<p>Semantic</p>
-</div>
-<p>Describe rainfall using shared terms, units, and measurement context.</p>
-</div>
-<div class="labelled">
-<div class="pill p-tan">
-<p>Technical</p>
-</div>
-<p>Provide repeatable, programmatic access to the older radar archive.</p>
-</div>
-</div><div class="column" style="width:50%;">
-<h3 id="beyond-interoperability">Beyond interoperability</h3>
-<div class="labelled">
-<div class="pill p-cream">
-<p>Reproducibility</p>
-</div>
-<p>Record source versions, provenance, and preprocessing parameters.</p>
-</div>
-<div class="labelled">
-<div class="pill p-grey">
-<p>Scientific suitability</p>
-</div>
-<p>Check whether the data are suitable for training the model, particularly whether missing observations during extreme rainfall events could affect its predictions.</p>
-</div>
-</div></div>
-</div>
+<section id="ai-changes-the-scale-of-the-interoperability-problem" class="slide level1 center">
+<h1>AI changes the scale of the interoperability problem</h1>
+</section>
+<section id="section" class="slide level1 center">
+<h1><img data-src="images/ai/AI_Interoperability_at_Scale.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></h1>
+</section>
+<section id="interoperability-does-not-guarantee-trustworthy-ai" class="slide level1 center">
+<h1>Interoperability does not guarantee trustworthy AI</h1>
+<ul>
+<li><p>Interoperability is an important foundation for automated and reproducible AI workflows, but it should not be confused with scientific validity or model quality.</p></li>
+<li><p>Datasets can be structurally, semantically, and technically interoperable while still contain measurement errors.</p></li>
+<li><p>Interoperability <strong>does not</strong> address questions of data quality, representativeness, modelling methodology, validation, uncertainty, and scientific interpretation.</p></li>
+</ul>
 </section>
 <section id="example-ai-for-earth-observation" class="slide level1 center">
 <h1>Example : AI for Earth Observation</h1>
