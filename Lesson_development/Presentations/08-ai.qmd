@@ -1,0 +1,174 @@
+---
+title: "Interoperable Infrastructure in the AI Era"
+subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF Data"
+format:
+  revealjs:
+    slide-level: 1
+---
+
+<!-- Five slides in total: the title slide plus the four sections below. -->
+
+# Problem
+
+::: {.columns}
+
+::: {.column width="62%"}
+
+> How can Ash train an extreme-rainfall prediction model using years of radar and atmospheric data **without correcting each dataset manually**?
+
+
+:::
+
+
+::: {.column width="38%"}
+![](images/shared/ash.png){fig-alt="Ash, the researcher featured throughout the interoperability lessons" width="70%" fig-align="center"}
+:::
+
+:::
+
+::: notes
+Previously, Ash compared two IDRA radar datasets. She now wants to build an extreme-rainfall prediction model using several years of radar observations, atmospheric observations, and reanalysis data. A human can sometimes rename variables, inspect a README, or download individual files, but a large automated pipeline cannot reliably depend on those interventions.
+
+AI is not a fourth interoperability layer. It makes the existing structural, semantic, and technical requirements more visible as the workflow becomes more automated and data-intensive.
+:::
+
+# What makes data infrastructure AI-ready?
+
+::: {.fragment .center-text}
+
+**AI-ready infrastructure** enables a **defined machine-learning workflow** to discover, access, interpret, retrieve, transform, and trace the data it needs with minimal dataset-specific manual intervention.
+
+:::
+
+::: {.fragment}
+
+::: {.row}
+
+::: {.labelled}
+::: {.pill .p-grey}
+Structural
+:::
+Predictable arrays, dimensions, and coordinates
+:::
+
+::: {.labelled}
+::: {.pill .p-red}
+Semantic
+:::
+Explicit quantities, units, and measurement context
+:::
+
+::: {.labelled}
+::: {.pill .p-tan}
+Technical
+:::
+Programmatic, repeatable access to required data
+:::
+
+:::
+
+:::
+
+::: {.fragment}
+
+::: {.callout-note appearance="simple"}
+**Scale matters, but format alone is not enough.** NetCDF through OPeNDAP, Zarr, or a Kerchunk-based virtual representation can all be useful, depending on the workflow. None automatically guarantees suitable training data.
+:::
+
+:::
+
+::: notes
+AI readiness is task-dependent: a dataset appropriate for one forecasting model might lack the temporal resolution, spatial coverage, variables, or labels needed by another.
+
+Structural interoperability means software can locate and interpret the organisation of arrays and coordinates. Semantic interoperability means that variables and their scientific context are described consistently. Technical interoperability means software can retrieve data without manual downloads.
+
+Large-scale workflows may repeatedly retrieve small spatial or temporal subsets, so chunking and remote access patterns also matter. A cloud-native layout such as Zarr can help with suitable workloads, but it is not compulsory. NetCDF served by OPeNDAP may already meet the needs of a specific workflow; Kerchunk can expose existing files through a Zarr-compatible reference model.
+
+Interoperable source data still require task-specific preparation, such as coordinate alignment, resampling, unit conversion, missing-value handling, and label creation. A repository need not anticipate every possible ML task.
+:::
+
+
+
+# What interoperability can and cannot solve
+
+::: {.fragment .center-text}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Interoperability requirements
+
+::: {.labelled}
+::: {.pill .p-grey}
+Structural
+:::
+Harmonise or map the inconsistent time dimension.
+:::
+
+::: {.labelled}
+::: {.pill .p-red}
+Semantic
+:::
+Describe rainfall using shared terms, units, and measurement context.
+:::
+
+::: {.labelled}
+::: {.pill .p-tan}
+Technical
+:::
+Provide repeatable, programmatic access to the older radar archive.
+:::
+
+:::
+
+::: {.column width="50%"}
+
+### Beyond interoperability
+
+::: {.labelled}
+::: {.pill .p-cream}
+Reproducibility
+:::
+Record source versions, provenance, and preprocessing parameters.
+:::
+
+::: {.labelled}
+::: {.pill .p-grey}
+Scientific suitability
+:::
+Check whether the data are suitable for training the model, 
+particularly whether missing observations during extreme rainfall events could affect its predictions.
+:::
+
+:::
+
+:::
+:::
+
+# Example : AI for Earth Observation 
+
+
+![FAIR-EO: AI for Earth Observation](images/ai/fair-eo.png){width="70%" fig-align="center"}
+
+https://eodata.bvlabs.ai/ai4eo/#/
+
+# Anemoi European framework for AI
+
+![Anemoi: European framework for AI](images/ai/anemoi.png){width="70%" fig-align="center"}
+
+https://www.ecmwf.int/en/about/media-centre/aifs-blog/2026/anemoi-european-framework-ai
+
+# Key takeaways
+
+- AI readiness is task-dependent. No single data format or technology automatically makes a dataset AI-ready.
+
+- AI does not introduce a new interoperability layer. Instead, automated AI workflows increase the importance of structural, semantic, and technical interoperability.
+
+- Interoperable source data provide a foundation from which task-specific AI training datasets can be constructed reproducibly.
+
+- Cloud-native layouts such as Zarr can improve selective and parallel access for suitable large-scale workflows, but they do not automatically improve semantic interoperability or data quality.
+
+- Persistent identification, provenance, and versioning complement interoperability by connecting models and derived training data to the exact source data and transformations from which they were produced.
+
+- Interoperability supports reproducible and inspectable AI workflows, but it does not guarantee that training data are representative, scientifically appropriate, unbiased, or sufficient for a particular model.
