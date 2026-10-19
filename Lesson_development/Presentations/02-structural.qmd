@@ -158,11 +158,10 @@ Help Ash identify:
 
 1. the global attributes
 2. the dimensions and their lengths
-3. the coordinate variables
-4. three data variables and their dimensions
-5. the data types of those variables
-6. one variable-level attribute that controls how missing data are represented
-7. any variables that hold descriptive metadata as *data values* rather than as global attributes
+3. three data variables and their dimensions
+4. the data types of those variables
+5. one variable-level attribute that controls how missing data are represented
+6. any variables that hold descriptive metadata as *data values* rather than as global attributes
 
 :::
 ::: {.column width="30%"}
@@ -197,24 +196,13 @@ scalar              = 1
 ```
 :::
 ::: {.column width="50%"}
-**3. Coordinate variables**
 
-```text
-time_raw_data(time_raw_data)
-sample_beat_signal(sample_beat_signal)
-time_processed_data(time_processed_data)
-range(range)
-```
-
-`scalar` has no variable of the same name: it is just a length-one dimension used by several variables.
-:::
-:::
 
 ## Solution: Ash's findings (2/2) {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
-**4 and 5. Data variables, dimensions, types**
+**3 and 4. Data variables, dimensions, types**
 
 ```text
 i_hh(time_raw_data, sample_beat_signal)
@@ -227,13 +215,13 @@ azimuth_processed_data(time_processed_data)
 ```
 :::
 ::: {.column width="50%"}
-**6. Missing data**
+**5. Missing data**
 
 `_FillValue: -999.0` on `equivalent_reflectivity_factor`, `differential_reflectivity`, `radial_velocity`, `spectrum_width`.
 
 Its existence, location, and type are *structural*. Whether to exclude or interpolate missing values is an *analytical* decision.
 
-**7. Metadata stored as variables**
+**6. Metadata stored as variables**
 
 `iso_dataset`, `product`, `station_details`: string variables, **not** global attributes.
 :::
