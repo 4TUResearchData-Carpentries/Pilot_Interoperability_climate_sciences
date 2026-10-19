@@ -19,7 +19,7 @@ format:
 
 ## Afternoon session
 
-- [Technical interoperability II: Data access protocols](04-technical-protocols.html)
+- [Technical interoperability I: Data access protocols](04-technical-protocols.html)
 - [Technical interoperability II: API](05-technical-api.html)
 - [Cloud native layouts](06-cloud-native-layouts.html)
 - [Interoperable infrastructure in the AI era](08-ai.html) 
