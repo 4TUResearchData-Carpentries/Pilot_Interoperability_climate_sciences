@@ -8,7 +8,7 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 ::: {.columns}
 
 ::: {.column width="62%"}
-> Can others understand the meaning of the data orrectly without making unnecessary assumptions?
+> Can others understand the meaning of the data correctly without making unnecessary assumptions?
 :::
 
 ::: {.column width="38%"}
