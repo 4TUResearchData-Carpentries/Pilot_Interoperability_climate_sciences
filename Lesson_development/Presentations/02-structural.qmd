@@ -16,6 +16,12 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 ![](images/shared/ash.png){fig-alt="Ash, a researcher" width="70%" fig-align="center"}
 :::
 
+::: notes
+Structural interoperability concerns the organisation and representation of data. 
+
+It helps solving the following problem: 
+:::
+
 :::
 
 ## Structural Interoperability 
@@ -27,29 +33,60 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 - Which values represent missing data
 - Whether the dataset follows expected structural rules
 
+::: {.fragment}
 
 ::: {.callout-note appearance="simple"}
 Machines can determine **how** a dataset is organised (structure), even if they do not yet understand **what** the values represent (semantics).
 :::
 
+:::
+
 ::: notes
-Structural interoperability sits between technical and semantic. This definition does not require every explanation to be written inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.
+The definition of the structure does not require every explanation to be written inside one file. 
+Meaning may also be expressed through persistent identifiers that resolve to external:
+
+- vocabularies, 
+- code lists, 
+- specifications,
+- instruments, 
+- methods, 
+- provenance records. 
+
+What matters is that the references and relationships are explicit and **machine-actionable** , not hidden in personal knowledge, filenames, or informal documentation.
 :::
 
 # How to achieve structural interoperability?
 ## A shared data contract
 
+::: notes
+**~1 min. One idea: the contract is the data model, not the file extension.**
+
+1. **(Before any click)** Can another tool read my data without asking me? Yes, if we agree on how data are organised. That agreement is the **data contract**.
+2. **(Click 1)** At its centre is the **data model**: what software expects to find. A table, a set of arrays, a raster."
+3. **(Click 2)** "A file extension is not the contract. `.nc` tells you how data are *stored*, not how they are *organised*."
+
+:::
+
 A **shared data contract** is an agreement about how data are organised.
 
 . . .
+
+<br>
 
 At its centre is the **data model**: the logical structure that software expects to find.
 
 . . .
 
+<br>
+
 ::: {.callout-warning appearance="simple"}
 A file extension (`.csv`, `.nc`, `.tif`, `.zarr`) is **not** the contract. It hints at how data are stored, but not how they are organised.
 :::
+
+
+
+
+
 
 ## Choosing a data model
 
