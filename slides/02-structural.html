@@ -212,6 +212,24 @@
 </section>
 <section id="the-problem" class="slide level2 center">
 <h2>The Problem</h2>
+<aside class="notes">
+<p><strong>~1 min. One idea: the problem is needing the creator to explain the data.</strong></p>
+<ol type="1">
+<li>“Meet Ash, a researcher. Ash has just received a dataset from a colleague, and wants to open it and start working.”</li>
+<li>Read the question aloud, slowly. Pause on <strong>“without bespoke instructions”</strong>: “Bespoke instructions are the README, the email, the phone call to the person who made the file: ‘which column is the time?’, ‘what does -999 mean?’”</li>
+<li>“Structural interoperability is about being able to say <strong>yes</strong> to this question. Structure first, meaning later.”</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="columns">
 <div class="column" style="width:62%;">
 <blockquote>
@@ -227,26 +245,13 @@
 </section>
 <section id="structural-interoperability" class="slide level2 center">
 <h2>Structural Interoperability</h2>
-<h3 id="different-software-tools-can-reliably-understand-the-organisation-of-a-dataset">Different software tools can reliably understand the organisation of a dataset</h3>
-<ul>
-<li>What data objects exist (records, columns, arrays, variables)</li>
-<li>How they are represented (data types, dimensions, coordinates)</li>
-<li>How they relate to one another</li>
-<li>Which values represent missing data</li>
-<li>Whether the dataset follows expected structural rules</li>
-</ul>
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Machines can determine <strong>how</strong> a dataset is organised (structure), even if they do not yet understand <strong>what</strong> the values represent (semantics).</p>
-</div>
-</div>
-</div>
 <aside class="notes">
-<p>Structural interoperability sits between technical and semantic. This definition does not require every explanation to be written inside one file. Meaning may also be expressed through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods, or provenance records. What matters is that the references and relationships are explicit and machine-actionable rather than hidden in personal knowledge, filenames, or informal documentation.</p>
+<p><strong>~2 min. One idea: structure is <em>how</em> data are organised, not <em>what</em> the values mean.</strong></p>
+<ol type="1">
+<li><strong>(Before any click)</strong> “To answer the question from the last slide, a tool needs to find out five things.” Read the five bullets quickly.</li>
+<li><strong>(Click)</strong> “Machines can find out <em>how</em> a dataset is organised without understanding <em>what</em> the values represent. The meaning comes in the semantic session later.”</li>
+</ol>
+<p>Say if asked (“so where does the meaning live?”): it doesn’t all have to sit in one file. Meaning can be linked through persistent identifiers that resolve to external vocabularies, code lists, specifications, instruments, methods or provenance records. What matters is that these references are explicit and <strong>machine-actionable</strong>, not hidden in personal knowledge, filenames or informal documentation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -258,6 +263,26 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<h3 id="different-software-tools-can-reliably-understand-the-organisation-of-a-dataset">Different software tools can reliably understand the organisation of a dataset</h3>
+<ul>
+<li>What data objects exist (records, columns, arrays, variables)</li>
+<li>How they are represented (data types, dimensions, coordinates)</li>
+<li>How they relate to one another</li>
+<li>Which values represent missing data</li>
+<li>Whether the dataset follows expected structural rules</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Machines can determine <strong>how</strong> a dataset is organised (structure), even if they do not yet understand <strong>what</strong> the values represent (semantics).</p>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="how-to-achieve-structural-interoperability" class="title-slide slide level1 center">
@@ -266,18 +291,38 @@
 </section>
 <section id="a-shared-data-contract" class="slide level2 center">
 <h2>A shared data contract</h2>
+<aside class="notes">
+<p><strong>~1 min. One idea: the contract is the data model, not the file extension.</strong></p>
+<ol type="1">
+<li><strong>(Before any click)</strong> Can another tool read my data without asking me? Yes, if we agree on how data are organised. That agreement is the <strong>data contract</strong>.</li>
+<li><strong>(Click 1)</strong> At its centre is the <strong>data model</strong>: what software expects to find. A table, a set of arrays, a raster.</li>
+<li><strong>(Click 2)</strong> “A file extension is not the contract. <code>.nc</code> tells you how data are <em>stored</em>, not how they are <em>organised</em>.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <p>A <strong>shared data contract</strong> is an agreement about how data are organised.</p>
 <div class="fragment">
+<p><br></p>
 <p>At its centre is the <strong>data model</strong>: the logical structure that software expects to find.</p>
 </div>
 <div class="fragment">
+<p><br></p>
 <div class="callout callout-warning callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>A file extension (<code>.csv</code>, <code>.nc</code>, <code>.tif</code>, <code>.zarr</code>) is <strong>not</strong> the contract. It hints at how data are stored, but not how they are organised.</p>
+<p>A file extension (<code>.csv</code>, <code>.nc</code>, <code>.tif</code>, <code>.zarr</code>) is <strong>not</strong> the data model. It hints at how data are stored, but not how they are organised.</p>
 </div>
 </div>
 </div>
@@ -285,6 +330,24 @@
 </section>
 <section id="choosing-a-data-model" class="slide level2 center">
 <h2>Choosing a data model</h2>
+<aside class="notes">
+<p><strong>~1 min. One idea: start from how you picture your data, not from the file format.</strong></p>
+<ul>
+<li>Don’t read every row. Read the first two aloud: “observations means a table; variables over shared dimensions means arrays.”</li>
+<li>Key phrase: <strong>flattening</strong>. Forcing arrays into a table loses the explicit link between dimensions.</li>
+</ul>
+<p>Say if asked: GRIB is for meteorological forecast fields (one message per field); raster is for georeferenced surfaces such as satellite images.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <p>The choice reflects <strong>how you conceptualise the scientific data</strong>. Choose a representation that preserves that structure with the <strong>least</strong> flattening, reconstruction, or artificial complexity.</p>
 <table class="caption-top">
 <colgroup>
@@ -320,8 +383,60 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="choosing-a-data-model-example" class="slide level2 center">
+<h2>Choosing a data model: Example</h2>
 <aside class="notes">
-<p>Example of a dataset: forecast data for 5 variables on 10 pressure levels and 24 time steps. Which model fits best? (Multidimensional arrays, or GRIB if it comes from an operational forecast.)</p>
+<p><strong>~1 min. Let the audience answer before you show the image.</strong></p>
+<ol type="1">
+<li>Read the dataset out: “5 variables, 10 pressure levels, 24 time steps, each a latitude-longitude grid.”</li>
+<li><strong>(Click)</strong> Ask “Which model fits best?” Wait 10-15 seconds and take one or two answers. Don’t confirm yet.</li>
+</ol>
+<p>Say if asked: there isn’t one correct answer. Arrays (NetCDF or Zarr) is the natural fit; GRIB if the data come from an operational forecast.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="columns">
+<div class="column" style="width:38%;">
+<p>Forecast dataset:</p>
+<ul>
+<li>5 variables</li>
+<li>10 pressure levels</li>
+<li>24 time steps</li>
+<li>latitude-longitude grid</li>
+</ul>
+</div><div class="column" style="width:62%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/structural/example-dataset2.png" class="quarto-figure quarto-figure-center" alt="Image representing forecast data with 5 variables, 10 pressure levels, 24 time steps and  2D latitude-longitude grid"></p>
+</figure>
+</div>
+</div></div>
+<div class="fragment">
+<p>Which model fits best?</p>
+</div>
+</section>
+<section id="section" class="slide level2 center" data-background-image="images/structural/data-models.png" data-background-size="contain" data-background-color="#ffffff">
+<h2></h2>
+<aside class="notes">
+<p><strong>~2 min. One idea: same data, five structures. Choose the one that flattens least.</strong> Walk through left to right, about 10 seconds each:</p>
+<ol type="1">
+<li><strong>Tabular:</strong> every grid-cell value becomes a row; the dimensions are repeated in each row. The same coordinates are stored millions of times</li>
+<li><strong>Multidimensional arrays (NetCDF, Zarr):</strong> variables share time, level, lat, lon. The structure is kept as it is.</li>
+<li><strong>GRIB:</strong> 1200 separate messages, one per field, each with its own metadata.</li>
+<li><strong>Raster (GeoTIFF):</strong> 1200 georeferenced layers or bands.</li>
+<li><strong>Geospatial features (GeoPackage):</strong> each grid cell becomes a vector feature.</li>
+</ol>
+<p>Answer to the question: arrays, or GRIB if it comes from a forecast system. Then your story: “Each model can be stored in several formats, such as CSV or Parquet for tables and NetCDF or Zarr for arrays, but not all are equally appropriate for this data.”</p>
+<p>Image description, in case someone needs it (background images can’t carry alt text): one forecast dataset of 5 variables, 10 pressure levels and 24 time steps, shown as a table, arrays, GRIB messages, raster layers and geospatial features.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -335,20 +450,37 @@
       }</style></aside>
 </section></section>
 <section>
-<section id="examples-of-data-models-and-formats" class="title-slide slide level1 center">
-<h1>Examples of data models and formats</h1>
-
-</section>
-<section id="section" class="slide level2 center" data-background-image="images/structural/data-models.png" data-background-size="contain" data-background-color="#ffffff">
-<h2></h2>
-</section></section>
-<section>
 <section id="netcdf-network-common-data-form" class="title-slide slide level1 center">
 <h1>NetCDF: Network Common Data Form</h1>
 
 </section>
 <section id="netcdf-a-data-model-for-multidimensional-scientific-data" class="slide level2 center">
-<h2>NetCDF: a data model for multidimensional scientific data</h2>
+<h2>NetCDF: A data model for multidimensional scientific data</h2>
+<aside class="notes">
+<p><strong>~2 min. One idea: NetCDF gives software three building blocks, and variables that share dimensions are explicitly related.</strong></p>
+<ol type="1">
+<li><strong>(Before the click)</strong> “This is the model from the last slide, the multidimensional arrays box. Scientists needed a <strong>common format</strong> that would allow different tools/computers to understand its structure.</li>
+<li>Walk through the three bullets using the picture and the code, 20 seconds each:
+<ul>
+<li><strong>Dimensions:</strong> “<code>time</code>, <code>latitude</code>, <code>longitude</code>: named axes with a length.”</li>
+<li><strong>Variables:</strong> “<code>air_temperature</code> is a float array over those three axes.”</li>
+<li><strong>Attributes:</strong> “<code>units = K</code> is information <em>about</em> a variable, not data.”</li>
+</ul></li>
+<li><strong>(Click)</strong> “Both variables use the same three dimensions. Software can see that from the declarations, with no guessing.”</li>
+</ol>
+<p>Say if asked (“why was it created?”): Unidata needed a common way for different applications and computers to access real-time meteorological data. A 1987 workshop explored ideas from NASA’s Common Data Format; Glenn Davis and Russ Rew developed the first versions, in use around 1989.</p>
+<p>Say if asked (“what about groups?”): the NetCDF-4 model adds groups, more data types and multiple unlimited dimensions. Not needed today.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
@@ -357,7 +489,7 @@
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
-<p><em>Network Common Data Form</em>: a portable, self-describing format for array data, created at Unidata (UCAR) in the late 1980s.</p>
+<p>A portable, self-describing format for array data, created at Unidata (UCAR) in the late 1980s.</p>
 <ul>
 <li><strong>Dimensions:</strong> named axes and their lengths</li>
 <li><strong>Variables:</strong> typed N-dimensional arrays</li>
@@ -374,6 +506,9 @@
 </section>
 <section id="netcdf-guarantees-a-structure-not-a-common-one" class="slide level2 center">
 <h2>NetCDF guarantees a structure, not a common one</h2>
+</section>
+<section id="same-data-different-structure" class="slide level2 center">
+<h2>Same data, different structure</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Dataset A</strong></p>
@@ -423,22 +558,19 @@
           display:block!important;
       }</style></aside>
 </div>
-</section></section>
-<section>
-<section id="exercise" class="title-slide slide level1 center">
-<h1>Exercise</h1>
-
 </section>
-<section id="help-ash-inspect-a-netcdf-file" class="slide level2 smaller center">
-<h2>Help Ash inspect a NetCDF file</h2>
+<section id="exercise-help-ash-inspect-a-netcdf-file" class="slide level2 smaller center">
+<h2>Exercise: help Ash inspect a NetCDF file</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <p>Ash has received a radar dataset and wants to know <strong>how it is organised before writing any code.</strong></p>
-<p>Open the OPeNDAP page for the IDRA dataset: <strong><a href="https://edu.nl/rgb3j" class="uri">https://edu.nl/rgb3j</a></strong></p>
+<p>Open the OPeNDAP page for the IDRA dataset:<br>
+<a href="https://opendap.4tu.nl/thredds/dodsC/IDRA/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc.html" class="uri">https://opendap.4tu.nl/thredds/dodsC/IDRA/2019/01/02/IDRA_2019-01-02_12-00_raw_data.nc.html</a></p>
 <p>Help Ash identify:</p>
 <ol type="1">
 <li>the global attributes</li>
 <li>the dimensions and their lengths</li>
+<li>the coordinate variables</li>
 <li>three data variables and their dimensions</li>
 <li>the data types of those variables</li>
 <li>one variable-level attribute that controls how missing data are represented</li>
@@ -480,23 +612,31 @@
 <span id="cb4-4"><a href="" aria-label="4"></a>range               = 512</span>
 <span id="cb4-5"><a href="" aria-label="5"></a>scalar              = 1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
+<p><strong>3. Coordinate variables</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="" aria-label="1"></a>time_raw_data(time_raw_data)</span>
+<span id="cb5-2"><a href="" aria-label="2"></a>sample_beat_signal(sample_beat_signal)</span>
+<span id="cb5-3"><a href="" aria-label="3"></a>time_processed_data(time_processed_data)</span>
+<span id="cb5-4"><a href="" aria-label="4"></a>range(range)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>scalar</code> has no variable of the same name: it is just a length-one dimension used by several variables.</p>
+</div></div>
+</section>
 <section id="solution-ashs-findings-22" class="slide level2 smaller center">
 <h2>Solution: Ash’s findings (2/2)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>3 and 4. Data variables, dimensions, types</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="" aria-label="1"></a>i_hh(time_raw_data, sample_beat_signal)</span>
-<span id="cb5-2"><a href="" aria-label="2"></a>    16-bit integer</span>
-<span id="cb5-3"><a href="" aria-label="3"></a>equivalent_reflectivity_factor(</span>
-<span id="cb5-4"><a href="" aria-label="4"></a>    time_processed_data, range)</span>
-<span id="cb5-5"><a href="" aria-label="5"></a>    32-bit real</span>
-<span id="cb5-6"><a href="" aria-label="6"></a>radial_velocity(time_processed_data, range)</span>
-<span id="cb5-7"><a href="" aria-label="7"></a>azimuth_processed_data(time_processed_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>4 and 5. Data variables, dimensions, types</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="" aria-label="1"></a>i_hh(time_raw_data, sample_beat_signal)</span>
+<span id="cb6-2"><a href="" aria-label="2"></a>    16-bit integer</span>
+<span id="cb6-3"><a href="" aria-label="3"></a>equivalent_reflectivity_factor(</span>
+<span id="cb6-4"><a href="" aria-label="4"></a>    time_processed_data, range)</span>
+<span id="cb6-5"><a href="" aria-label="5"></a>    32-bit real</span>
+<span id="cb6-6"><a href="" aria-label="6"></a>radial_velocity(time_processed_data, range)</span>
+<span id="cb6-7"><a href="" aria-label="7"></a>azimuth_processed_data(time_processed_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<p><strong>5. Missing data</strong></p>
+<p><strong>6. Missing data</strong></p>
 <p><code>_FillValue: -999.0</code> on <code>equivalent_reflectivity_factor</code>, <code>differential_reflectivity</code>, <code>radial_velocity</code>, <code>spectrum_width</code>.</p>
 <p>Its existence, location, and type are <em>structural</em>. Whether to exclude or interpolate missing values is an <em>analytical</em> decision.</p>
-<p><strong>6. Metadata stored as variables</strong></p>
+<p><strong>7. Metadata stored as variables</strong></p>
 <p><code>iso_dataset</code>, <code>product</code>, <code>station_details</code>: string variables, <strong>not</strong> global attributes.</p>
 </div></div>
 <div class="callout callout-note callout-style-simple">
@@ -523,10 +663,6 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="wrap-up" class="title-slide slide level1 center">
-<h1>Wrap-up</h1>
-
-</section>
 <section id="key-takeaways" class="slide level2 center">
 <h2>Key takeaways</h2>
 <ul>
@@ -550,9 +686,6 @@
           display:block!important;
       }</style></aside>
 
-</section>
-
-</div></div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
