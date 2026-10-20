@@ -439,7 +439,6 @@
 <ol type="1">
 <li>the global attributes</li>
 <li>the dimensions and their lengths</li>
-<li>the coordinate variables</li>
 <li>three data variables and their dimensions</li>
 <li>the data types of those variables</li>
 <li>one variable-level attribute that controls how missing data are represented</li>
@@ -481,31 +480,23 @@
 <span id="cb4-4"><a href="" aria-label="4"></a>range               = 512</span>
 <span id="cb4-5"><a href="" aria-label="5"></a>scalar              = 1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<p><strong>3. Coordinate variables</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="" aria-label="1"></a>time_raw_data(time_raw_data)</span>
-<span id="cb5-2"><a href="" aria-label="2"></a>sample_beat_signal(sample_beat_signal)</span>
-<span id="cb5-3"><a href="" aria-label="3"></a>time_processed_data(time_processed_data)</span>
-<span id="cb5-4"><a href="" aria-label="4"></a>range(range)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>scalar</code> has no variable of the same name: it is just a length-one dimension used by several variables.</p>
-</div></div>
-</section>
 <section id="solution-ashs-findings-22" class="slide level2 smaller center">
 <h2>Solution: Ash’s findings (2/2)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>4 and 5. Data variables, dimensions, types</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="" aria-label="1"></a>i_hh(time_raw_data, sample_beat_signal)</span>
-<span id="cb6-2"><a href="" aria-label="2"></a>    16-bit integer</span>
-<span id="cb6-3"><a href="" aria-label="3"></a>equivalent_reflectivity_factor(</span>
-<span id="cb6-4"><a href="" aria-label="4"></a>    time_processed_data, range)</span>
-<span id="cb6-5"><a href="" aria-label="5"></a>    32-bit real</span>
-<span id="cb6-6"><a href="" aria-label="6"></a>radial_velocity(time_processed_data, range)</span>
-<span id="cb6-7"><a href="" aria-label="7"></a>azimuth_processed_data(time_processed_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>3 and 4. Data variables, dimensions, types</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="" aria-label="1"></a>i_hh(time_raw_data, sample_beat_signal)</span>
+<span id="cb5-2"><a href="" aria-label="2"></a>    16-bit integer</span>
+<span id="cb5-3"><a href="" aria-label="3"></a>equivalent_reflectivity_factor(</span>
+<span id="cb5-4"><a href="" aria-label="4"></a>    time_processed_data, range)</span>
+<span id="cb5-5"><a href="" aria-label="5"></a>    32-bit real</span>
+<span id="cb5-6"><a href="" aria-label="6"></a>radial_velocity(time_processed_data, range)</span>
+<span id="cb5-7"><a href="" aria-label="7"></a>azimuth_processed_data(time_processed_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<p><strong>6. Missing data</strong></p>
+<p><strong>5. Missing data</strong></p>
 <p><code>_FillValue: -999.0</code> on <code>equivalent_reflectivity_factor</code>, <code>differential_reflectivity</code>, <code>radial_velocity</code>, <code>spectrum_width</code>.</p>
 <p>Its existence, location, and type are <em>structural</em>. Whether to exclude or interpolate missing values is an <em>analytical</em> decision.</p>
-<p><strong>7. Metadata stored as variables</strong></p>
+<p><strong>6. Metadata stored as variables</strong></p>
 <p><code>iso_dataset</code>, <code>product</code>, <code>station_details</code>: string variables, <strong>not</strong> global attributes.</p>
 </div></div>
 <div class="callout callout-note callout-style-simple">
@@ -531,8 +522,7 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section></section>
-<section>
+</section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap-up</h1>
 
@@ -560,6 +550,9 @@
           display:block!important;
       }</style></aside>
 
+</section>
+
+</div></div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
