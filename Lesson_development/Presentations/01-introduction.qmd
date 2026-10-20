@@ -3,7 +3,7 @@ title: "Introduction"
 subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF Data"
 ---
 
-# Big picture {background-image="images/shared/4tu-logo.png" background-size="20%" background-position="96% 94%" background-repeat="no-repeat"}
+# Big picture 
 
 ::: {.incremental}
 
