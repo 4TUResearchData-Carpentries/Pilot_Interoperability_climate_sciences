@@ -4,6 +4,11 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 ---
 
 # What is technical interoperability?
+
+::: notes
+60 minutes: **13:00 -14:00**
+:::
+
 ## The Problem
 
 ::: {.columns}
@@ -18,9 +23,26 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 :::
 :::
 
+::: notes
+::: {style="font-size:17px"}
+**~2 min. One idea: the problem is getting the data to where the work happens.**
+
+1. "Ash faces another problem: How does she get at the data when they sit on someone else's system?"
+2. Read both questions aloud. Pause on **"without necessarily downloading the entire file"**.
+3. "Technical interoperability is about answering these two questions."
+:::
+:::
+
 ## Definition
 
 Technical Interoperability concerns the mechanisms that allow independent systems to communicate and **exchange data** through agreed technical **interfaces** and **protocols**
+
+::: notes
+**~1 min. One idea: agreed interfaces and protocols let independent systems exchange data.**
+
+Read the definition aloud. Stress **interfaces** and **protocols**: "the agreed way to ask, and the agreed rules for the exchange."
+
+:::
 
 ## Example: one variable, one period, one region
 
@@ -35,8 +57,19 @@ Consider two approaches:
 1. Download the complete file and perform the selection locally
 2. The remote infrastructure provides a mechanism to request only the required part
 
+::: notes
+**~4 min. One idea: often you need only a small part of a large dataset.**
 
-[**Which one is more suitable...?**]{.fragment}
+1. **(Before any click)** Read the scenario: one variable, one period, one region. Point at the image: "the part we need is a small slice of a big array." Read the two approaches.
+:::
+
+::: {.fragment}
+**Which one is more suitable...?**
+
+::: notes
+2. **(Click 1)** Ask "Which one is more suitable?" Wait 10-15 seconds and take one or two answers. Don't confirm yet: the answer is "it depends".
+:::
+:::
 
 :::
 ::: {.column width="35%"}
@@ -50,19 +83,38 @@ Consider two approaches:
 
 - **Requesting only the part you need** matters for large datasets and automated workflows. 
 :::
-:::
-
-
 
 ::: notes
-For example, imagine a Python workflow that runs every day and retrieves temperature data for the Netherlands from a global climate dataset. If the workflow has to download the entire global file every time, it repeatedly transfers a large amount of unnecessary data, consumes local storage, and adds extra steps for managing those downloaded files.
+3. **(Click 2)** "It depends on the task." Small file, or you need everything: download. Large dataset or automated workflow: request only the part.
+
+:::
 :::
 
 # Concepts
 
 ## {background-image="images/protocols/storage-is-not-access.png" background-size="contain" background-color="#ffffff"}
 
+::: notes
+::: {style="font-size:17px"}
+**~2 min. One idea: storage is not access.**
+
+1. "Where the data are stored, a repository or a server, is one thing. How a program can ask for them is another."
+2. "A data-access service sits in between, retrieving data from storage and delivering the requested subset."
+3. "So remote or cloud storage alone does not guarantee interoperability. An agreed access mechanism is also needed."
+:::
+:::
+
 ## {background-image="images/protocols/protocol-defines-access.png" background-size="contain" background-color="#ffffff"}
+
+::: notes
+::: {style="font-size:17px"}
+**~3 min. One idea: the protocol defines what a client may ask and how the server answers.**
+
+1. "NetCDF describes how data are structured. A protocol such as DAP describes how that structured data can be requested over a network."
+2. "The protocol defines the conversation between client and server: discover metadata, request a subset, and receive the selected data."
+3. "Because the requests and responses are standardized, the same client can work with any compatible server without custom code for each dataset."
+:::
+:::
 
 # DAP and OPeNDAP
 ## DAP and OPeNDAP
@@ -71,23 +123,36 @@ For example, imagine a Python workflow that runs every day and retrieves tempera
 Important scientific datasets were spread across institutions, each with its own way of storing and accessing data.
 :::
 
+::: notes
+**~4 min. One idea: DAP started as a common way to reach data spread across institutions.**
+
+1. **The problem:** datasets spread across institutions, each with its own way of storing and accessing data.
+:::
+
+::: fragment
 ::: {.callout-tip appearance="simple" title="The idea"}
 A common way to access data, wherever it is stored.
 :::
+
+::: notes
+2. **The idea:** a common way to access data, wherever it is stored.
+:::
+
+:::
+
+. . .
+
+<br>
 
 > "A URL equals a dataset."
 >
 > "A URL with constraints equals a subset."
 
-
 ::: notes
-The idea came out of a 1993 workshop at the University of Rhode Island (with MIT, supported by NASA, NOAA and The Oceanography Society). The first Distributed Oceanographic Data System (DODS) was implemented in 1995 and presented at the Fourth International World Wide Web Conference.
-
-It started in oceanography, but the problem was not specific to ocean data. Climate, atmospheric science and remote sensing faced the same challenge, so DODS evolved into the Data Access Protocol (DAP).
-
-OPeNDAP Inc. was formed as a nonprofit in 2000 to maintain and develop the infrastructure.
-
-Later milestones (mention only if asked): DAP2 became a NASA Earth Science Data Systems standard in 2005, Hyrax was first released in 2006, and DAP4 followed in 2014 with a richer data model.
+::: {style="font-size:17px"}
+3. Read the two quotes: "A URL equals a dataset. A URL with constraints equals a subset."
+4. Origin in one line: it started in oceanography (a 1993 workshop; the first system, DODS, in 1995). Climate, atmospheric science and remote sensing had the same problem, so it evolved into the Data Access Protocol (DAP). OPeNDAP Inc. has maintained it as a nonprofit since 2000.
+:::
 :::
 
 ## Who is who?
@@ -98,12 +163,19 @@ Later milestones (mention only if asked): DAP2 became a NASA Earth Science Data 
 | **OPeNDAP** | the project and software ecosystem behind DAP |
 | **Hyrax, THREDDS** | data servers that implement DAP |
 
-[<br>Researchers just receive an endpoint URL. Data providers run the server.]{.fragment}
+::: notes
+**~2 min. One idea: DAP is the protocol, OPeNDAP the project, Hyrax and THREDDS the servers.**
+
+1. **(Before the click)** Go through the three rows: "the protocol, the project behind it, the servers that implement it."
+:::
+
+. . .
+
+<br>Researchers just receive an endpoint URL. Data providers run the server.
 
 ::: notes
-For researchers accessing existing datasets, the distinction is usually invisible. For data providers and infrastructure operators it matters: someone has to operate the server that interprets DAP requests and connects them to the underlying datasets.
+2. **(Click)** "Researchers just receive an endpoint URL. Data providers run the server." For researchers the distinction is usually invisible; the purpose stays the same: independent clients accessing distributed, structured data through one common protocol.
 
-The main purpose has stayed the same: allow independent scientific clients to access distributed, structured data through a common protocol.
 :::
 
 
@@ -114,6 +186,14 @@ We will access remote NetCDF datasets stored in 4TU.ResearchData using the DAP p
 <br>
 
 [<https://edu.nl/9fh7g>]{.r-fit-text}
+
+::: notes
+**~35 min (the time that is left). One idea: reach remote data with DAP, without downloading the file.**
+
+1. "Open the link." Wait until everyone has the page open before you start.
+2. Remind them of the three ideas as they work: explore the dataset **without downloading it**, **subset on the server**, and what is transferred is only the part they asked for.
+
+:::
 
 
 # Wrap-up
@@ -126,7 +206,11 @@ We will access remote NetCDF datasets stored in 4TU.ResearchData using the DAP p
 - A repository can be more than a place to store data: it can also make data **accessible to machines, selectively**
 
 ::: notes
-These mirror the episode's key points. The last one is the main message for data stewards: when choosing infrastructure, ask not only "Can it store my NetCDF files?" but also "How will machines access the data after I publish them?"
+::: {style="font-size:17px"}
+**~3 min. One idea: Think about access, not only storage.**
 
-Next: APIs, the other main way systems exchange data.
+1. Read the five bullets quickly; they mirror the episode's key points.
+2. Main message for data stewards: when choosing infrastructure, ask not only "Can it store my NetCDF files?" but also "How will machines access the data after I publish them?"
+
+:::
 :::

@@ -25,12 +25,12 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 :::
 
 ::: notes
-**~1 min. One idea: the problem is needing the creator to explain the data.**
+::: {style="font-size:17px"}
+**~1 min. One idea: the problem: the creator needs to explain the data.**
 
-1. "Meet Ash, a researcher. Ash has just received a dataset from a colleague, and wants to open it and start working."
-2. Read the question aloud, slowly. Pause on **"without bespoke instructions"**: "Bespoke instructions are the README, the email, the phone call to the person who made the file: 'which column is the time?', 'what does -999 mean?'"
-3. "Structural interoperability is about being able to say **yes** to this question. Structure first, meaning later."
-
+1. "Ash has just received a dataset from a colleague, and wants to open it and start working."
+2. Read the question aloud, slowly. Pause on **"without bespoke instructions"**: "Bespoke instructions are the README, or e.g.  the email, creator of the file: 'which column is the time?', 'what does -999 mean?'"
+:::
 :::
 
 ## Structural Interoperability 
@@ -107,11 +107,12 @@ The choice reflects **how you conceptualise the scientific data**. Choose a repr
 | "geographic objects with properties" | Geospatial features |
 
 ::: notes
+::: {style="font-size:17px"}
 **~1 min. One idea: start from how you picture your data, not from the file format.**
 
 - Don't read every row. Read the first two aloud: "observations means a table; variables over shared dimensions means arrays."
 - Key phrase: **flattening**. Forcing arrays into a table loses the explicit link between dimensions.
-
+:::
 :::
 
 ## Choosing a data model: Example
@@ -152,8 +153,8 @@ Which model fits best?
 
 ## {background-image="images/structural/data-models.png" background-size="contain" background-color="#ffffff"}
 ::: notes
-**~2 min. One idea: same data, five structures. Choose the one that flattens least.**
-Walk through left to right, about 10 seconds each:
+::: {style="font-size:16px"}
+**~2 min. One idea: same data, five structures.**
 
 1. **Tabular:** every grid-cell value becomes a row; the dimensions are repeated in each row. The same coordinates are stored millions of times.
 2. **Multidimensional arrays (NetCDF, Zarr):** variables share time, level, lat, lon. The structure is kept as it is.
@@ -161,8 +162,8 @@ Walk through left to right, about 10 seconds each:
 4. **Raster (GeoTIFF):** 1200 georeferenced layers or bands.
 5. **Geospatial features (GeoPackage):** each grid cell becomes a vector feature.
 
-Answer to the question: arrays, or GRIB if it comes from a forecast system. "Each model can be stored in several formats, such as CSV or Parquet for tables and NetCDF or Zarr for arrays, but not all are equally appropriate for this data."
-
+Answer to the question: arrays, or GRIB if it comes from a forecast system.
+:::
 :::
 
 # NetCDF: Network Common Data Form
@@ -190,6 +191,8 @@ air_temperature:units = "K"
 :::
 
 ::: notes
+::: {style="font-size:16px"}
+
 **~2 min. One idea: NetCDF gives software three building blocks, and variables that share dimensions are explicitly related.**
 
 1. **(Before the click)** "This is the model from the last slide, the multidimensional arrays box. Scientists needed a **common format** that would allow different tools/computers to understand its structure."
@@ -197,7 +200,7 @@ air_temperature:units = "K"
    - **Dimensions:** "`time`, `latitude`, `longitude`: named axes with a length."
    - **Variables:** "`air_temperature` is a float array over those three axes."
    - **Attributes:** "`units = K` is information *about* a variable, not data."
-
+::: 
 :::
 
 . . .
@@ -242,13 +245,15 @@ variables:
 :::
 
 ::: notes
+::: {style="font-size:17px"}
 **~2 min. One idea: both files are valid NetCDF, but a generic tool cannot tell how they correspond.**
 
-1. **(Before any click)** "Same data, two NetCDF files. Dataset A and Dataset B both have dimensions, variables and types." Ask: "What can software tell for both?" (Dimensions, variables, types.) Then: "What can it *not* tell?" Give 10 seconds, then point at the differences:
+1. **(Before any click)** "Same data, two NetCDF files. Dataset A and Dataset B both have dimensions, variables and types." Ask: "What can software tell for both?" (Dimensions, variables, types.) Then: "Whereis software stuck?" 
    - **Dimension order:** `(time, lat, lon)` vs `(lon, lat, t)`.
    - **Names:** `temp` vs `T`, `time` vs `t`.
    - **Coordinate variables:** A has `lat(lat)` holding the axis values; B has none.
    - **Missing data:** A declares `_FillValue`; in B, -999 is just a number in the data.
+:::
 :::
 
 . . .
@@ -256,7 +261,9 @@ variables:
 Both are **valid NetCDF**. A generic tool can read both, but it cannot tell which axis is which, or what marks missing data, without extra rules.
 
 ::: notes
-2. **(Click 1)** "Both are **valid NetCDF**. A generic tool can read both, but it cannot tell which axis is which, or what marks missing data, without extra rules." Concrete example: "In B, an average would include the -999 values."
+2. **(Click 1)** "Both are **valid NetCDF**. A generic tool can read both, but it cannot tell which axis is which, or what marks missing data, without extra rules." 
+
+Concrete example: "In B, an average would include the -999 values."
 :::
 
 . . .
@@ -300,12 +307,13 @@ Help Ash identify:
 ⏱ 8 minutes, in pairs. Do as much as time allows.
 
 ::: notes
+::: {style="font-size:16px"}
 **~8 min. One idea: Ash can answer all of this from the file itself.**
 
 1. **(Start)** "Open the link and work in pairs." Hint: scroll to the **DDS** at the bottom of the page; Ctrl+F helps. Pairs need a couple of minutes to find their way around.
 2. **(While they work)** Walk around and check that people have found the DDS. Dimensions appear as `name = length` in brackets. Coordinate variables are the ones named like a dimension, e.g. `range`. Watch out: the form shows indices (`0..511`), the DDS shows lengths (`512`).
 3. **(Minute 6)** Check progress. Stop at 8, even if not everyone has finished.
-
+:::
 :::
 
 ## Solution: Ash's findings (1/2) {.smaller}
@@ -343,11 +351,13 @@ range(range)
 :::
 
 ::: notes
+::: {style="font-size:16px"}
 **~2 min. One idea: dimensions are axes with a length; coordinate variables hold the values along an axis.**
 
 1. Ask one pair: "How many dimensions did you find?" (Five, including `scalar`.) In the DDS they appear as `name = length`.
 2. Coordinate variables: "`range = 512` says there are 512 positions. The variable `range(range)` says what each position is."
 3. `scalar` has no variable of its own: it is just a length-one dimension used by several variables.
+:::
 :::
 
 ## Solution: Ash's findings (2/2) {.smaller}
@@ -384,12 +394,13 @@ Ash learned all of this from the file itself, with no bespoke instructions: that
 :::
 
 ::: notes
+::: {style="font-size:16px"}
 **~3 min. One idea: Ash learned all of this from the file itself.**
 
 1. **Missing data:** `_FillValue` is structural, because it is declared in the file. What to do with the missing values is an analytical decision.
 2. **Item 7:** string variables such as `station_details` are *data*, not global attributes.
 3. **Callout:** "Ash needed no README, and the same steps work for any NetCDF file."
-
+:::
 :::
 
 ## Key takeaways
