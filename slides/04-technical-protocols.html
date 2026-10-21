@@ -142,7 +142,19 @@
 <section>
 <section id="what-is-technical-interoperability" class="title-slide slide level1 center">
 <h1>What is technical interoperability?</h1>
-
+<aside class="notes">
+<p>60 minutes: <strong>13:00 -14:00</strong></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-problem" class="slide level2 center">
 <h2>The Problem</h2>
@@ -161,10 +173,44 @@
 </figure>
 </div>
 </div></div>
+<aside class="notes">
+<div style="font-size:17px">
+<p><strong>~2 min. One idea: the problem is getting the data to where the work happens.</strong></p>
+<ol type="1">
+<li>“Ash faces another problem: How does she get at the data when they sit on someone else’s system?”</li>
+<li>Read both questions aloud. Pause on <strong>“without necessarily downloading the entire file”</strong>.</li>
+<li>“Technical interoperability is about answering these two questions.”</li>
+</ol>
+</div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="definition" class="slide level2 center">
 <h2>Definition</h2>
 <p>Technical Interoperability concerns the mechanisms that allow independent systems to communicate and <strong>exchange data</strong> through agreed technical <strong>interfaces</strong> and <strong>protocols</strong></p>
+<aside class="notes">
+<p><strong>~1 min. One idea: agreed interfaces and protocols let independent systems exchange data.</strong></p>
+<p>Read the definition aloud. Stress <strong>interfaces</strong> and <strong>protocols</strong>: “the agreed way to ask, and the agreed rules for the exchange.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="example-one-variable-one-period-one-region" class="slide level2 center">
 <h2>Example: one variable, one period, one region</h2>
@@ -177,7 +223,40 @@
 <li>Download the complete file and perform the selection locally</li>
 <li>The remote infrastructure provides a mechanism to request only the required part</li>
 </ol>
-<p><span class="fragment"><strong>Which one is more suitable…?</strong></span></p>
+<aside class="notes">
+<p><strong>~4 min. One idea: often you need only a small part of a large dataset.</strong></p>
+<ol type="1">
+<li><strong>(Before any click)</strong> Read the scenario: one variable, one period, one region. Point at the image: “the part we need is a small slice of a big array.” Read the two approaches.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="fragment">
+<p><strong>Which one is more suitable…?</strong></p>
+<aside class="notes">
+<ol start="2" type="1">
+<li><strong>(Click 1)</strong> Ask “Which one is more suitable?” Wait 10-15 seconds and take one or two answers. Don’t confirm yet: the answer is “it depends”.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </div><div class="column" style="width:35%;">
 <p><img data-src="images/protocols/multidimensional-array.png" alt="A 4D array (time, level, lat, lon) and the variables that share its dimensions"></p>
 </div></div>
@@ -200,9 +279,10 @@
 </div>
 </div>
 </div>
-</div>
 <aside class="notes">
-<p>For example, imagine a Python workflow that runs every day and retrieves temperature data for the Netherlands from a global climate dataset. If the workflow has to download the entire global file every time, it repeatedly transfers a large amount of unnecessary data, consumes local storage, and adds extra steps for managing those downloaded files.</p>
+<ol start="3" type="1">
+<li><strong>(Click 2)</strong> “It depends on the task.” Small file, or you need everything: download. Large dataset or automated workflow: request only the part.</li>
+</ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -214,6 +294,7 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
 </section></section>
 <section>
 <section id="concepts" class="title-slide slide level1 center">
@@ -222,9 +303,49 @@
 </section>
 <section id="section" class="slide level2 center" data-background-image="images/protocols/storage-is-not-access.png" data-background-size="contain" data-background-color="#ffffff">
 <h2></h2>
+<aside class="notes">
+<div style="font-size:17px">
+<p><strong>~2 min. One idea: storage is not access.</strong></p>
+<ol type="1">
+<li>“Where the data are stored, a repository or a server, is one thing. How a program can ask for them is another.”</li>
+<li>“A data-access service sits in between, retrieving data from storage and delivering the requested subset.”</li>
+<li>“So remote or cloud storage alone does not guarantee interoperability. An agreed access mechanism is also needed.”</li>
+</ol>
+</div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="section-1" class="slide level2 center" data-background-image="images/protocols/protocol-defines-access.png" data-background-size="contain" data-background-color="#ffffff">
 <h2></h2>
+<aside class="notes">
+<div style="font-size:17px">
+<p><strong>~3 min. One idea: the protocol defines what a client may ask and how the server answers.</strong></p>
+<ol type="1">
+<li>“NetCDF describes how data are structured. A protocol such as DAP describes how that structured data can be requested over a network.”</li>
+<li>“The protocol defines the conversation between client and server: discover metadata, request a subset, and receive the selected data.”</li>
+<li>“Because the requests and responses are standardized, the same client can work with any compatible server without custom code for each dataset.”</li>
+</ol>
+</div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="dap-and-opendap" class="title-slide slide level1 center">
@@ -248,6 +369,23 @@
 </div>
 </div>
 </div>
+<aside class="notes">
+<p><strong>~4 min. One idea: DAP started as a common way to reach data spread across institutions.</strong></p>
+<ol type="1">
+<li><strong>The problem:</strong> datasets spread across institutions, each with its own way of storing and accessing data.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="fragment">
 <div title="The idea">
 <div class="callout callout-tip callout-titled callout-style-simple">
 <div class="callout-body">
@@ -263,15 +401,10 @@
 </div>
 </div>
 </div>
-<blockquote>
-<p>“A URL equals a dataset.”</p>
-<p>“A URL with constraints equals a subset.”</p>
-</blockquote>
 <aside class="notes">
-<p>The idea came out of a 1993 workshop at the University of Rhode Island (with MIT, supported by NASA, NOAA and The Oceanography Society). The first Distributed Oceanographic Data System (DODS) was implemented in 1995 and presented at the Fourth International World Wide Web Conference.</p>
-<p>It started in oceanography, but the problem was not specific to ocean data. Climate, atmospheric science and remote sensing faced the same challenge, so DODS evolved into the Data Access Protocol (DAP).</p>
-<p>OPeNDAP Inc.&nbsp;was formed as a nonprofit in 2000 to maintain and develop the infrastructure.</p>
-<p>Later milestones (mention only if asked): DAP2 became a NASA Earth Science Data Systems standard in 2005, Hyrax was first released in 2006, and DAP4 followed in 2014 with a richer data model.</p>
+<ol start="2" type="1">
+<li><strong>The idea:</strong> a common way to access data, wherever it is stored.</li>
+</ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -283,6 +416,32 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
+<div class="fragment">
+<p><br></p>
+<blockquote>
+<p>“A URL equals a dataset.”</p>
+<p>“A URL with constraints equals a subset.”</p>
+</blockquote>
+<aside class="notes">
+<div style="font-size:17px">
+<ol start="3" type="1">
+<li>Read the two quotes: “A URL equals a dataset. A URL with constraints equals a subset.”</li>
+<li>Origin in one line: it started in oceanography (a 1993 workshop; the first system, DODS, in 1995). Climate, atmospheric science and remote sensing had the same problem, so it evolved into the Data Access Protocol (DAP). OPeNDAP Inc.&nbsp;has maintained it as a nonprofit since 2000.</li>
+</ol>
+</div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="who-is-who" class="slide level2 center">
 <h2>Who is who?</h2>
@@ -302,10 +461,11 @@
 </tr>
 </tbody>
 </table>
-<p><span class="fragment"><br>Researchers just receive an endpoint URL. Data providers run the server.</span></p>
 <aside class="notes">
-<p>For researchers accessing existing datasets, the distinction is usually invisible. For data providers and infrastructure operators it matters: someone has to operate the server that interprets DAP requests and connects them to the underlying datasets.</p>
-<p>The main purpose has stayed the same: allow independent scientific clients to access distributed, structured data through a common protocol.</p>
+<p><strong>~2 min. One idea: DAP is the protocol, OPeNDAP the project, Hyrax and THREDDS the servers.</strong></p>
+<ol type="1">
+<li><strong>(Before the click)</strong> Go through the three rows: “the protocol, the project behind it, the servers that implement it.”</li>
+</ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -317,6 +477,24 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<div class="fragment">
+<p><br>Researchers just receive an endpoint URL. Data providers run the server.</p>
+<aside class="notes">
+<ol start="2" type="1">
+<li><strong>(Click)</strong> “Researchers just receive an endpoint URL. Data providers run the server.” For researchers the distinction is usually invisible; the purpose stays the same: independent clients accessing distributed, structured data through one common protocol.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section></section>
 <section>
 <section id="hands-on" class="title-slide slide level1 center">
@@ -327,6 +505,23 @@
 <h2>Let’s make use of DAP</h2>
 <p>We will access remote NetCDF datasets stored in 4TU.ResearchData using the DAP protocol <br></p>
 <p><span class="r-fit-text"><a href="https://edu.nl/9fh7g" class="uri">https://edu.nl/9fh7g</a></span></p>
+<aside class="notes">
+<p><strong>~35 min (the time that is left). One idea: reach remote data with DAP, without downloading the file.</strong></p>
+<ol type="1">
+<li>“Open the link.” Wait until everyone has the page open before you start.</li>
+<li>Remind them of the three ideas as they work: explore the dataset <strong>without downloading it</strong>, <strong>subset on the server</strong>, and what is transferred is only the part they asked for.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="wrap-up" class="title-slide slide level1 center">
@@ -343,8 +538,13 @@
 <li>A repository can be more than a place to store data: it can also make data <strong>accessible to machines, selectively</strong></li>
 </ul>
 <aside class="notes">
-<p>These mirror the episode’s key points. The last one is the main message for data stewards: when choosing infrastructure, ask not only “Can it store my NetCDF files?” but also “How will machines access the data after I publish them?”</p>
-<p>Next: APIs, the other main way systems exchange data.</p>
+<div style="font-size:17px">
+<p><strong>~3 min. One idea: Think about access, not only storage.</strong></p>
+<ol type="1">
+<li>Read the five bullets quickly; they mirror the episode’s key points.</li>
+<li>Main message for data stewards: when choosing infrastructure, ask not only “Can it store my NetCDF files?” but also “How will machines access the data after I publish them?”</li>
+</ol>
+</div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

@@ -237,12 +237,13 @@
 </div>
 </div></div>
 <aside class="notes">
-<p><strong>~1 min. One idea: the problem is needing the creator to explain the data.</strong></p>
+<div style="font-size:17px">
+<p><strong>~1 min. One idea: the problem: the creator needs to explain the data.</strong></p>
 <ol type="1">
-<li>“Meet Ash, a researcher. Ash has just received a dataset from a colleague, and wants to open it and start working.”</li>
-<li>Read the question aloud, slowly. Pause on <strong>“without bespoke instructions”</strong>: “Bespoke instructions are the README, the email, the phone call to the person who made the file: ‘which column is the time?’, ‘what does -999 mean?’”</li>
-<li>“Structural interoperability is about being able to say <strong>yes</strong> to this question. Structure first, meaning later.”</li>
+<li>“Ash has just received a dataset from a colleague, and wants to open it and start working.”</li>
+<li>Read the question aloud, slowly. Pause on <strong>“without bespoke instructions”</strong>: “Bespoke instructions are the README, or e.g.&nbsp;the email, creator of the file: ‘which column is the time?’, ‘what does -999 mean?’”</li>
 </ol>
+</div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -419,11 +420,13 @@
 </tbody>
 </table>
 <aside class="notes">
+<div style="font-size:17px">
 <p><strong>~1 min. One idea: start from how you picture your data, not from the file format.</strong></p>
 <ul>
 <li>Don’t read every row. Read the first two aloud: “observations means a table; variables over shared dimensions means arrays.”</li>
 <li>Key phrase: <strong>flattening</strong>. Forcing arrays into a table loses the explicit link between dimensions.</li>
 </ul>
+</div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -492,7 +495,8 @@
 <section id="section" class="slide level2 center" data-background-image="images/structural/data-models.png" data-background-size="contain" data-background-color="#ffffff">
 <h2></h2>
 <aside class="notes">
-<p><strong>~2 min. One idea: same data, five structures. Choose the one that flattens least.</strong> Walk through left to right, about 10 seconds each:</p>
+<div style="font-size:16px">
+<p><strong>~2 min. One idea: same data, five structures.</strong></p>
 <ol type="1">
 <li><strong>Tabular:</strong> every grid-cell value becomes a row; the dimensions are repeated in each row. The same coordinates are stored millions of times.</li>
 <li><strong>Multidimensional arrays (NetCDF, Zarr):</strong> variables share time, level, lat, lon. The structure is kept as it is.</li>
@@ -500,7 +504,8 @@
 <li><strong>Raster (GeoTIFF):</strong> 1200 georeferenced layers or bands.</li>
 <li><strong>Geospatial features (GeoPackage):</strong> each grid cell becomes a vector feature.</li>
 </ol>
-<p>Answer to the question: arrays, or GRIB if it comes from a forecast system. “Each model can be stored in several formats, such as CSV or Parquet for tables and NetCDF or Zarr for arrays, but not all are equally appropriate for this data.”</p>
+<p>Answer to the question: arrays, or GRIB if it comes from a forecast system.</p>
+</div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -540,6 +545,7 @@
 <span id="cb1-4"><a href="" aria-label="4"></a>air_temperature:units = "K"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <aside class="notes">
+<div style="font-size:16px">
 <p><strong>~2 min. One idea: NetCDF gives software three building blocks, and variables that share dimensions are explicitly related.</strong></p>
 <ol type="1">
 <li><strong>(Before the click)</strong> “This is the model from the last slide, the multidimensional arrays box. Scientists needed a <strong>common format</strong> that would allow different tools/computers to understand its structure.”</li>
@@ -550,6 +556,7 @@
 <li><strong>Attributes:</strong> “<code>units = K</code> is information <em>about</em> a variable, not data.”</li>
 </ul></li>
 </ol>
+</div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -604,9 +611,10 @@
 <span id="cb3-7"><a href="" aria-label="7"></a>   not declared)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <aside class="notes">
+<div style="font-size:17px">
 <p><strong>~2 min. One idea: both files are valid NetCDF, but a generic tool cannot tell how they correspond.</strong></p>
 <ol type="1">
-<li><strong>(Before any click)</strong> “Same data, two NetCDF files. Dataset A and Dataset B both have dimensions, variables and types.” Ask: “What can software tell for both?” (Dimensions, variables, types.) Then: “What can it <em>not</em> tell?” Give 10 seconds, then point at the differences:
+<li><strong>(Before any click)</strong> “Same data, two NetCDF files. Dataset A and Dataset B both have dimensions, variables and types.” Ask: “What can software tell for both?” (Dimensions, variables, types.) Then: “Whereis software stuck?”
 <ul>
 <li><strong>Dimension order:</strong> <code>(time, lat, lon)</code> vs <code>(lon, lat, t)</code>.</li>
 <li><strong>Names:</strong> <code>temp</code> vs <code>T</code>, <code>time</code> vs <code>t</code>.</li>
@@ -614,6 +622,7 @@
 <li><strong>Missing data:</strong> A declares <code>_FillValue</code>; in B, -999 is just a number in the data.</li>
 </ul></li>
 </ol>
+</div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -629,8 +638,9 @@
 <p>Both are <strong>valid NetCDF</strong>. A generic tool can read both, but it cannot tell which axis is which, or what marks missing data, without extra rules.</p>
 <aside class="notes">
 <ol start="2" type="1">
-<li><strong>(Click 1)</strong> “Both are <strong>valid NetCDF</strong>. A generic tool can read both, but it cannot tell which axis is which, or what marks missing data, without extra rules.” Concrete example: “In B, an average would include the -999 values.”</li>
+<li><strong>(Click 1)</strong> “Both are <strong>valid NetCDF</strong>. A generic tool can read both, but it cannot tell which axis is which, or what marks missing data, without extra rules.”</li>
 </ol>
+<p>Concrete example: “In B, an average would include the -999 values.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -698,12 +708,14 @@
 </div></div>
 <p>⏱ 8 minutes, in pairs. Do as much as time allows.</p>
 <aside class="notes">
+<div style="font-size:16px">
 <p><strong>~8 min. One idea: Ash can answer all of this from the file itself.</strong></p>
 <ol type="1">
 <li><strong>(Start)</strong> “Open the link and work in pairs.” Hint: scroll to the <strong>DDS</strong> at the bottom of the page; Ctrl+F helps. Pairs need a couple of minutes to find their way around.</li>
 <li><strong>(While they work)</strong> Walk around and check that people have found the DDS. Dimensions appear as <code>name = length</code> in brackets. Coordinate variables are the ones named like a dimension, e.g.&nbsp;<code>range</code>. Watch out: the form shows indices (<code>0..511</code>), the DDS shows lengths (<code>512</code>).</li>
 <li><strong>(Minute 6)</strong> Check progress. Stop at 8, even if not everyone has finished.</li>
 </ol>
+</div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -738,12 +750,14 @@
 <p><code>scalar</code> has no variable of the same name: it is just a length-one dimension used by several variables.</p>
 </div></div>
 <aside class="notes">
+<div style="font-size:16px">
 <p><strong>~2 min. One idea: dimensions are axes with a length; coordinate variables hold the values along an axis.</strong></p>
 <ol type="1">
 <li>Ask one pair: “How many dimensions did you find?” (Five, including <code>scalar</code>.) In the DDS they appear as <code>name = length</code>.</li>
 <li>Coordinate variables: “<code>range = 512</code> says there are 512 positions. The variable <code>range(range)</code> says what each position is.”</li>
 <li><code>scalar</code> has no variable of its own: it is just a length-one dimension used by several variables.</li>
 </ol>
+</div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -786,12 +800,14 @@
 </div>
 </div>
 <aside class="notes">
+<div style="font-size:16px">
 <p><strong>~3 min. One idea: Ash learned all of this from the file itself.</strong></p>
 <ol type="1">
 <li><strong>Missing data:</strong> <code>_FillValue</code> is structural, because it is declared in the file. What to do with the missing values is an analytical decision.</li>
 <li><strong>Item 7:</strong> string variables such as <code>station_details</code> are <em>data</em>, not global attributes.</li>
 <li><strong>Callout:</strong> “Ash needed no README, and the same steps work for any NetCDF file.”</li>
 </ol>
+</div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
