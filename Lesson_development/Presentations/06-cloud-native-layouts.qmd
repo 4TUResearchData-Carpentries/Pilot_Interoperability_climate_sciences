@@ -170,7 +170,7 @@ A  Zarr storage layout can expose those chunks as **independently addressable pa
 :::
 
 
-## Cloud optimized Geospatail data 
+## Cloud optimized Geospatial data 
 
 ![From https://guide.cloudnativegeo.org/](images/cloud/cloud-optimized-geospatial-formats.png)
 
