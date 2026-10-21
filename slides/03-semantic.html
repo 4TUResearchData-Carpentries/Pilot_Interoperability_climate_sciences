@@ -351,7 +351,7 @@
 <h2>A NetCDF file with dimensions, variables, and units is semantically interoperable by default.</h2>
 <div class="fragment">
 <div class="pill pill-lg p-cream">
-<p><strong>False</strong>: : NetCDF provides a self-describing structure, but dimensions and units do not fully define scientific meaning, context, statistical treatment, or relationships.</p>
+<p><strong>False</strong>: : The NetCDF has to follow semantic conventions to be semantically interoperable.</p>
 </div>
 </div>
 </section>
@@ -491,11 +491,9 @@
 <h1>Key takeaways</h1>
 <ul>
 <li>Semantic interoperability concerns shared, explicit, and machine-actionable meaning.</li>
-<li>File formats and readable labels provide containers for meaning but do not guarantee semantic agreement.</li>
 <li>Controlled vocabulary terms, units, coordinates, bounds, cell methods, grid mappings, flags, and qualified relationships work together to express scientific meaning.</li>
-<li>A CF <code>standard_name</code> identifies a physical quantity; <code>long_name</code> remains free text for human readability.</li>
 <li>CF compliance is relative to a specific version and does not prove scientific correctness, data quality, or suitability for a particular analysis.</li>
-<li>The global Conventions attribute is a conformance claim, not evidence that every requirement is satisfied.</li>
+<li>The global Conventions attribute in the metadata of the NetCDF file is a conformance claim, not evidence that every requirement is satisfied.</li>
 </ul>
 
 </section>
