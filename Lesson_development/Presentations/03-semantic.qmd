@@ -156,7 +156,7 @@ CF compliance does not guarantee that the scientific values are correct.
 
 ::: {.fragment}
 ::: {.pill .pill-lg  .p-cream}
-**False**: : NetCDF provides a self-describing structure, but dimensions and units do not fully define scientific meaning, context, statistical treatment, or relationships.
+**False**: : The NetCDF has to follow semantic conventions to be semantically interoperable.
 :::
 :::
 
@@ -317,8 +317,6 @@ Show an example of a report from the compliance check. Lesson_development\data\c
 # Key takeaways
 
 - Semantic interoperability concerns shared, explicit, and machine-actionable meaning.
-- File formats and readable labels provide containers for meaning but do not guarantee semantic agreement.
 - Controlled vocabulary terms, units, coordinates, bounds, cell methods, grid mappings, flags, and qualified relationships work together to express scientific meaning.
-- A CF `standard_name` identifies a physical quantity; `long_name` remains free text for human readability.
 - CF compliance is relative to a specific version and does not prove scientific correctness, data quality, or suitability for a particular analysis.
-- The global Conventions attribute is a conformance claim, not evidence that every requirement is satisfied.
+- The global Conventions attribute in the metadata of the NetCDF file is a conformance claim, not evidence that every requirement is satisfied.

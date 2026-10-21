@@ -10,7 +10,7 @@ subtitle: "Interoperability in Climate and Atmospheric sciences<br>FAIR NetCDF D
 ::: {.fragment}
 
 ::: {.callout-note appearance="simple"}
-General definition
+General definition of interoperability
 :::
 
 - The lesson introduces interoperability as the **ability** to make research data **usable** across different tools, systems, and workflows with **minimal dataset-specific intervention**.
@@ -81,7 +81,7 @@ Challenges
 
 <p class="center-text small">She needs to integrate multiple data from different sources</p>
 
-::: {.incremental}
+
 
 - Climate models
 - Satellite observations
@@ -89,7 +89,7 @@ Challenges
 - Radar observations
 - National meteorological datasets
 
-:::
+
 
 
 ::: {.fragment .center-text}
