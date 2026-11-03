@@ -6,6 +6,12 @@ $presentation-heading-color: #3a3a3a;
 $presentation-heading-font-weight: 700;
 $presentation-font-size-root: 30px;
 
+$blockquote-color: #17375e;
+$code-block-bg: #ffffff;
+$code-block-color: #1a1a1a;
+$code-block-border-left: #9a9a9a;
+$code-block-font-size: 0.9em;
+
 /*-- scss:rules --*/
 
 // palette used by the boxes and pills
@@ -160,4 +166,30 @@ $c-edge:   #6b4a2f;
   background: transparent !important;
   font-size: 2rem !important;   
   padding: 0.5em 0.9em;
+}
+
+/* ---- quotes: darker text ---- */
+
+.reveal blockquote,
+.reveal blockquote p {
+  color: #17375e !important;
+}
+
+.reveal blockquote {
+  border-left: 4px solid #17375e !important;
+}
+
+/* ---- code blocks: white background ---- */
+.reveal pre {
+  background: #ffffff !important;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.reveal div.sourceCode pre code,
+.reveal pre code {
+  font-size: .85em !important;
+  background: #ffffff !important;
+  color: #1a1a1a;
 }
